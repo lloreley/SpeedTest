@@ -1,0 +1,14 @@
+# ninja log v5
+27	1722	0	CMakeFiles/SpeedTest_autogen-Debug	1771d3038e1529
+27	1722	0	SpeedTest_autogen/mocs_compilation_Debug.cpp	1771d3038e1529
+27	1722	0	D:/projects/SpeedTest/build/CMakeFiles/SpeedTest_autogen-Debug	1771d3038e1529
+27	1722	0	D:/projects/SpeedTest/build/SpeedTest_autogen/mocs_compilation_Debug.cpp	1771d3038e1529
+1737	2558	7519258771174682	CMakeFiles/SpeedTest.dir/Debug/src/String.cpp.obj	e247cd63569b0e36
+1733	3569	7519258781196240	CMakeFiles/SpeedTest.dir/Debug/src/Logger.cpp.obj	cf57d3abedd57ab6
+1744	4024	7519258785863638	CMakeFiles/SpeedTest.dir/Debug/src/AnimatedTabBar/VAnimatedTabBar.cpp.obj	a459c895ed8e0eb1
+1741	4077	7519258786525151	CMakeFiles/SpeedTest.dir/Debug/src/AnimatedTabBar/HAnimatedTabBar.cpp.obj	b12facdb60bd52f6
+1723	4102	7519258786693584	CMakeFiles/SpeedTest.dir/Debug/SpeedTest_autogen/mocs_compilation_Debug.cpp.obj	260b117f83ec6d79
+1748	4213	7519258787875424	CMakeFiles/SpeedTest.dir/Debug/src/AnimatedTabBar/AnimatedTabBar.cpp.obj	582e8317d114abea
+1726	4265	7519258788440217	CMakeFiles/SpeedTest.dir/Debug/main.cpp.obj	fa829b5405c82a34
+1729	4277	7519258788549570	CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj	677c706fca1d9f0d
+4277	4512	7519258790836648	Debug/SpeedTest.exe	2c3ce5d7af619432

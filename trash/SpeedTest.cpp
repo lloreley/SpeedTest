@@ -1,0 +1,1 @@
+#include "../include/SpeedTest.hpp"

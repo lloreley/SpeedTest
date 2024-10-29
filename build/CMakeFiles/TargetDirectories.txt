@@ -1,0 +1,4 @@
+D:/projects/SpeedTest/build/CMakeFiles/SpeedTest.dir
+D:/projects/SpeedTest/build/CMakeFiles/edit_cache.dir
+D:/projects/SpeedTest/build/CMakeFiles/rebuild_cache.dir
+D:/projects/SpeedTest/build/CMakeFiles/SpeedTest_autogen.dir
