@@ -12,11 +12,11 @@
 using std::time_t;
 using std::tm;
 
-class Logger final : public Singleton<Logger>
+class Logger : public Singleton<Logger>
 {
     friend class Singleton<Logger>;
 
-private:
+protected:
     String fileName;
 
     Logger();

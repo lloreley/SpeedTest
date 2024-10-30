@@ -107,6 +107,14 @@ build CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/AnimatedTabBar.cpp.obj
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Release
   OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Release\src\AnimatedTabBar
 
+build CMakeFiles/SpeedTest.dir/Release/include/LoginWindow/LoginWindow.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Release D$:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp || cmake_object_order_depends_target_SpeedTest_RELEASE
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Release\include\LoginWindow\LoginWindow.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Release
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Release\include\LoginWindow
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target SpeedTest
@@ -115,7 +123,7 @@ build CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/AnimatedTabBar.cpp.obj
 #############################################
 # Link the executable Release\SpeedTest.exe
 
-build Release/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_Release CMakeFiles/SpeedTest.dir/Release/SpeedTest_autogen/mocs_compilation_Release.cpp.obj CMakeFiles/SpeedTest.dir/Release/main.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/Logger.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/String.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/HAnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/VAnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/AnimatedTabBar.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:Release
+build Release/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_Release CMakeFiles/SpeedTest.dir/Release/SpeedTest_autogen/mocs_compilation_Release.cpp.obj CMakeFiles/SpeedTest.dir/Release/main.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/Logger.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/String.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/HAnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/VAnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/Release/src/AnimatedTabBar/AnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/Release/include/LoginWindow/LoginWindow.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:Release
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Release

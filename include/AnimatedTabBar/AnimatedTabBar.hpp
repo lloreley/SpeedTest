@@ -39,7 +39,6 @@ namespace TabBar
         void setDuration(int duration) noexcept;
         QEasingCurve getEasingCurve() const noexcept;
         void setEasignCurve(QEasingCurve easignCurve)noexcept;
-
         virtual bool setSide(side_t side) = 0;
 
     protected:

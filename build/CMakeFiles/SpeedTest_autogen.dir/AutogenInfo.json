@@ -84,6 +84,18 @@
 			"MU",
 			"P4SWX64FE6/moc_VAnimatedTabBar.cpp",
 			null
+		],
+		[
+			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.hpp",
+			"MU",
+			"GIBGGU7VF6/moc_LoginWindow.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/mainwindow.hpp",
+			"MU",
+			"6YEA5652QU/moc_mainwindow.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -152,6 +164,11 @@
 	"SETTINGS_FILE_Release" : "D:/projects/SpeedTest/build/CMakeFiles/SpeedTest_autogen.dir/AutogenUsed_Release.txt",
 	"SOURCES" : 
 	[
+		[
+			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp",
+			"MU",
+			null
+		],
 		[ "D:/projects/SpeedTest/main.cpp", "MU", null ],
 		[
 			"D:/projects/SpeedTest/src/AnimatedTabBar/AnimatedTabBar.cpp",

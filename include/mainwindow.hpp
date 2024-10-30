@@ -5,14 +5,15 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QKeyEvent>
-#include "Logger.hpp"
+#include "LoginWindow/LoginWindow.hpp"
 
-#define MIN_HEIGHT 480
-#define MIN_WIDHT 640
+#define MIN_HEIGHT 600
+#define MIN_WIDHT 800
 #define MAIN_WINDOW_NAME "Typing speed test"
 
 class MainWindow : public QWidget
 {
+    Q_OBJECT
 public:
     MainWindow(const char *windowTitle = nullptr,
                size_t minimumWidth = 0,
@@ -21,11 +22,19 @@ public:
     ~MainWindow();
 
 private:
-    QLabel *label;
 
-    void keyPressEvent(QKeyEvent *event) override
-    {
-        label->setText(event->text());
-    }
+    LoginWindow* logwin;
+public slots:
+    void login();
+
+private slots:
+    // void isLoginSuccessful();
+    // void isLoginFailed();
+    // void isLogout();
+    
+signals:
+    void loginSuccessful();
+    void loginFailed();
+    void logout();
 };
 #endif // MAINWINDOW_H
