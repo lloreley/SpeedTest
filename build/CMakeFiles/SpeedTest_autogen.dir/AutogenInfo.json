@@ -68,27 +68,21 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/projects/SpeedTest/include/AnimatedTabBar/AnimatedTabBar.hpp",
-			"MU",
-			"P4SWX64FE6/moc_AnimatedTabBar.cpp",
-			null
-		],
-		[
-			"D:/projects/SpeedTest/include/AnimatedTabBar/HAnimatedTabBar.hpp",
-			"MU",
-			"P4SWX64FE6/moc_HAnimatedTabBar.cpp",
-			null
-		],
-		[
-			"D:/projects/SpeedTest/include/AnimatedTabBar/VAnimatedTabBar.hpp",
-			"MU",
-			"P4SWX64FE6/moc_VAnimatedTabBar.cpp",
-			null
-		],
-		[
 			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.hpp",
 			"MU",
 			"GIBGGU7VF6/moc_LoginWindow.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/LoginWindow/LoginWindowSlider.hpp",
+			"MU",
+			"GIBGGU7VF6/moc_LoginWindowSlider.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/LoginWindow/SignButton.hpp",
+			"MU",
+			"GIBGGU7VF6/moc_SignButton.cpp",
 			null
 		],
 		[
@@ -169,24 +163,12 @@
 			"MU",
 			null
 		],
+		[
+			"D:/projects/SpeedTest/include/LoginWindow/LoginWindowSlider.cpp",
+			"MU",
+			null
+		],
 		[ "D:/projects/SpeedTest/main.cpp", "MU", null ],
-		[
-			"D:/projects/SpeedTest/src/AnimatedTabBar/AnimatedTabBar.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/projects/SpeedTest/src/AnimatedTabBar/HAnimatedTabBar.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/projects/SpeedTest/src/AnimatedTabBar/VAnimatedTabBar.cpp",
-			"MU",
-			null
-		],
-		[ "D:/projects/SpeedTest/src/Logger.cpp", "MU", null ],
-		[ "D:/projects/SpeedTest/src/String.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

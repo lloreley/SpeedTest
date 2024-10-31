@@ -18,18 +18,23 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 add_executable(SpeedTest
     "main.cpp"
+    # "test.hpp"
+    # "test.cpp"
     "src/mainwindow.cpp"
     "include/mainwindow.hpp"
-    "src/Logger.cpp"
-    "src/String.cpp"
-    "src/AnimatedTabBar/HAnimatedTabBar.cpp"
-    "src/AnimatedTabBar/VAnimatedTabBar.cpp"
-    "src/AnimatedTabBar/AnimatedTabBar.cpp"
-    "include/AnimatedTabBar/AnimatedTabBar.hpp"
-    "include/AnimatedTabBar/HAnimatedTabBar.hpp"
-    "include/AnimatedTabBar/VAnimatedTabBar.hpp"
+    # "src/Logger.cpp"
+    # "src/String.cpp"
+    # "src/AnimatedTabBar/HAnimatedTabBar.cpp"
+    # "src/AnimatedTabBar/VAnimatedTabBar.cpp"
+    # "src/AnimatedTabBar/AnimatedTabBar.cpp"
+    # "include/AnimatedTabBar/AnimatedTabBar.hpp"
+    # "include/AnimatedTabBar/HAnimatedTabBar.hpp"
+    # "include/AnimatedTabBar/VAnimatedTabBar.hpp"
     "include/LoginWindow/LoginWindow.hpp"
     "include/LoginWindow/LoginWindow.cpp"
+    "include/LoginWindow/LoginWindowSlider.hpp"
+    "include/LoginWindow/LoginWindowSlider.cpp"
+    "include/LoginWindow/SignButton.hpp"
     
 )
 

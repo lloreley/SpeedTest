@@ -67,49 +67,17 @@ build CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/mainwindow.cpp.obj: CXX_COMPIL
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src
 
-build CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/Logger.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/src/Logger.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\Logger.cpp.obj.d
-  FLAGS = -O2 -g -DNDEBUG -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src
-
-build CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/String.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/src/String.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\String.cpp.obj.d
-  FLAGS = -O2 -g -DNDEBUG -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src
-
-build CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/AnimatedTabBar/HAnimatedTabBar.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/src/AnimatedTabBar/HAnimatedTabBar.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\AnimatedTabBar\HAnimatedTabBar.cpp.obj.d
-  FLAGS = -O2 -g -DNDEBUG -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\AnimatedTabBar
-
-build CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/AnimatedTabBar/VAnimatedTabBar.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/src/AnimatedTabBar/VAnimatedTabBar.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\AnimatedTabBar\VAnimatedTabBar.cpp.obj.d
-  FLAGS = -O2 -g -DNDEBUG -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\AnimatedTabBar
-
-build CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/AnimatedTabBar/AnimatedTabBar.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/src/AnimatedTabBar/AnimatedTabBar.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\AnimatedTabBar\AnimatedTabBar.cpp.obj.d
-  FLAGS = -O2 -g -DNDEBUG -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\src\AnimatedTabBar
-
 build CMakeFiles/SpeedTest.dir/RelWithDebInfo/include/LoginWindow/LoginWindow.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\include\LoginWindow\LoginWindow.cpp.obj.d
+  FLAGS = -O2 -g -DNDEBUG -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo\include\LoginWindow
+
+build CMakeFiles/SpeedTest.dir/RelWithDebInfo/include/LoginWindow/LoginWindowSlider.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_RelWithDebInfo D$:/projects/SpeedTest/include/LoginWindow/LoginWindowSlider.cpp || cmake_object_order_depends_target_SpeedTest_RELWITHDEBINFO
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\RelWithDebInfo\include\LoginWindow\LoginWindowSlider.cpp.obj.d
   FLAGS = -O2 -g -DNDEBUG -std=gnu++11
   INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
@@ -123,7 +91,7 @@ build CMakeFiles/SpeedTest.dir/RelWithDebInfo/include/LoginWindow/LoginWindow.cp
 #############################################
 # Link the executable RelWithDebInfo\SpeedTest.exe
 
-build RelWithDebInfo/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_RelWithDebInfo CMakeFiles/SpeedTest.dir/RelWithDebInfo/SpeedTest_autogen/mocs_compilation_RelWithDebInfo.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/main.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/Logger.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/String.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/AnimatedTabBar/HAnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/AnimatedTabBar/VAnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/AnimatedTabBar/AnimatedTabBar.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/include/LoginWindow/LoginWindow.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:RelWithDebInfo
+build RelWithDebInfo/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_RelWithDebInfo CMakeFiles/SpeedTest.dir/RelWithDebInfo/SpeedTest_autogen/mocs_compilation_RelWithDebInfo.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/main.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/include/LoginWindow/LoginWindow.cpp.obj CMakeFiles/SpeedTest.dir/RelWithDebInfo/include/LoginWindow/LoginWindowSlider.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:RelWithDebInfo
   FLAGS = -O2 -g -DNDEBUG
   LINK_LIBRARIES = D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\RelWithDebInfo
