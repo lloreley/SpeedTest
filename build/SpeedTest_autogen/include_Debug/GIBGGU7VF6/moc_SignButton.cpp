@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SignButton_t {
     QByteArrayData data[6];
-    char stringdata0[45];
+    char stringdata0[57];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,15 +33,15 @@ struct qt_meta_stringdata_SignButton_t {
 static const qt_meta_stringdata_SignButton_t qt_meta_stringdata_SignButton = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "SignButton"
-QT_MOC_LITERAL(1, 11, 5), // "leave"
-QT_MOC_LITERAL(2, 17, 0), // ""
-QT_MOC_LITERAL(3, 18, 5), // "enter"
-QT_MOC_LITERAL(4, 24, 10), // "background"
-QT_MOC_LITERAL(5, 35, 9) // "textColor"
+QT_MOC_LITERAL(1, 11, 11), // "cursorLeave"
+QT_MOC_LITERAL(2, 23, 0), // ""
+QT_MOC_LITERAL(3, 24, 11), // "cursorEnter"
+QT_MOC_LITERAL(4, 36, 10), // "background"
+QT_MOC_LITERAL(5, 47, 9) // "textColor"
 
     },
-    "SignButton\0leave\0\0enter\0background\0"
-    "textColor"
+    "SignButton\0cursorLeave\0\0cursorEnter\0"
+    "background\0textColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -79,8 +79,8 @@ void SignButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<SignButton *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->leave(); break;
-        case 1: _t->enter(); break;
+        case 0: _t->cursorLeave(); break;
+        case 1: _t->cursorEnter(); break;
         default: ;
         }
     }

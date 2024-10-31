@@ -14,13 +14,9 @@ MainWindow::MainWindow(const char *windowTitle,
     {
         this->setMinimumSize(minimumWidth, minimumHeight);
     }
-    // layout = new QHBoxLayout(this);
-    // layout->setContentsMargins(QMargins(0, 0, 0, 0));
     logwin = new LoginWindow(this);
-    // layout->addWidget(logwin);
+    // LoginWindowSlider* slider = new LoginWindowSlider(this);
 
-    // label = new QLabel(this);
-    // setAttribute(Qt::WA_DeleteOnClose);
     this->setMinimumSize(minimumWidth, minimumHeight);
 }
 MainWindow::~MainWindow()

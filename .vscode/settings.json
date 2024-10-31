@@ -56,6 +56,7 @@
         "qpainterpath": "cpp",
         "qhboxlayout": "cpp",
         "qpropertyanimation": "cpp",
-        "qenterevent": "cpp"
+        "qenterevent": "cpp",
+        "qtimer": "cpp"
     }
 }
