@@ -30,6 +30,7 @@ add_executable(SpeedTest
     # "include/AnimatedTabBar/AnimatedTabBar.hpp"
     # "include/AnimatedTabBar/HAnimatedTabBar.hpp"
     # "include/AnimatedTabBar/VAnimatedTabBar.hpp"
+
     "include/LoginWindow/LoginWindow.hpp"
     "include/LoginWindow/LoginWindow.cpp"
     "include/LoginWindow/LoginWindowSlider.hpp"

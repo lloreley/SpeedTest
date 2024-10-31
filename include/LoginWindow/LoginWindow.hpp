@@ -10,8 +10,9 @@
 #include <QPainterPath>
 #include "LoginWindowSlider.hpp"
 
-// #define RIGHT_SLIDER_STYLE "background-color: rgb(81, 45, 168); border-top-left-radius: 150px; border-bottom-left-radius: 100px;"
-// #define LEFT_SLIDER_STYLE "background-color: rgb(81, 45, 168); border-radius: 100px;" // border-bottom-right-radius: 100px;"
+
+#define MIN_LOGIN_WINDOW_WIDTH 800
+#define MIN_LOGIN_WINDOW_HEIGHT 600
 
 class LoginWindow : public QWidget
 {
@@ -21,12 +22,10 @@ public:
     ~LoginWindow();
 
 private:
+
     LoginWindowSlider *slider;
+    LoginBar* logbar;
 
-private slots:
-
-    void isSliderSignUpClicked();
-    void isSliderSignInClicked();
 };
 
 #endif

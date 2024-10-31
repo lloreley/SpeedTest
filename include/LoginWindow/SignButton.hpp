@@ -6,7 +6,7 @@
 #define SIGN_BUTTONS_SIZE QSize(190, 80)
 #define SIGN_IN "Sign In"
 #define SIGN_UP "Sign Up"
-#define SIGN_BUTTON_STYLE "background-color:rgb(%1, %2, %3);color: rgb(%4, %5, %6);font-size: 24px; border: 2px solid; border-color:white;border-radius: 26px;font-weight: 600;font-family: 'Montserrat', sans-serif;"
+#define SIGN_BUTTON_STYLE "QPushButton {background-color:rgb(%1, %2, %3);color: rgb(%4, %5, %6);font-size: 24px; border: 2px solid; border-color:white;border-radius: 26px;font-weight: 600;font-family: 'Montserrat', sans-serif;}"
 #define PURPLE QColor(81, 45, 168)
 #define WHITE QColor(255, 255, 255)
 #define SIGN_BUTTON_HOVER_DURATION 400
