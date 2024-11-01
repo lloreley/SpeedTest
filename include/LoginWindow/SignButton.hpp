@@ -2,55 +2,38 @@
 #define SIGN_BUTTON
 
 #include <QPushButton>
+#include "../StyleLoader/StyleLoader.hpp"
 
-#define SIGN_BUTTONS_SIZE QSize(190, 80)
+#define STYLES_FILE_NAME "styles/Styles.qss"
 #define SIGN_IN "Sign In"
 #define SIGN_UP "Sign Up"
-#define SIGN_BUTTON_STYLE "QPushButton {background-color:rgb(%1, %2, %3);color: rgb(%4, %5, %6);font-size: 24px; border: 2px solid; border-color:white;border-radius: 26px;font-weight: 600;font-family: 'Montserrat', sans-serif;}"
+#define TRANSPARENT QColor(255, 255, 255, 0)
 #define PURPLE QColor(81, 45, 168)
 #define WHITE QColor(255, 255, 255)
+#define WHITE_VISIBLE_BACKGROUND QColor(255, 255, 255, 255)
 #define SIGN_BUTTON_HOVER_DURATION 400
 
 class SignButton final : public QPushButton
 {
     Q_OBJECT
-    Q_PROPERTY(QColor background READ getBackground WRITE setBackground)
-    Q_PROPERTY(QColor textColor READ getTextColor WRITE setTextColor)
+    Q_PROPERTY(QColor currentBackground READ getBackground WRITE setBackground)
+    Q_PROPERTY(QColor currentTextColor READ getTextColor WRITE setTextColor)
 public:
-    SignButton(QWidget *parent = nullptr) : QPushButton(parent), hoverDuration{SIGN_BUTTON_HOVER_DURATION}, hoverActive{true}
+    SignButton(QWidget *parent = nullptr) : QPushButton(parent),
+                                            hoverDuration{SIGN_BUTTON_HOVER_DURATION},
+                                            hoverActive{false},
+                                            buttonStyle{""},
+                                            currentBackground{WHITE},
+                                            currentTextColor{QColor(Qt::black)},
+                                            startTextColor{QColor(Qt::black)},
+                                            endTextColor{QColor(Qt::black)},
+                                            startBackgroundColor{QColor(Qt::white)},
+                                            endBackgroundColor{QColor(Qt::white)}
     {
-        this->setFixedSize(SIGN_BUTTONS_SIZE);
-        this->setText(SIGN_IN);
         QObject::connect(this, &QPushButton::clicked, this, &cursorLeave);
-
-        setBackground(PURPLE);
-        setTextColor(WHITE);
-
-        animBackColor = new QPropertyAnimation(this, "background");
-        animTextColor = new QPropertyAnimation(this, "textColor");
+        animBackColor = new QPropertyAnimation(this, "currentBackground");
+        animTextColor = new QPropertyAnimation(this, "currentTextColor");
     }
-    QColor getBackground() const
-    {
-        return background;
-    }
-
-    void setBackground(const QColor backColor)
-    {
-        background = backColor;
-        this->setStyleSheet(QString{SIGN_BUTTON_STYLE}.arg(backColor.red()).arg(backColor.green()).arg(backColor.blue()).arg(textColor.red()).arg(textColor.green()).arg(textColor.blue()));
-    }
-
-    QColor getTextColor() const
-    {
-        return textColor;
-    }
-
-    void setTextColor(const QColor tColor)
-    {
-        textColor = tColor;
-        this->setStyleSheet(QString{SIGN_BUTTON_STYLE}.arg(background.red()).arg(background.green()).arg(background.blue()).arg(textColor.red()).arg(textColor.green()).arg(textColor.blue()));
-    }
-
     void setHoverDuration(int hoverDuration) noexcept
     {
         this->hoverDuration = hoverDuration;
@@ -73,18 +56,106 @@ public:
         hoverActive = value;
     }
 
+    void swapText() noexcept
+    {
+        if (text() == SIGN_IN)
+        {
+            setText(SIGN_UP);
+            return;
+        }
+        if(text() == SIGN_UP)
+        {
+        setText(SIGN_IN);
+        }
+    }
+
+    void setStartTextColor(const QColor &color) noexcept
+    {
+        setTextColor(color);
+        startTextColor = color;
+    }
+
+    QColor getStartTextColor() const noexcept
+    {
+        return startTextColor;
+    }
+
+    void setEndTextColor(const QColor &color) noexcept
+    {
+        endTextColor = color;
+    }
+
+    QColor getEndTextColor() const noexcept
+    {
+        return endTextColor;
+    }
+
+    void setStartBackgroundColor(const QColor &color) noexcept
+    {
+        setBackground(color);
+        startBackgroundColor = color;
+    }
+
+    QColor getStartBackgroundColor() const noexcept
+    {
+        return startBackgroundColor;
+    }
+
+    void setEndBackgroundColor(const QColor &color) noexcept
+    {
+        endBackgroundColor = color;
+    }
+
+    QColor getEndBackgroundColor() const noexcept
+    {
+        return endBackgroundColor;
+    }
+
+    void setButtonStyle(const QString &style)
+    {
+        buttonStyle = style;
+    }
+
 private:
-    QColor background;
-    QColor textColor;
+    QString buttonStyle;
+    QColor currentBackground;
+    QColor currentTextColor;
+    QColor startTextColor;
+    QColor endTextColor;
+    QColor startBackgroundColor;
+    QColor endBackgroundColor;
     QPropertyAnimation *animBackColor;
     QPropertyAnimation *animTextColor;
     int hoverDuration;
     bool hoverActive;
 
+    QColor getBackground() const
+    {
+        return currentBackground;
+    }
+
+    void setBackground(const QColor backColor)
+    {
+        currentBackground = backColor;
+        this->setStyleSheet(buttonStyle.arg(backColor.red()).arg(backColor.green()).arg(backColor.blue()).arg(currentBackground.alpha()).arg(currentTextColor.red()).arg(currentTextColor.green()).arg(currentTextColor.blue()));
+    }
+
+    QColor getTextColor() const
+    {
+        return currentTextColor;
+    }
+
+    void setTextColor(const QColor &tColor)
+    {
+        currentTextColor = tColor;
+        this->setStyleSheet(buttonStyle.arg(currentBackground.red()).arg(currentBackground.green()).arg(currentBackground.blue()).arg(currentBackground.alpha()).arg(currentTextColor.red()).arg(currentTextColor.green()).arg(currentTextColor.blue()));
+    }
+
     void leaveEvent(QEvent *event)
     {
         cursorLeave();
     }
+  
     void enterEvent(QEvent *event)
     {
         cursorEnter();
@@ -94,10 +165,11 @@ private slots:
 
     void cursorLeave()
     {
+        setCursor(Qt::ArrowCursor);
         if (hoverActive)
         {
-            animBackColor->setEndValue(PURPLE);
-            animTextColor->setEndValue(WHITE);
+            animBackColor->setEndValue(startBackgroundColor);
+            animTextColor->setEndValue(startTextColor);
             animBackColor->start();
             animTextColor->start();
         }
@@ -105,13 +177,16 @@ private slots:
 
     void cursorEnter()
     {
+        setCursor(Qt::PointingHandCursor);
         if (hoverActive)
         {
-            animBackColor->setEndValue(WHITE);
-            animTextColor->setEndValue(PURPLE);
+            animBackColor->setEndValue(endBackgroundColor);
+            animTextColor->setEndValue(endTextColor);
             animBackColor->start();
             animTextColor->start();
         }
     }
+
 };
+
 #endif

@@ -205,8 +205,8 @@ void Slider::moveToLeft()
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 struct qt_meta_stringdata_LoginWindowSlider_t {
-    QByteArrayData data[7];
-    char stringdata0[96];
+    QByteArrayData data[8];
+    char stringdata0[104];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -216,17 +216,18 @@ struct qt_meta_stringdata_LoginWindowSlider_t {
 static const qt_meta_stringdata_LoginWindowSlider_t qt_meta_stringdata_LoginWindowSlider = {
     {
 QT_MOC_LITERAL(0, 0, 17), // "LoginWindowSlider"
-QT_MOC_LITERAL(1, 18, 25), // "isSliderSignButtonClicked"
-QT_MOC_LITERAL(2, 44, 0), // ""
-QT_MOC_LITERAL(3, 45, 12), // "isMoveToLeft"
-QT_MOC_LITERAL(4, 58, 13), // "isMoveToRight"
-QT_MOC_LITERAL(5, 72, 11), // "borderRadii"
-QT_MOC_LITERAL(6, 84, 11) // "BorderRadii"
+QT_MOC_LITERAL(1, 18, 7), // "timeout"
+QT_MOC_LITERAL(2, 26, 0), // ""
+QT_MOC_LITERAL(3, 27, 25), // "isSliderSignButtonClicked"
+QT_MOC_LITERAL(4, 53, 12), // "isMoveToLeft"
+QT_MOC_LITERAL(5, 66, 13), // "isMoveToRight"
+QT_MOC_LITERAL(6, 80, 11), // "borderRadii"
+QT_MOC_LITERAL(7, 92, 11) // "BorderRadii"
 
     },
-    "LoginWindowSlider\0isSliderSignButtonClicked\0"
-    "\0isMoveToLeft\0isMoveToRight\0borderRadii\0"
-    "BorderRadii"
+    "LoginWindowSlider\0timeout\0\0"
+    "isSliderSignButtonClicked\0isMoveToLeft\0"
+    "isMoveToRight\0borderRadii\0BorderRadii"
 };
 #undef QT_MOC_LITERAL
 
@@ -236,25 +237,27 @@ static const uint qt_meta_data_LoginWindowSlider[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
-       1,   32, // properties
+       4,   14, // methods
+       1,   38, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x0a /* Public */,
-       3,    0,   30,    2, 0x0a /* Public */,
-       4,    0,   31,    2, 0x0a /* Public */,
+       1,    0,   34,    2, 0x0a /* Public */,
+       3,    0,   35,    2, 0x0a /* Public */,
+       4,    0,   36,    2, 0x0a /* Public */,
+       5,    0,   37,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // properties: name, type, flags
-       5, 0x80000000 | 6, 0x0009510b,
+       6, 0x80000000 | 7, 0x0009510b,
 
        0        // eod
 };
@@ -265,9 +268,10 @@ void LoginWindowSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         auto *_t = static_cast<LoginWindowSlider *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->isSliderSignButtonClicked(); break;
-        case 1: _t->isMoveToLeft(); break;
-        case 2: _t->isMoveToRight(); break;
+        case 0: _t->timeout(); break;
+        case 1: _t->isSliderSignButtonClicked(); break;
+        case 2: _t->isMoveToLeft(); break;
+        case 3: _t->isMoveToRight(); break;
         default: ;
         }
     }
@@ -323,13 +327,13 @@ int LoginWindowSlider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 4;
     }
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
@@ -351,8 +355,8 @@ int LoginWindowSlider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 struct qt_meta_stringdata_LoginBar_t {
-    QByteArrayData data[5];
-    char stringdata0[63];
+    QByteArrayData data[6];
+    char stringdata0[71];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -362,13 +366,14 @@ struct qt_meta_stringdata_LoginBar_t {
 static const qt_meta_stringdata_LoginBar_t qt_meta_stringdata_LoginBar = {
     {
 QT_MOC_LITERAL(0, 0, 8), // "LoginBar"
-QT_MOC_LITERAL(1, 9, 25), // "isSliderSignButtonClicked"
-QT_MOC_LITERAL(2, 35, 0), // ""
-QT_MOC_LITERAL(3, 36, 12), // "isMoveToLeft"
-QT_MOC_LITERAL(4, 49, 13) // "isMoveToRight"
+QT_MOC_LITERAL(1, 9, 7), // "timeout"
+QT_MOC_LITERAL(2, 17, 0), // ""
+QT_MOC_LITERAL(3, 18, 25), // "isSliderSignButtonClicked"
+QT_MOC_LITERAL(4, 44, 12), // "isMoveToLeft"
+QT_MOC_LITERAL(5, 57, 13) // "isMoveToRight"
 
     },
-    "LoginBar\0isSliderSignButtonClicked\0\0"
+    "LoginBar\0timeout\0\0isSliderSignButtonClicked\0"
     "isMoveToLeft\0isMoveToRight"
 };
 #undef QT_MOC_LITERAL
@@ -379,7 +384,7 @@ static const uint qt_meta_data_LoginBar[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -387,11 +392,13 @@ static const uint qt_meta_data_LoginBar[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x0a /* Public */,
-       3,    0,   30,    2, 0x0a /* Public */,
-       4,    0,   31,    2, 0x0a /* Public */,
+       1,    0,   34,    2, 0x0a /* Public */,
+       3,    0,   35,    2, 0x0a /* Public */,
+       4,    0,   36,    2, 0x0a /* Public */,
+       5,    0,   37,    2, 0x0a /* Public */,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -405,9 +412,10 @@ void LoginBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<LoginBar *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->isSliderSignButtonClicked(); break;
-        case 1: _t->isMoveToLeft(); break;
-        case 2: _t->isMoveToRight(); break;
+        case 0: _t->timeout(); break;
+        case 1: _t->isSliderSignButtonClicked(); break;
+        case 2: _t->isMoveToLeft(); break;
+        case 3: _t->isMoveToRight(); break;
         default: ;
         }
     }
@@ -443,13 +451,13 @@ int LoginBar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

@@ -57,6 +57,8 @@
         "qhboxlayout": "cpp",
         "qpropertyanimation": "cpp",
         "qenterevent": "cpp",
-        "qtimer": "cpp"
+        "qtimer": "cpp",
+        "qstyleoption": "cpp",
+        "qdebug": "cpp"
     }
 }

@@ -11,44 +11,34 @@
 #include <QTimer>
 #include <QLineEdit>
 
+#include <QDebug>
 #include "SignButton.hpp"
+#include "../StyleLoader/StyleLoader.hpp"
 
 #define MIN_SLIDER_HEIGHT 600
 #define MIN_SLIDER_WIDTH 400
 #define ZERO_CONTEXT_MARGINS QMargins(0, 0, 0, 0)
-#define ZERO_BORDER_RADII BorderRadii(0, 0, 0, 0)
-
 #define SLIDER_BORDER_RADIUS 150
 #define SLIDER_LEFT_POS QPoint(0, 0)
 #define SLIDER_RIGHT_POS QPoint(MIN_SLIDER_WIDTH, 0)
-#define DURATION_BASIC 1000
-#define SLIDER_EASING_CURVE_BASIC QEasingCurve::OutQuart
-
+#define SLIDER_DURATION 1000
+#define SLIDER_EASING_CURVE QEasingCurve::OutQuart
 #define GREETIN_LABEL_TEXT_BACK "Welcome Back!"
 #define GREETIN_LABEL_TEXT_HELLO "Hello, Friend!"
-
 #define ADDITIONAL_LABEL_TEXT_BACK "Enter yor personal details to use all of application features"
 #define ADDITIONAL_LABEL_TEXT_HELLO "Register with your personal details to use all of application features"
-#define ADDITIONAL_LABEL_MIN_WIDTH 350
 #define LAYOUT_SPACING 50
-
-#define GREATING_LABEL_STYLE "QLabel {color: rgb(255, 255, 255);font-size: 30px;font-weight: 1000;font-family: 'Montserrat', sans-serif;}"
-#define ADDITIONAL_LABEL_STYLE "QLabel {color: rgb(255, 255, 255);font-size: 18px;font-weight: 440;font-family: 'Montserrat', sans-serif;}"
-#define SLIDER_STYLE_WITH_BORDER_RADII "LoginWindowSlider {background:rgb(81, 45, 168); border-top-left-radius: %1px;border-bottom-left-radius: %2px;border-top-right-radius: %3px;border-bottom-right-radius: %4px;}"
-
-#define LEFT_BORDER_RADII BorderRadii(0, 0, SLIDER_BORDER_RADIUS, SLIDER_BORDER_RADIUS)
-#define RIGHT_BORDER_RADII BorderRadii(SLIDER_BORDER_RADIUS, SLIDER_BORDER_RADIUS, 0, 0)
-
-#define MAIN_LABEL_LOGIN_TAB "QLabel {color: rgb(0, 0, 0);font-size: 36px;font-weight: 1000;font-family: 'Montserrat', sans-serif;}"
+#define LEFT_POS_BORDER_RADII BorderRadii(0, 0, SLIDER_BORDER_RADIUS, SLIDER_BORDER_RADIUS)
+#define RIGHT_POS_BORDER_RADII BorderRadii(SLIDER_BORDER_RADIUS, SLIDER_BORDER_RADIUS, 0, 0)
 #define MAIN_LABEL_LOGIN_TAB_TEXT_BACK "Sign In"
 #define MAIN_LABEL_LOGIN_TAB_TEXT_HELLO "Create Account"
-
 #define NAME_PLACEHOLDER_TEXT "Name"
+#define NAME_PLACEHOLDER_TEXT_AND_EMAIL "Name/Email"
 #define EMAIL_PLACEHOLDER_TEXT "Email"
 #define PASSWORD_PLACEHOLDER_TEXT "Password"
 #define LOGIN_TAB_LAYOUT_SPACING 5
+#define LOGO_PATH "pictures/logo.png"
 
-#define LINE_EDIT_STYLE "background-color: rgb(217, 213, 219); border: none; margin: 8px; font-size: 20px; border-radius: 12px;width:320px; height: 44;font-family: 'Montserrat', sans-serif;"
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 typedef struct borderRadii
@@ -82,20 +72,20 @@ public:
     int getDuration() const noexcept;
     void setSliderEasingCurve(QEasingCurve easingCurve);
     QEasingCurve getSliderEasingCurve() const noexcept;
-    void swapSignText() noexcept;
     virtual void swap() = 0;
 
 protected:
     QVBoxLayout *sliderLayout;
     SignButton *signButton;
+    QTimer *timer;
     QEasingCurve sliderEasingCurve;
     int duration;
-    QTimer *timer;
+    QString sliderStyle;
 
     void paintEvent(QPaintEvent *event) override;
 
 public slots:
-    void timeout();
+    virtual void timeout() = 0;
     virtual void isSliderSignButtonClicked() = 0;
     virtual void isMoveToRight() = 0;
     virtual void isMoveToLeft() = 0;
@@ -106,15 +96,16 @@ signals:
     void moveToRight();
     void moveToLeft();
 };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class LoginWindowSlider : public Slider
+class MainSlider : public Slider
 {
     Q_OBJECT
     Q_PROPERTY(BorderRadii borderRadii READ getBorderRadii WRITE setBorderRadii)
 public:
-    LoginWindowSlider(QWidget *parent = nullptr);
-    ~LoginWindowSlider();
+    MainSlider(QWidget *parent = nullptr);
+    ~MainSlider();
 
     BorderRadii getBorderRadii();
     void setBorderRadii(BorderRadii borderRadii);
@@ -129,6 +120,7 @@ private:
     BorderRadii borderRadii;
 
 public slots:
+    void timeout() override;
     void isSliderSignButtonClicked() override;
     void isMoveToLeft() override;
     void isMoveToRight() override;
@@ -150,8 +142,9 @@ private:
     QLineEdit *name;
     QLineEdit *email;
     QLineEdit *password;
+    QLabel *label;
 public slots:
-
+    void timeout() override;
     void isSliderSignButtonClicked() override;
     void isMoveToLeft() override;
     void isMoveToRight() override;

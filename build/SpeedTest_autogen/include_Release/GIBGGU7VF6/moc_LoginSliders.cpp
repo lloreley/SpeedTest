@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'LoginWindowSlider.hpp'
+** Meta object code from reading C++ file 'LoginSliders.hpp'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.14.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../../../include/LoginWindow/LoginWindowSlider.hpp"
+#include "../../../../include/LoginWindow/LoginSliders.hpp"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'LoginWindowSlider.hpp' doesn't include <QObject>."
+#error "The header file 'LoginSliders.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.14.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -204,34 +204,34 @@ void Slider::moveToLeft()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
-struct qt_meta_stringdata_LoginWindowSlider_t {
+struct qt_meta_stringdata_MainSlider_t {
     QByteArrayData data[8];
-    char stringdata0[104];
+    char stringdata0[97];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_LoginWindowSlider_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_MainSlider_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_LoginWindowSlider_t qt_meta_stringdata_LoginWindowSlider = {
+static const qt_meta_stringdata_MainSlider_t qt_meta_stringdata_MainSlider = {
     {
-QT_MOC_LITERAL(0, 0, 17), // "LoginWindowSlider"
-QT_MOC_LITERAL(1, 18, 7), // "timeout"
-QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 25), // "isSliderSignButtonClicked"
-QT_MOC_LITERAL(4, 53, 12), // "isMoveToLeft"
-QT_MOC_LITERAL(5, 66, 13), // "isMoveToRight"
-QT_MOC_LITERAL(6, 80, 11), // "borderRadii"
-QT_MOC_LITERAL(7, 92, 11) // "BorderRadii"
+QT_MOC_LITERAL(0, 0, 10), // "MainSlider"
+QT_MOC_LITERAL(1, 11, 7), // "timeout"
+QT_MOC_LITERAL(2, 19, 0), // ""
+QT_MOC_LITERAL(3, 20, 25), // "isSliderSignButtonClicked"
+QT_MOC_LITERAL(4, 46, 12), // "isMoveToLeft"
+QT_MOC_LITERAL(5, 59, 13), // "isMoveToRight"
+QT_MOC_LITERAL(6, 73, 11), // "borderRadii"
+QT_MOC_LITERAL(7, 85, 11) // "BorderRadii"
 
     },
-    "LoginWindowSlider\0timeout\0\0"
-    "isSliderSignButtonClicked\0isMoveToLeft\0"
-    "isMoveToRight\0borderRadii\0BorderRadii"
+    "MainSlider\0timeout\0\0isSliderSignButtonClicked\0"
+    "isMoveToLeft\0isMoveToRight\0borderRadii\0"
+    "BorderRadii"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_LoginWindowSlider[] = {
+static const uint qt_meta_data_MainSlider[] = {
 
  // content:
        8,       // revision
@@ -262,10 +262,10 @@ static const uint qt_meta_data_LoginWindowSlider[] = {
        0        // eod
 };
 
-void LoginWindowSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void MainSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<LoginWindowSlider *>(_o);
+        auto *_t = static_cast<MainSlider *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->timeout(); break;
@@ -277,7 +277,7 @@ void LoginWindowSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     }
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty) {
-        auto *_t = static_cast<LoginWindowSlider *>(_o);
+        auto *_t = static_cast<MainSlider *>(_o);
         Q_UNUSED(_t)
         void *_v = _a[0];
         switch (_id) {
@@ -285,7 +285,7 @@ void LoginWindowSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
-        auto *_t = static_cast<LoginWindowSlider *>(_o);
+        auto *_t = static_cast<MainSlider *>(_o);
         Q_UNUSED(_t)
         void *_v = _a[0];
         switch (_id) {
@@ -298,30 +298,30 @@ void LoginWindowSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject LoginWindowSlider::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject MainSlider::staticMetaObject = { {
     QMetaObject::SuperData::link<Slider::staticMetaObject>(),
-    qt_meta_stringdata_LoginWindowSlider.data,
-    qt_meta_data_LoginWindowSlider,
+    qt_meta_stringdata_MainSlider.data,
+    qt_meta_data_MainSlider,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *LoginWindowSlider::metaObject() const
+const QMetaObject *MainSlider::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *LoginWindowSlider::qt_metacast(const char *_clname)
+void *MainSlider::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_LoginWindowSlider.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_MainSlider.stringdata0))
         return static_cast<void*>(this);
     return Slider::qt_metacast(_clname);
 }
 
-int LoginWindowSlider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int MainSlider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = Slider::qt_metacall(_c, _id, _a);
     if (_id < 0)

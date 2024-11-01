@@ -2,13 +2,12 @@
 #define LOGIN_WINDOW
 
 #include <QWidget>
-#include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QPropertyAnimation>
 #include <QPainter>
 #include <QPainterPath>
-#include "LoginWindowSlider.hpp"
+#include "LoginSliders.hpp"
 
 
 #define MIN_LOGIN_WINDOW_WIDTH 800
@@ -23,7 +22,7 @@ public:
 
 private:
 
-    LoginWindowSlider *slider;
+    MainSlider *slider;
     LoginBar* logbar;
 
 };

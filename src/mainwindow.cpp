@@ -15,7 +15,7 @@ MainWindow::MainWindow(const char *windowTitle,
         this->setMinimumSize(minimumWidth, minimumHeight);
     }
     logwin = new LoginWindow(this);
-    // LoginWindowSlider* slider = new LoginWindowSlider(this);
+    // MainSlider* slider = new MainSlider(this);
 
     this->setMinimumSize(minimumWidth, minimumHeight);
 }

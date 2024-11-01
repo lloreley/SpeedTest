@@ -68,21 +68,27 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/projects/SpeedTest/include/LoginWindow/LoginSliders.hpp",
+			"MU",
+			"GIBGGU7VF6/moc_LoginSliders.cpp",
+			null
+		],
+		[
 			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.hpp",
 			"MU",
 			"GIBGGU7VF6/moc_LoginWindow.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginWindowSlider.hpp",
-			"MU",
-			"GIBGGU7VF6/moc_LoginWindowSlider.cpp",
-			null
-		],
-		[
 			"D:/projects/SpeedTest/include/LoginWindow/SignButton.hpp",
 			"MU",
 			"GIBGGU7VF6/moc_SignButton.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/StyleLoader/StyleLoader.hpp",
+			"MU",
+			"AIL65UW3BF/moc_StyleLoader.cpp",
 			null
 		],
 		[
@@ -159,12 +165,12 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp",
+			"D:/projects/SpeedTest/include/LoginWindow/LoginSliders.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginWindowSlider.cpp",
+			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp",
 			"MU",
 			null
 		],

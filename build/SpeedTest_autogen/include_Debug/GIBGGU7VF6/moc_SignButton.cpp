@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SignButton_t {
     QByteArrayData data[6];
-    char stringdata0[57];
+    char stringdata0[71];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,12 +36,12 @@ QT_MOC_LITERAL(0, 0, 10), // "SignButton"
 QT_MOC_LITERAL(1, 11, 11), // "cursorLeave"
 QT_MOC_LITERAL(2, 23, 0), // ""
 QT_MOC_LITERAL(3, 24, 11), // "cursorEnter"
-QT_MOC_LITERAL(4, 36, 10), // "background"
-QT_MOC_LITERAL(5, 47, 9) // "textColor"
+QT_MOC_LITERAL(4, 36, 17), // "currentBackground"
+QT_MOC_LITERAL(5, 54, 16) // "currentTextColor"
 
     },
     "SignButton\0cursorLeave\0\0cursorEnter\0"
-    "background\0textColor"
+    "currentBackground\0currentTextColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,8 +67,8 @@ static const uint qt_meta_data_SignButton[] = {
     QMetaType::Void,
 
  // properties: name, type, flags
-       4, QMetaType::QColor, 0x00095103,
-       5, QMetaType::QColor, 0x00095103,
+       4, QMetaType::QColor, 0x00095003,
+       5, QMetaType::QColor, 0x00095003,
 
        0        // eod
 };
