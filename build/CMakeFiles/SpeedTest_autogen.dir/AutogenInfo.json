@@ -60,13 +60,28 @@
 		"D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
 		"D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
-		"W:/mingw64/share/cmake-3.26/Modules/CMakeParseArguments.cmake"
+		"W:/mingw64/share/cmake-3.26/Modules/CMakeParseArguments.cmake",
+		"D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake",
+		"D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake",
+		"D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/projects/SpeedTest",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
+		[
+			"D:/projects/SpeedTest/include/FileDataBase.hpp",
+			"MU",
+			"6YEA5652QU/moc_FileDataBase.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/FileLoader/FileLoader.hpp",
+			"MU",
+			"5VR73UMQH6/moc_FileLoader.cpp",
+			null
+		],
 		[
 			"D:/projects/SpeedTest/include/LoginWindow/LoginSliders.hpp",
 			"MU",
@@ -86,9 +101,15 @@
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/StyleLoader/StyleLoader.hpp",
+			"D:/projects/SpeedTest/include/ServerClient.hpp",
 			"MU",
-			"AIL65UW3BF/moc_StyleLoader.cpp",
+			"6YEA5652QU/moc_ServerClient.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/User.hpp",
+			"MU",
+			"6YEA5652QU/moc_User.cpp",
 			null
 		],
 		[
@@ -107,8 +128,15 @@
 	"MOC_COMPILATION_FILE_Debug" : "D:/projects/SpeedTest/build/SpeedTest_autogen/mocs_compilation_Debug.cpp",
 	"MOC_COMPILATION_FILE_RelWithDebInfo" : "D:/projects/SpeedTest/build/SpeedTest_autogen/mocs_compilation_RelWithDebInfo.cpp",
 	"MOC_COMPILATION_FILE_Release" : "D:/projects/SpeedTest/build/SpeedTest_autogen/mocs_compilation_Release.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
-	"MOC_DEFINITIONS_Debug" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB"
+	],
+	"MOC_DEFINITIONS_Debug" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NETWORK_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -124,6 +152,7 @@
 		"D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE",
 		"D:/tools/Qt/5.14.2/mingw73_64/include/QtCore",
 		"D:/tools/Qt/5.14.2/mingw73_64/mkspecs/win32-g++",
+		"D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork",
 		"D:/tools/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++",
 		"D:/tools/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32",
 		"D:/tools/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward",

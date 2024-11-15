@@ -65,20 +65,20 @@ static const uint qt_meta_data_Slider[] = {
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x06 /* Public */,
-       3,    0,   55,    2, 0x06 /* Public */,
-       4,    0,   56,    2, 0x06 /* Public */,
-       5,    0,   57,    2, 0x06 /* Public */,
+       1,    1,   54,    2, 0x06 /* Public */,
+       3,    1,   57,    2, 0x06 /* Public */,
+       4,    0,   60,    2, 0x06 /* Public */,
+       5,    0,   61,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,   58,    2, 0x0a /* Public */,
-       7,    0,   59,    2, 0x0a /* Public */,
-       8,    0,   60,    2, 0x0a /* Public */,
-       9,    0,   61,    2, 0x0a /* Public */,
+       6,    0,   62,    2, 0x0a /* Public */,
+       7,    0,   63,    2, 0x0a /* Public */,
+       8,    0,   64,    2, 0x0a /* Public */,
+       9,    0,   65,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    2,
+    QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -97,8 +97,8 @@ void Slider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         auto *_t = static_cast<Slider *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->sliderSignUpClicked(); break;
-        case 1: _t->sliderSignInClicked(); break;
+        case 0: _t->sliderSignUpClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 1: _t->sliderSignInClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 2: _t->moveToRight(); break;
         case 3: _t->moveToLeft(); break;
         case 4: _t->timeout(); break;
@@ -110,14 +110,14 @@ void Slider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Slider::*)();
+            using _t = void (Slider::*)(QString );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Slider::sliderSignUpClicked)) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _t = void (Slider::*)();
+            using _t = void (Slider::*)(QString );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&Slider::sliderSignInClicked)) {
                 *result = 1;
                 return;
@@ -138,7 +138,6 @@ void Slider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             }
         }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject Slider::staticMetaObject = { {
@@ -182,15 +181,17 @@ int Slider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Slider::sliderSignUpClicked()
+void Slider::sliderSignUpClicked(QString _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void Slider::sliderSignInClicked()
+void Slider::sliderSignInClicked(QString _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2

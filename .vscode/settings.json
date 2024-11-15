@@ -59,6 +59,13 @@
         "qenterevent": "cpp",
         "qtimer": "cpp",
         "qstyleoption": "cpp",
-        "qdebug": "cpp"
+        "qdebug": "cpp",
+        "iomanip": "cpp",
+        "bit": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "numbers": "cpp",
+        "qstring": "cpp",
+        "qdatastream": "cpp"
     }
 }

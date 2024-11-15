@@ -14,20 +14,11 @@ MainWindow::MainWindow(const char *windowTitle,
     {
         this->setMinimumSize(minimumWidth, minimumHeight);
     }
+
     logwin = new LoginWindow(this);
-    // MainSlider* slider = new MainSlider(this);
+    user = new User(this);
+    connect(logwin->getLoginBar(), &LoginBar::sliderSignInClicked, user, &ServerClient::sendToServer);
+    connect(logwin->getLoginBar(), &LoginBar::sliderSignUpClicked, user, &ServerClient::sendToServer);
 
     this->setMinimumSize(minimumWidth, minimumHeight);
-}
-MainWindow::~MainWindow()
-{
-}
-
-void MainWindow::login()
-{
-    // hide all widgets in main widnow;
-    // QWidget* slider = new QWidget(this);
-    // slider->resize(QSize(this->width()/2, this->height()/2));
-
-
 }

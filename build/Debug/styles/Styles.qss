@@ -46,6 +46,7 @@ QLineEdit.loginLineEdit
     height: 44;
     font-family: 'Montserrat', sans-serif;
 }
+
 QLabel#MainLabelLoginTab
 {
     color: rgb(0, 0, 0);

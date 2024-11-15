@@ -238,6 +238,18 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "W:/mingw64/share/cmake-3.26/Modules/CMakeParseArguments.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/tools/Qt/5.14.2/mingw73_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -2,4 +2,5 @@
 #include <GIBGGU7VF6/moc_LoginSliders.cpp>
 #include <GIBGGU7VF6/moc_LoginWindow.cpp>
 #include <GIBGGU7VF6/moc_SignButton.cpp>
+#include <6YEA5652QU/moc_ServerClient.cpp>
 #include <6YEA5652QU/moc_mainwindow.cpp>

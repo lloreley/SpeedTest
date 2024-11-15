@@ -13,31 +13,8 @@
 
 #include <QDebug>
 #include "SignButton.hpp"
-#include "../StyleLoader/StyleLoader.hpp"
-
-#define MIN_SLIDER_HEIGHT 600
-#define MIN_SLIDER_WIDTH 400
-#define ZERO_CONTEXT_MARGINS QMargins(0, 0, 0, 0)
-#define SLIDER_BORDER_RADIUS 150
-#define SLIDER_LEFT_POS QPoint(0, 0)
-#define SLIDER_RIGHT_POS QPoint(MIN_SLIDER_WIDTH, 0)
-#define SLIDER_DURATION 1000
-#define SLIDER_EASING_CURVE QEasingCurve::OutQuart
-#define GREETIN_LABEL_TEXT_BACK "Welcome Back!"
-#define GREETIN_LABEL_TEXT_HELLO "Hello, Friend!"
-#define ADDITIONAL_LABEL_TEXT_BACK "Enter yor personal details to use all of application features"
-#define ADDITIONAL_LABEL_TEXT_HELLO "Register with your personal details to use all of application features"
-#define LAYOUT_SPACING 50
-#define LEFT_POS_BORDER_RADII BorderRadii(0, 0, SLIDER_BORDER_RADIUS, SLIDER_BORDER_RADIUS)
-#define RIGHT_POS_BORDER_RADII BorderRadii(SLIDER_BORDER_RADIUS, SLIDER_BORDER_RADIUS, 0, 0)
-#define MAIN_LABEL_LOGIN_TAB_TEXT_BACK "Sign In"
-#define MAIN_LABEL_LOGIN_TAB_TEXT_HELLO "Create Account"
-#define NAME_PLACEHOLDER_TEXT "Name"
-#define NAME_PLACEHOLDER_TEXT_AND_EMAIL "Name/Email"
-#define EMAIL_PLACEHOLDER_TEXT "Email"
-#define PASSWORD_PLACEHOLDER_TEXT "Password"
-#define LOGIN_TAB_LAYOUT_SPACING 5
-#define LOGO_PATH "pictures/logo.png"
+#include "../defines.hpp"
+#include "../FileLoader/FileLoader.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,12 +44,12 @@ class Slider : public QWidget
     Q_OBJECT
 public:
     Slider(QWidget *parent = nullptr);
-    ~Slider();
     void setDuration(int duration) noexcept;
-    int getDuration() const noexcept;
     void setSliderEasingCurve(QEasingCurve easingCurve);
-    QEasingCurve getSliderEasingCurve() const noexcept;
     virtual void swap() = 0;
+
+    const QPushButton *button()const;
+    
 
 protected:
     QVBoxLayout *sliderLayout;
@@ -91,8 +68,8 @@ public slots:
     virtual void isMoveToLeft() = 0;
 
 signals:
-    void sliderSignUpClicked();
-    void sliderSignInClicked();
+    void sliderSignUpClicked(QString);
+    void sliderSignInClicked(QString);
     void moveToRight();
     void moveToLeft();
 };
@@ -105,7 +82,6 @@ class MainSlider : public Slider
     Q_PROPERTY(BorderRadii borderRadii READ getBorderRadii WRITE setBorderRadii)
 public:
     MainSlider(QWidget *parent = nullptr);
-    ~MainSlider();
 
     BorderRadii getBorderRadii();
     void setBorderRadii(BorderRadii borderRadii);
@@ -133,7 +109,6 @@ class LoginBar : public Slider
     Q_OBJECT
 public:
     LoginBar(QWidget *parent = nullptr);
-    ~LoginBar() {}
     void swapMainLabelText();
     void swap() override;
 

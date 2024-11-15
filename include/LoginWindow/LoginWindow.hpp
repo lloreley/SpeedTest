@@ -8,10 +8,7 @@
 #include <QPainter>
 #include <QPainterPath>
 #include "LoginSliders.hpp"
-
-
-#define MIN_LOGIN_WINDOW_WIDTH 800
-#define MIN_LOGIN_WINDOW_HEIGHT 600
+#include "../defines.hpp"
 
 class LoginWindow : public QWidget
 {
@@ -20,10 +17,15 @@ public:
     LoginWindow(QWidget *parent = nullptr);
     ~LoginWindow();
 
-private:
+    const MainSlider* getMainSlider();
+    const LoginBar* getLoginBar();
 
-    MainSlider *slider;
-    LoginBar* logbar;
+private:
+    MainSlider *mainSlider;
+    LoginBar *logbar;
+
+private slots:
+
 
 };
 

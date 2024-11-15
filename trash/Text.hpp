@@ -1,7 +1,7 @@
 #ifndef TEXT
 #define TEXT
 #include "String.hpp"
-#include "Logger.hpp"
+// #include "Logger.hpp"
 
 class Text
 {

@@ -5,7 +5,7 @@
 #include <QRegularExpression>
 #include <QString>
 
-class StyleLoader 
+class FileLoader
 {
 public:
     static QString loadStyleFromFile(const QString &filePath, const QString &selector)
@@ -27,10 +27,6 @@ public:
             return match.captured(1);
         }
         return QString(); // Если стиль не найден
-    }
-
-    ~StyleLoader()
-    {
     }
 
 private:

@@ -16,26 +16,14 @@ Slider::Slider(QWidget *parent) : QWidget(parent), duration{SLIDER_DURATION}, sl
     timer = new QTimer(this);
 }
 
-Slider::~Slider() {}
-
 void Slider::setDuration(int duration) noexcept
 {
     this->duration = duration;
 }
 
-int Slider::getDuration() const noexcept
-{
-    return duration;
-}
-
 void Slider::setSliderEasingCurve(QEasingCurve easingCurve)
 {
     this->sliderEasingCurve = easingCurve;
-}
-
-QEasingCurve Slider::getSliderEasingCurve() const noexcept
-{
-    return sliderEasingCurve;
 }
 
 void Slider::paintEvent(QPaintEvent *pe)
@@ -50,6 +38,11 @@ void Slider::paintEvent(QPaintEvent *pe)
     style()->drawPrimitive(QStyle::PE_Widget, &o, &p, this);
     this->setUpdatesEnabled(true);
 };
+
+const QPushButton *Slider::button() const
+{
+    return signButton;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,10 +64,10 @@ MainSlider::MainSlider(QWidget *parent) : Slider(parent)
     move(SLIDER_LEFT_POS);
 
     setObjectName("MainSlider");
-    sliderStyle = StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "#MainSlider");
+    sliderStyle = FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "#MainSlider");
 
     signButton->setObjectName("SliderButton");
-    signButton->setButtonStyle(StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "#SliderButton"));
+    signButton->setButtonStyle(FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "#SliderButton"));
     signButton->setHoverActive(true);
     signButton->setStartBackgroundColor(TRANSPARENT);
     signButton->setEndBackgroundColor(WHITE);
@@ -85,12 +78,12 @@ MainSlider::MainSlider(QWidget *parent) : Slider(parent)
     greetingLabel = new QLabel(this);
     greetingLabel->setText(GREETIN_LABEL_TEXT_BACK);
     greetingLabel->setObjectName("GreatingLabel");
-    greetingLabel->setStyleSheet(StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "#GreatingLabel"));
+    greetingLabel->setStyleSheet(FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "#GreatingLabel"));
 
     additionalLabel = new QLabel(this);
     additionalLabel->setText(ADDITIONAL_LABEL_TEXT_BACK);
     additionalLabel->setObjectName("AdditionalLabel");
-    additionalLabel->setStyleSheet(StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "#AdditionalLabel"));
+    additionalLabel->setStyleSheet(FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "#AdditionalLabel"));
     additionalLabel->setWordWrap(true);
     additionalLabel->setAlignment(Qt::AlignHCenter);
 
@@ -106,8 +99,6 @@ MainSlider::MainSlider(QWidget *parent) : Slider(parent)
 
     QObject::connect(timer, &QTimer::timeout, this, &MainSlider::timeout);
 }
-
-MainSlider::~MainSlider() {}
 
 void MainSlider::isMoveToLeft()
 {
@@ -215,10 +206,10 @@ LoginBar::LoginBar(QWidget *parent) : Slider(parent)
     mainLabel = new QLabel(this);
     mainLabel->setObjectName("MainLabelLoginTab");
     mainLabel->setText(MAIN_LABEL_LOGIN_TAB_TEXT_HELLO);
-    mainLabel->setStyleSheet(StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "#MainLabelLoginTab"));
+    mainLabel->setStyleSheet(FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "#MainLabelLoginTab"));
 
     signButton->setObjectName("LoginButton");
-    signButton->setButtonStyle(StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "#LoginButton"));
+    signButton->setButtonStyle(FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "#LoginButton"));
     signButton->setHoverActive(true);
     signButton->setStartBackgroundColor(PURPLE);
     signButton->setEndBackgroundColor(QColor(92, 107, 192));
@@ -238,7 +229,7 @@ LoginBar::LoginBar(QWidget *parent) : Slider(parent)
     email->setPlaceholderText(EMAIL_PLACEHOLDER_TEXT);
     password->setPlaceholderText(PASSWORD_PLACEHOLDER_TEXT);
     password->setEchoMode(QLineEdit::Password);
-    this->setStyleSheet(StyleLoader::loadStyleFromFile(STYLES_FILE_NAME, "QLineEdit.loginLineEdit"));
+    this->setStyleSheet(FileLoader::loadStyleFromFile(STYLES_FILE_NAME, "QLineEdit.loginLineEdit"));
 
     sliderLayout->setSpacing(LOGIN_TAB_LAYOUT_SPACING);
     sliderLayout->addWidget(mainLabel);
@@ -247,7 +238,6 @@ LoginBar::LoginBar(QWidget *parent) : Slider(parent)
     sliderLayout->addWidget(email);
     sliderLayout->addWidget(password);
     sliderLayout->addWidget(signButton);
-
 
     for (int i = 0; i < sliderLayout->count(); ++i)
     {
@@ -272,7 +262,23 @@ void LoginBar::swapMainLabelText()
     mainLabel->setText(MAIN_LABEL_LOGIN_TAB_TEXT_BACK);
 }
 
-void LoginBar::isSliderSignButtonClicked() {}
+void LoginBar::isSliderSignButtonClicked()
+{
+    QString message;
+    message += QString(MESSAGE_TYPE_SELECTOR) + QString(": \"");
+    message += mainLabel->text() == SIGN_IN ? QString(CHECK_CREDENTIALS_MESSAGE_TYPE) : QString(ADD_USER_MESSAGE_TYPE);
+    message += QString("\"\n");
+    message += QString(NAME_SELECTOR) + QString(": \"") + name->text() + QString("\"\n");
+    message += QString(PASSWORD_SELECTOR) + QString(": \"") + password->text() + QString("\"\n");
+    
+    if (mainLabel->text() == SIGN_IN)
+    {
+        emit sliderSignInClicked(message);
+        return;
+    }
+    message += QString(EMAIL_SELECTOR) + QString(": \"") + email->text() + QString("\"\n");
+    emit sliderSignUpClicked(message);
+}
 
 void LoginBar::isMoveToLeft()
 {
@@ -281,12 +287,11 @@ void LoginBar::isMoveToLeft()
     sliderPosAnimation->setEndValue(SLIDER_LEFT_POS);
     sliderPosAnimation->setEasingCurve(sliderEasingCurve);
     sliderPosAnimation->start(QAbstractAnimation::DeleteWhenStopped);
-    
+
     timer->start(duration / 5.4);
     name->clear();
     email->clear();
     password->clear();
-    name->setPlaceholderText(NAME_PLACEHOLDER_TEXT_AND_EMAIL);
     emit moveToLeft();
 }
 
@@ -299,12 +304,10 @@ void LoginBar::isMoveToRight()
     sliderPosAnimation->start(QAbstractAnimation::DeleteWhenStopped);
     timer->start(duration / 5.4);
 
-
     name->clear();
     email->clear();
     password->clear();
 
-    name->setPlaceholderText(NAME_PLACEHOLDER_TEXT);
     emit moveToRight();
 }
 

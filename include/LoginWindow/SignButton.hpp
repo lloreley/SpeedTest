@@ -2,16 +2,8 @@
 #define SIGN_BUTTON
 
 #include <QPushButton>
-#include "../StyleLoader/StyleLoader.hpp"
-
-#define STYLES_FILE_NAME "styles/Styles.qss"
-#define SIGN_IN "Sign In"
-#define SIGN_UP "Sign Up"
-#define TRANSPARENT QColor(255, 255, 255, 0)
-#define PURPLE QColor(81, 45, 168)
-#define WHITE QColor(255, 255, 255)
-#define WHITE_VISIBLE_BACKGROUND QColor(255, 255, 255, 255)
-#define SIGN_BUTTON_HOVER_DURATION 400
+#include "../FileLoader/FileLoader.hpp"
+#include "../defines.hpp"
 
 class SignButton final : public QPushButton
 {
@@ -34,6 +26,7 @@ public:
         animBackColor = new QPropertyAnimation(this, "currentBackground");
         animTextColor = new QPropertyAnimation(this, "currentTextColor");
     }
+    
     void setHoverDuration(int hoverDuration) noexcept
     {
         this->hoverDuration = hoverDuration;
