@@ -22,17 +22,23 @@ add_executable(SpeedTest
     include/mainwindow.hpp
     src/mainwindow.cpp
 
-    include/FileLoader/FileLoader.hpp
-    include/LoginWindow/LoginWindow.hpp
-    include/LoginWindow/LoginWindow.cpp
-    include/LoginWindow/LoginSliders.hpp
-    include/LoginWindow/LoginSliders.cpp
-    include/LoginWindow/SignButton.hpp
-    include/FileDataBase.hpp
+    # include/FileLoader/FileLoader.hpp
+    include/Pages/LoginPage/LoginPage.hpp
+    include/Pages/LoginPage/LoginSliders.hpp
+    include/Pages/LoginPage/LoginSliders.cpp
+    
+    include/ButtonWithHover.hpp
+
+    include/DataBase/FileDataBase.hpp
+    include/DataBase/UserDataBase.hpp
+
+    include/Pages/WelcomePage/WelcomePage.hpp
+    include/Pages/TypingTest/TypingTest.hpp
+    include/Pages/Page.hpp
 
 
-    include/ServerClient.hpp
-    include/User.hpp
+    include/Accounts/ServerClient.hpp
+    include/Accounts/User.hpp
 )
 
 target_link_libraries(SpeedTest Qt5::Widgets Qt5::Network)

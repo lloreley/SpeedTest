@@ -66,6 +66,9 @@
         "concepts": "cpp",
         "numbers": "cpp",
         "qstring": "cpp",
-        "qdatastream": "cpp"
+        "qdatastream": "cpp",
+        "qvboxlayout": "cpp",
+        "qframe": "cpp",
+        "qgridlayout": "cpp"
     }
 }

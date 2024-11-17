@@ -71,45 +71,63 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/projects/SpeedTest/include/FileDataBase.hpp",
+			"D:/projects/SpeedTest/include/Accounts/ServerClient.hpp",
 			"MU",
-			"6YEA5652QU/moc_FileDataBase.cpp",
+			"GKX6U2S5T6/moc_ServerClient.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/FileLoader/FileLoader.hpp",
+			"D:/projects/SpeedTest/include/Accounts/User.hpp",
 			"MU",
-			"5VR73UMQH6/moc_FileLoader.cpp",
+			"GKX6U2S5T6/moc_User.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginSliders.hpp",
+			"D:/projects/SpeedTest/include/ButtonWithHover.hpp",
 			"MU",
-			"GIBGGU7VF6/moc_LoginSliders.cpp",
+			"6YEA5652QU/moc_ButtonWithHover.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.hpp",
+			"D:/projects/SpeedTest/include/DataBase/FileDataBase.hpp",
 			"MU",
-			"GIBGGU7VF6/moc_LoginWindow.cpp",
+			"HSSC5WASNF/moc_FileDataBase.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/SignButton.hpp",
+			"D:/projects/SpeedTest/include/DataBase/UserDataBase.hpp",
 			"MU",
-			"GIBGGU7VF6/moc_SignButton.cpp",
+			"HSSC5WASNF/moc_UserDataBase.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/ServerClient.hpp",
+			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginPage.hpp",
 			"MU",
-			"6YEA5652QU/moc_ServerClient.cpp",
+			"7GNFVZUKHW/moc_LoginPage.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/User.hpp",
+			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginSliders.hpp",
 			"MU",
-			"6YEA5652QU/moc_User.cpp",
+			"7GNFVZUKHW/moc_LoginSliders.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/Pages/Page.hpp",
+			"MU",
+			"WD4OUXR6EQ/moc_Page.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/Pages/TypingTest/TypingTest.hpp",
+			"MU",
+			"NTLF4UN254/moc_TypingTest.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/Pages/WelcomePage/WelcomePage.hpp",
+			"MU",
+			"YSZPZIQU5Q/moc_WelcomePage.cpp",
 			null
 		],
 		[
@@ -194,12 +212,7 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginSliders.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp",
+			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginSliders.cpp",
 			"MU",
 			null
 		],

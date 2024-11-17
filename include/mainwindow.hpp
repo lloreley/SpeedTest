@@ -5,8 +5,9 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QKeyEvent>
-#include "LoginWindow/LoginWindow.hpp"
-#include "User.hpp"
+#include "Pages/LoginPage/LoginPage.hpp"
+#include "Pages/WelcomePage/WelcomePage.hpp"
+#include "Accounts/User.hpp"
 
 
 class MainWindow : public QWidget
@@ -18,15 +19,17 @@ public:
                size_t minimumHeight = 0,
                QWidget *parent = nullptr);
 
+    LoginPage *logwin;
 private:
-    LoginWindow *logwin;
-    User *user;
+    BaseUser *user;
 
 private slots:
-
+ 
 signals:
     void loginSuccessful();
     void loginFailed();
     void logout();
 };
 #endif
+
+

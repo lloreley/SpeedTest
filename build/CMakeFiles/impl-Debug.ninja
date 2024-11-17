@@ -67,21 +67,13 @@ build CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj: CXX_COMPILER__Speed
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
   OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
 
-build CMakeFiles/SpeedTest.dir/Debug/include/LoginWindow/LoginWindow.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/include/LoginWindow/LoginWindow.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+build CMakeFiles/SpeedTest.dir/Debug/include/Pages/LoginPage/LoginSliders.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/include/Pages/LoginPage/LoginSliders.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\include\LoginWindow\LoginWindow.cpp.obj.d
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\include\Pages\LoginPage\LoginSliders.cpp.obj.d
   FLAGS = -g -std=gnu++11
   INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\include\LoginWindow
-
-build CMakeFiles/SpeedTest.dir/Debug/include/LoginWindow/LoginSliders.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/include/LoginWindow/LoginSliders.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\include\LoginWindow\LoginSliders.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\include\LoginWindow
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\include\Pages\LoginPage
 
 
 # =============================================================================
@@ -91,7 +83,7 @@ build CMakeFiles/SpeedTest.dir/Debug/include/LoginWindow/LoginSliders.cpp.obj: C
 #############################################
 # Link the executable Debug\SpeedTest.exe
 
-build Debug/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_Debug CMakeFiles/SpeedTest.dir/Debug/SpeedTest_autogen/mocs_compilation_Debug.cpp.obj CMakeFiles/SpeedTest.dir/Debug/main.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/Debug/include/LoginWindow/LoginWindow.cpp.obj CMakeFiles/SpeedTest.dir/Debug/include/LoginWindow/LoginSliders.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Network.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:Debug
+build Debug/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_Debug CMakeFiles/SpeedTest.dir/Debug/SpeedTest_autogen/mocs_compilation_Debug.cpp.obj CMakeFiles/SpeedTest.dir/Debug/main.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/Debug/include/Pages/LoginPage/LoginSliders.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Network.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:Debug
   FLAGS = -g
   LINK_LIBRARIES = D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Network.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug

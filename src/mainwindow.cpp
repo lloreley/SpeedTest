@@ -1,24 +1,24 @@
 #include "../include/mainwindow.hpp"
 
+#include <QGraphicsBlurEffect>
 MainWindow::MainWindow(const char *windowTitle,
                        size_t minimumWidth,
                        size_t minimumHeight,
                        QWidget *parent) : QWidget(parent)
 {
-    if (windowTitle)
-    {
         this->setWindowTitle(windowTitle);
-    }
-
-    if (minimumHeight && minimumWidth)
-    {
         this->setMinimumSize(minimumWidth, minimumHeight);
-    }
 
-    logwin = new LoginWindow(this);
-    user = new User(this);
-    connect(logwin->getLoginBar(), &LoginBar::sliderSignInClicked, user, &ServerClient::sendToServer);
-    connect(logwin->getLoginBar(), &LoginBar::sliderSignUpClicked, user, &ServerClient::sendToServer);
+        logwin = new LoginPage(this);
+        user = new UnauthorizedUser(this);
+        logwin->setUser(user);
 
-    this->setMinimumSize(minimumWidth, minimumHeight);
+        connect(logwin, &Page::faded, [this]()
+                {WelcomePage *wp = new WelcomePage(this);
+                setLayout(new QHBoxLayout(this));
+                this->layout()->addWidget(wp);
+                wp->appear(); });
+
+        this->setObjectName("MainWindow");
+        this->setStyleSheet(UserDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
 }
