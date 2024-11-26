@@ -23,6 +23,15 @@ public:
         connect(keepAliveTimer, &QTimer::timeout, this, &checkConnection);
         keepAliveTimer->start(KEEP_ALIGN_TIME);
     }
+    ServerClient(QTcpSocket *s, QObject *parent = nullptr) : QObject(parent)
+    {
+        socket = s;
+        connect(socket, &QTcpSocket::readyRead, this, &ServerClient::read);
+        connect(this, &ServerClient::messageReceived, this, &ServerClient::processMessage);
+        keepAliveTimer = new QTimer(this);
+        connect(keepAliveTimer, &QTimer::timeout, this, &checkConnection);
+        keepAliveTimer->start(KEEP_ALIGN_TIME);
+    }
 
     QTcpSocket *getSocket()
     {

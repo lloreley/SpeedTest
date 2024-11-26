@@ -27,7 +27,6 @@ public:
         layout->addLayout(buttonsLayout);
         layout->setSpacing(WELCOME_PAGE_LAYOUT_SPACING);
         layout->setAlignment(Qt::AlignVCenter);
-
         for (int i = 0; i < layout->count(); ++i)
         {
             layout->setAlignment(layout->itemAt(i)->widget(), Qt::AlignCenter);
@@ -46,7 +45,6 @@ public:
         QLabel *label = new QLabel(this);
         label->setText(WELCOME_PAGE_ADDITIONAL_LABEL_TEXT);
         label->setObjectName(WELCOME_PAGE_ADDITIONAL_OBJECT_NAME);
-        label->setMinimumWidth(qobject_cast<QWidget *>(parent())->width()); ///
         label->setAlignment(Qt::AlignHCenter);
         return label;
     }
@@ -59,11 +57,11 @@ public:
         btn->setHoverActive(true);
         btn->setStartBackgroundColor(GOLD);
         btn->setEndBackgroundColor(DARK_BLUE);
-        btn->setText(WELCOME_PAGE_RIGHT_BUTTON_TEXT);
+        btn->setText(WELCOME_PAGE_LEFT_BUTTON_TEXT);
         btn->setStartTextColor(GRAY);
         btn->setEndTextColor(GOLD);
         connect(btn, &QPushButton::clicked, [this]()
-                { emit TypingTest(); fade(); });
+                { emit TypingTest(); hide();});
         return btn;
     }
     ButtonWithHover *createRightButton()
@@ -79,23 +77,8 @@ public:
         btn->setStartTextColor(GRAY);
         btn->setEndTextColor(GOLD);
         connect(btn, &QPushButton::clicked, [&]()
-                {fade();emit TypingLessons(); });
+                { emit TypingLessons(); hide();});
         return btn;
-    }
-
-public slots:
-    /// delete
-    void animatedMove(const QString &direction)
-    {
-        QPropertyAnimation *anim = new QPropertyAnimation(this, "maximumWidth");
-        anim->setDuration(1000);
-        anim->setStartValue(width());
-        anim->setEasingCurve(QEasingCurve::InQuad);
-        anim->setEndValue(this->width() == 0 ? qobject_cast<QWidget *>(parent())->width() : 0);
-        anim->start(QAbstractAnimation::DeleteWhenStopped);
-        connect(anim, &QAbstractAnimation::finished, [this]()
-                {if(this->width()!=0){this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        this->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX); } });
     }
 
 private:

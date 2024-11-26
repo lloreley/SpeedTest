@@ -34,7 +34,12 @@ add_executable(SpeedTest
 
     include/Pages/WelcomePage/WelcomePage.hpp
     include/Pages/TypingTest/TypingTest.hpp
+    include/Pages/TypingLessons/TypingLessons.hpp
+    include/Pages/NavigationPage/NavigationPage.hpp
+    include/Pages/AccountPage/AccountPage.hpp
+    include/Exception/Exception.hpp
     include/Pages/Page.hpp
+    include/Pages/LessonsScrollArea.hpp
 
 
     include/Accounts/ServerClient.hpp

@@ -14,35 +14,58 @@ public:
     {
         if (parent)
         {
-            parent->setFixedSize(LOGIN_PAGE_WIDTH, LOGIN_PAGE_HEIGHT);
+            parent->setMaximumSize(LOGIN_PAGE_WIDTH, LOGIN_PAGE_HEIGHT);
         }
-        logbar = new LoginSlider(this);
+        loginSlider = new LoginSlider(this);
         mainSlider = new MainSlider(this);
-        connect(mainSlider, &Slider::sliderMove, logbar, &Slider::isSliderMove);
+        connect(mainSlider, &Slider::sliderMove, loginSlider, &Slider::isSliderMove);
+        createUser();
     }
 
-    void setUser(BaseUser *user)
+    void createUser()
     {
-        this->user = user;
-
-        connect(user, &BaseUser::accountCreated, [this](){ fade(); });
-        connect(user, &BaseUser::loginSuccessful, [this](){ fade(); });
+        user = new UnauthorizedUser(parent());
+        connect(user, &BaseUser::accountCreated, this, &isSuccessfulSign);
+        connect(user, &BaseUser::loginSuccessful, this, &isSuccessfulSign);
         connect(user, &BaseUser::accountNotCreated, [this]()
-                { logbar->errorLabel()->setText("This name is taken!"); });
+                { loginSlider->errorLabel()->setText(LP_LS_EL_THIS_NAME_IS_TAKEN); });
         connect(user, &BaseUser::passwordIncorrect, [this]()
-                { logbar->errorLabel()->setText("Passord incorrect!"); });
+                { loginSlider->errorLabel()->setText(LP_LS_EL_PASSWORD_INCORRECT); });
         connect(user, &BaseUser::userNotFound, [this]()
-                { logbar->errorLabel()->setText("User not found!"); });
+                { loginSlider->errorLabel()->setText(LP_LS_EL_USER_NOT_FOUND); });
         connect(user, &BaseUser::connectionLost, [this]()
-                { logbar->errorLabel()->setText("Connection lost!"); });
+                { loginSlider->errorLabel()->setText(LP_LS_EL_CONNECTION_LOST); });
 
-        connect(logbar, &LoginSlider::sliderSignInClicked, user, &ServerClient::sendToServer);
-        connect(logbar, &LoginSlider::sliderSignUpClicked, user, &ServerClient::sendToServer);
+        connect(loginSlider->notSignButton(), &QAbstractButton::clicked, this, &dontUseAccount);
+        connect(loginSlider, &LoginSlider::sliderSignInClicked, user, &ServerClient::sendToServer);
+        connect(loginSlider, &LoginSlider::sliderSignUpClicked, user, &ServerClient::sendToServer);
+    }
+
+    BaseUser *getUser()
+    {
+        return user;
     }
 
 private:
+    void dontUseAccount()
+    {
+        user->getSocket()->disconnect();
+        hide();
+    }
+
+    void isSuccessfulSign()
+    {
+        QString userData = user->getUserData();
+        qDebug() << userData;
+        delete user;
+        User *autorizedUser = new User;
+        autorizedUser->setUserData(userData);
+        user = autorizedUser;
+        hide();
+    }
+
     MainSlider *mainSlider;
-    LoginSlider *logbar;
+    LoginSlider *loginSlider;
     BaseUser *user;
 };
 

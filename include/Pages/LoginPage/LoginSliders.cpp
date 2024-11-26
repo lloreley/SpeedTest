@@ -1,12 +1,11 @@
 #include "LoginSliders.hpp"
-#include <QDebug>
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Slider::Slider(QWidget *parent) : QWidget(parent), sliderStyle{""}
 {
     setGeometry(QRect(0, 0, LOGIN_PAGE_SLIDER_WIDTH, LOGIN_PAGE_SLIDER_HEIGHT));
     QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->setContentsMargins(ZERO_CONTEXT_MARGINS);
+    layout->setContentsMargins(ZERO_CONTENTS_MARGINS);
     layout->setAlignment(Qt::AlignCenter);
 
     sliderPosAnimation = new QPropertyAnimation(this, "pos");
@@ -22,7 +21,7 @@ void Slider::paintEvent(QPaintEvent *pe)
     style()->drawPrimitive(QStyle::PE_Widget, &o, &p, this);
 };
 
-QPropertyAnimation* Slider::SliderPosAnimation()
+QPropertyAnimation *Slider::SliderPosAnimation()
 {
     return sliderPosAnimation;
 }
@@ -182,10 +181,47 @@ LoginSlider::LoginSlider(QWidget *parent) : Slider(parent)
     layout()->addWidget(createNameLineEdit());
     layout()->addWidget(createEmailLineEdit());
     layout()->addWidget(createPasswordLineEdit());
+    layout()->addWidget(createNotSignButton());
     layout()->addWidget(createSignButton());
     for (int i = 0; i < layout()->count(); ++i)
     {
         layout()->setAlignment(layout()->itemAt(i)->widget(), Qt::AlignHCenter);
+    }
+    connect(nameLineEdit(), &QLineEdit::returnPressed, [this]()
+            { if (emailLineEdit()->isVisible()){
+                emailLineEdit()->setFocus();
+            }else passwordLineEdit()->setFocus(); });
+    connect(emailLineEdit(), &QLineEdit::returnPressed, [this]()
+            { passwordLineEdit()->setFocus(); });
+    connect(passwordLineEdit(), &QLineEdit::returnPressed, [this]()
+            { this->isSignButtonClicked(); });
+}
+
+void LoginSlider::validateName(const QString &name)
+{
+    if (name.isEmpty() || !QRegularExpression("^[A-Za-z][A-Za-z0-9_]{2,29}$").match(name).hasMatch())
+    {
+        throw InvalidNameException(name);
+    }
+}
+
+void LoginSlider::validateEmail(const QString &email)
+{
+    if (email.isEmpty() || !QRegularExpression(R"((^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,})$)").match(email).hasMatch())
+    {
+        throw InvalidEmailException(email);
+    }
+}
+
+void LoginSlider::validatePassword(const QString &password)
+{
+    if (password.length() < 8 ||
+        !QRegularExpression("[A-Z]").match(password).hasMatch() ||      // хотя бы одна заглавная буква
+        !QRegularExpression("[a-z]").match(password).hasMatch() ||      // хотя бы одна строчная буква
+        !QRegularExpression("[0-9]").match(password).hasMatch() ||      // хотя бы одна цифра
+        !QRegularExpression("[^A-Za-z0-9]").match(password).hasMatch()) // хотя бы один специальный символ
+    {
+        throw InvalidPasswordException(password);
     }
 }
 
@@ -196,6 +232,13 @@ QLabel *LoginSlider::createMainLabel()
     label->setText(LP_LS_MAIN_LABEL_TEXT_IN_RIGHT_POS);
     return label;
 }
+QPushButton *LoginSlider::createNotSignButton()
+{
+    QPushButton *btn = new QPushButton(this);
+    btn->setText(LP_LS_NOT_SIGN_BUTTON_TEXT);
+    btn->setObjectName(LP_LS_NOT_SIGN_BUTTON_OBJECT_NAME);
+    return btn;
+}
 ButtonWithHover *LoginSlider::createSignButton()
 {
     ButtonWithHover *btn = new ButtonWithHover(this);
@@ -203,19 +246,19 @@ ButtonWithHover *LoginSlider::createSignButton()
     btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                         QString("#") + QString(LP_LS_SIGN_BUTTON_OBJECT_NAME)));
     btn->setHoverActive(true);
-    // btn->setHoverDuration(LOGIN_PAGE_SIGN_BUTTON_HOVER_DURATION);
     btn->setStartBackgroundColor(GOLD);
     btn->setEndBackgroundColor(DARK_BLUE);
     btn->setText(SIGN_UP);
     btn->setStartTextColor(DARK_BLUE);
     btn->setEndTextColor(GOLD);
-    QObject::connect(btn, &QPushButton::clicked, this, &isSignButtonClicked);
+    connect(btn, &QPushButton::clicked, this, &isSignButtonClicked);
     return btn;
 }
 QLineEdit *LoginSlider::createNameLineEdit()
 {
     QLineEdit *lineEdit = new QLineEdit(this);
     lineEdit->setProperty(LP_LS_LINE_EDIT_PROPERTY);
+    lineEdit->setObjectName(LP_LS_NAME_LE_OBJECT_NAME);
     lineEdit->setPlaceholderText(LP_LS_NAME_LINE_EDIT_PLACEHOLDER_TEXT);
     connect(lineEdit, &QLineEdit::textChanged, errorLabel(), &QLabel::clear);
     return lineEdit;
@@ -224,6 +267,7 @@ QLineEdit *LoginSlider::createEmailLineEdit()
 {
     QLineEdit *lineEdit = new QLineEdit(this);
     lineEdit->setProperty(LP_LS_LINE_EDIT_PROPERTY);
+    lineEdit->setObjectName(LP_LS_EMAIL_LE_OBJECT_NAME);
     lineEdit->setPlaceholderText(LP_LS_EMAIL_LINE_EDIT_PLACEHOLDER_TEXT);
     connect(lineEdit, &QLineEdit::textChanged, errorLabel(), &QLabel::clear);
     return lineEdit;
@@ -232,6 +276,7 @@ QLineEdit *LoginSlider::createPasswordLineEdit()
 {
     QLineEdit *lineEdit = new QLineEdit(this);
     lineEdit->setProperty(LP_LS_LINE_EDIT_PROPERTY);
+    lineEdit->setObjectName(LP_LS_PASSWORD_LE_OBJECT_NAME);
     lineEdit->setPlaceholderText(LP_LS_PASSWORD_LINE_EDIT_PLACEHOLDER_TEXT);
     lineEdit->setEchoMode(QLineEdit::Password);
     connect(lineEdit, &QLineEdit::textChanged, errorLabel(), &QLabel::clear);
@@ -249,33 +294,37 @@ QLabel *LoginSlider::createPictureLabel()
     QPixmap pixmap(LOGO_PATH);
     picture->setPixmap(pixmap.scaled(LP_LS_LOGO_SIZE, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     picture->setAlignment(Qt::AlignCenter);
-    picture->setContentsMargins(ZERO_CONTEXT_MARGINS); ////
+    picture->setContentsMargins(ZERO_CONTENTS_MARGINS); ////
     return picture;
 }
 
+QPushButton *LoginSlider::notSignButton()
+{
+    return findChild<QPushButton *>(LP_LS_NOT_SIGN_BUTTON_OBJECT_NAME);
+}
 QLabel *LoginSlider::mainLabel()
 {
-    return LP_LS_MAIN_LABEL_IN_LAYOUT;
+    return findChild<QLabel *>(LP_LS_MAIN_LABEL_OBJECT_NAME);
 }
 QLabel *LoginSlider::errorLabel()
 {
-    return LP_LS_ERROR_LABEL_IN_LAYOUT;
+    return findChild<QLabel *>(LP_LS_ERROR_LABEL_OBJECT_NAME);
 }
 QLineEdit *LoginSlider::nameLineEdit()
 {
-    return LP_LS_NAME_LINE_EDIT_IN_LAYOUT;
+    return findChild<QLineEdit *>(LP_LS_NAME_LE_OBJECT_NAME);
 }
 QLineEdit *LoginSlider::emailLineEdit()
 {
-    return LP_LS_EMAIL_LINE_EDIT_IN_LAYOUT;
+    return findChild<QLineEdit *>(LP_LS_EMAIL_LE_OBJECT_NAME);
 }
 QLineEdit *LoginSlider::passwordLineEdit()
 {
-    return LP_LS_PASSWORD_LINE_EDIT_IN_LAYOUT;
+    return findChild<QLineEdit *>(LP_LS_PASSWORD_LE_OBJECT_NAME);
 }
 ButtonWithHover *LoginSlider::signButton()
 {
-    return LP_LS_SIGN_BUTTON_IN_LAYOUT;
+    return findChild<ButtonWithHover *>(LP_LS_SIGN_BUTTON_OBJECT_NAME);
 }
 
 void LoginSlider::swap()
@@ -310,25 +359,39 @@ void LoginSlider::swapMainLabelText()
 
 void LoginSlider::isSignButtonClicked()
 {
-    if (nameLineEdit()->text() != "" && (!emailLineEdit()->isVisible() || emailLineEdit()->text() != "") && passwordLineEdit()->text() != "")
+    errorLabel()->setText(LP_LS_EL_EMTPY_FIELS_TEXT);
+    try
     {
-        QString message;
-        message += MESSAGE_TYPE_SELECTOR + LEFT_MESSAGE_BRACKET;
-        message += mainLabel()->text() == SIGN_IN ? CHECK_CREDENTIALS_MESSAGE_TYPE : ADD_USER_MESSAGE_TYPE;
-        message += RIGHT_MESSAGE_BRACKET;
-        message += NAME_SELECTOR + LEFT_MESSAGE_BRACKET + nameLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
-        message += PASSWORD_SELECTOR + LEFT_MESSAGE_BRACKET + passwordLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
-
-        if (mainLabel()->text() == SIGN_IN)
-        {
-            emit sliderSignInClicked(message);
-            return;
-        }
-        message += EMAIL_SELECTOR + LEFT_MESSAGE_BRACKET + emailLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
-        emit sliderSignUpClicked(message);
+        validateName(nameLineEdit()->text());
+        if (emailLineEdit()->isVisible())
+            validateEmail(emailLineEdit()->text());
+        validatePassword(passwordLineEdit()->text());
+    }
+    catch (BaseException &ex)
+    {
+        QMessageBox msgBox;
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setText("An error occurred");
+        msgBox.setInformativeText(ex.what());
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
         return;
     }
-    errorLabel()->setText(LP_LS_EL_EMTPY_FIELS_TEXT);
+
+    QString message;
+    message += MESSAGE_TYPE_SELECTOR + LEFT_MESSAGE_BRACKET;
+    message += mainLabel()->text() == SIGN_IN ? CHECK_CREDENTIALS_MESSAGE_TYPE : ADD_USER_MESSAGE_TYPE;
+    message += RIGHT_MESSAGE_BRACKET;
+    message += NAME_SELECTOR + LEFT_MESSAGE_BRACKET + nameLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
+    message += PASSWORD_SELECTOR + LEFT_MESSAGE_BRACKET + passwordLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
+
+    if (mainLabel()->text() == SIGN_IN)
+    {
+        emit sliderSignInClicked(message);
+        return;
+    }
+    message += EMAIL_SELECTOR + LEFT_MESSAGE_BRACKET + emailLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
+    emit sliderSignUpClicked(message);
 }
 
 void LoginSlider::isSliderMove()

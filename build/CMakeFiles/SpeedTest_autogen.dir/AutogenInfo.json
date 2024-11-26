@@ -101,6 +101,24 @@
 			null
 		],
 		[
+			"D:/projects/SpeedTest/include/Exception/Exception.hpp",
+			"MU",
+			"2JIUHOC7LV/moc_Exception.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/Pages/AccountPage/AccountPage.hpp",
+			"MU",
+			"ECL5PCTLHN/moc_AccountPage.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/Pages/LessonsScrollArea.hpp",
+			"MU",
+			"WD4OUXR6EQ/moc_LessonsScrollArea.cpp",
+			null
+		],
+		[
 			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginPage.hpp",
 			"MU",
 			"7GNFVZUKHW/moc_LoginPage.cpp",
@@ -113,9 +131,21 @@
 			null
 		],
 		[
+			"D:/projects/SpeedTest/include/Pages/NavigationPage/NavigationPage.hpp",
+			"MU",
+			"TYTHKC2AES/moc_NavigationPage.cpp",
+			null
+		],
+		[
 			"D:/projects/SpeedTest/include/Pages/Page.hpp",
 			"MU",
 			"WD4OUXR6EQ/moc_Page.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/Pages/TypingLessons/TypingLessons.hpp",
+			"MU",
+			"ZLBZZ3Z4QZ/moc_TypingLessons.cpp",
 			null
 		],
 		[

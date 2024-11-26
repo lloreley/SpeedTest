@@ -3,43 +3,40 @@
 
 #include <QFrame>
 #include <QGraphicsOpacityEffect>
+#include "../ButtonWithHover.hpp"
+#include "../Exception/Exception.hpp"
+
 class Page : public QFrame
 {
     Q_OBJECT
 public:
-    Page(QWidget *parent = nullptr) : QFrame(parent)
+    Page(QWidget *parent = nullptr) : QFrame(parent) { hide(); }
+
+    static ButtonWithHover *createBaseButton(QWidget *parent = nullptr)
     {
-        opacity = new QGraphicsOpacityEffect(this);
-        this->setGraphicsEffect(opacity);
-        opacityAnimation = new QPropertyAnimation(this->graphicsEffect(), "opacity");
-        opacityAnimation->setDuration(PAGE_OPACITY_ANIMATION_DURATION);
+        ButtonWithHover *btn = new ButtonWithHover(parent);
+        if(!btn)
+        {
+            throw NullPointerException("ButtonWithHower");
+        }
+        btn->setProperty(NP_BUTTONS_PROPERTY);
+        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH, QString(NP_BUTTONS_CLASS_NAME)));
+        btn->setHoverActive(true);
+        btn->setStartBackgroundColor(TRANSPARENT);
+        btn->setEndBackgroundColor(TRANSPARENT);
+        btn->setStartTextColor(MEDIUM_GRAY);
+        btn->setEndTextColor(WHITE);
+        return btn;
     }
 
-    void fade()
+    void hide()
     {
-        opacityAnimation->setStartValue(MAX_OPACITY);
-        opacityAnimation->setEndValue(ZERO_OPACITY);
-        opacityAnimation->start();
-        connect(opacityAnimation, &QAbstractAnimation::finished, [this]()
-                { emit faded();hide(); });
+        QWidget::hide();
+        emit hidden();
     }
-    void appear()
-    {
-        this->show();
-        opacityAnimation->setStartValue(ZERO_OPACITY);
-        opacityAnimation->setEndValue(MAX_OPACITY);
-        opacityAnimation->start();
-        connect(opacityAnimation, &QAbstractAnimation::finished, [this]()
-                { emit faded(); });
-    }
-
-protected:
-    QPropertyAnimation *opacityAnimation;
-    QGraphicsOpacityEffect *opacity;
 
 signals:
-    void faded();
-    void appeared();
+    void hidden();
 };
 
 #endif

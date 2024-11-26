@@ -3,6 +3,8 @@
 
 #include <QPushButton>
 #include <QPropertyAnimation>
+#include <QPixmap>
+#include <QPainter>
 #include "DataBase/UserDataBase.hpp"
 #include "defines.hpp"
 
@@ -35,16 +37,6 @@ public:
         animTextColor->setDuration(hoverDuration);
     }
 
-    int getHoverDuration() const noexcept
-    {
-        return hoverDuration;
-    }
-
-    bool getHoverActive()
-    {
-        return hoverActive;
-    }
-
     void setHoverActive(bool value)
     {
         hoverActive = value;
@@ -69,19 +61,9 @@ public:
         startTextColor = color;
     }
 
-    QColor getStartTextColor() const noexcept
-    {
-        return startTextColor;
-    }
-
     void setEndTextColor(const QColor &color) noexcept
     {
         endTextColor = color;
-    }
-
-    QColor getEndTextColor() const noexcept
-    {
-        return endTextColor;
     }
 
     void setStartBackgroundColor(const QColor &color) noexcept
@@ -90,24 +72,28 @@ public:
         startBackgroundColor = color;
     }
 
-    QColor getStartBackgroundColor() const noexcept
-    {
-        return startBackgroundColor;
-    }
-
     void setEndBackgroundColor(const QColor &color) noexcept
     {
         endBackgroundColor = color;
     }
 
-    QColor getEndBackgroundColor() const noexcept
-    {
-        return endBackgroundColor;
-    }
-
     void setButtonStyle(const QString &style)
     {
         buttonStyle = style;
+    }
+
+    void upldateIconColor()
+    {
+        QPixmap pixmap = icon().pixmap(this->size());
+        QPixmap coloredPixmap(pixmap.size());
+        coloredPixmap.fill(Qt::transparent); // Заполняем прозрачным цветом
+        QPainter painter(&coloredPixmap);
+        painter.setCompositionMode(QPainter::CompositionMode_Source);   // Устанавливаем режим наложения
+        painter.drawPixmap(0, 0, pixmap);                               // Рисуем оригинальный pixmap
+        painter.setCompositionMode(QPainter::CompositionMode_SourceIn); // Устанавливаем режим наложения
+        painter.fillRect(coloredPixmap.rect(), currentTextColor);       // Заполняем цветом
+        painter.end();
+        this->setIcon(coloredPixmap);
     }
 
 private:
@@ -142,6 +128,10 @@ private:
     void setTextColor(const QColor &tColor)
     {
         currentTextColor = tColor;
+        if (!icon().isNull())
+        {
+            this->upldateIconColor();
+        }
         this->setStyleSheet(buttonStyle.arg(currentBackground.red()).arg(currentBackground.green()).arg(currentBackground.blue()).arg(currentBackground.alpha()).arg(currentTextColor.red()).arg(currentTextColor.green()).arg(currentTextColor.blue()));
     }
 

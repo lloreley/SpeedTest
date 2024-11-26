@@ -2,14 +2,14 @@
 QWidget#MainWindow
 {
         background: #2a2b38; 
-}
+ }
 QWidget
 {
     font-family: Noto Sans Mono;
-    border: none; 
-} 
-
-
+    font-size: 24px;
+    font-weight: 500;
+    color: #6d7887;
+}
 
 QLabel#WelcomeGreatingLabel
 {
@@ -23,6 +23,14 @@ QLabel#WelcomeAdditionalLabel
     color: #6d7887;
     font-size: 28px;
     font-weight: 700;
+    max-width:780px;
+}
+
+QPushButton#LoginPageLoginSliderNotSignButton
+{
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 QLineEdit.loginLineEdit
@@ -66,4 +74,70 @@ QLabel#LoginPageMainSliderAdditionalLabel
     font-size: 20px;
     font-weight: 470;
     max-width: 680;
+}
+QWidget#NavigationPanel
+{
+    background: #1f2029;
+    border-radius: 12px;
+    max-width: 100;
+}
+
+QTextEdit
+{
+    color: rgb(109, 120, 135); 
+    font-size: 24px;
+    font-weight: 600;
+    border:none;
+    background: rgba(255, 255, 255, 0);
+} 
+
+QWidget.TypingLessons
+{
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+QWidget#typingLessons
+{
+    border-radius: 0px;
+}
+
+QScrollArea {
+    background-color: #2a2b38; 
+    border: none;
+}
+QScrollBar:vertical {
+    background: #2a2b38;
+    width: 12px;
+    margin: 22px 0 22px 0;
+}
+QScrollBar::handle:vertical {
+    background: #1f2029;
+    min-height: 20px;
+    border-radius: 5px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+    height: 0;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: #2a2b38; /* Цвет области прокрутки */
+    border: none;
+}
+
+QFrame#typingLessons
+{
+    background-color: #2a2b38; 
+    font-family: Noto Sans Mono;
+
+}
+
+QLabel.AccountPage
+{
+    font-size: 20px; 
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0 25px;
+    min-height: 70;
+    background-color: #1f2029; 
 }

@@ -8,7 +8,8 @@
 #include "Pages/LoginPage/LoginPage.hpp"
 #include "Pages/WelcomePage/WelcomePage.hpp"
 #include "Accounts/User.hpp"
-
+#include "Pages/NavigationPage/NavigationPage.hpp"
+#include "Pages/LessonsScrollArea.hpp"
 
 class MainWindow : public QWidget
 {
@@ -19,17 +20,20 @@ public:
                size_t minimumHeight = 0,
                QWidget *parent = nullptr);
 
-    LoginPage *logwin;
+    LoginPage *logpage;
+    WelcomePage *welcomePage;
+    NavigationPanel *navigationPanel;
+    LessonsScrollArea *area;
+    QGridLayout *layout;
+
 private:
-    BaseUser *user;
+    void isLoginPageHidden();
+    void isWelcomePageHidden();
+    void createWidgets();
+    void setConnections();
 
-private slots:
- 
-signals:
-    void loginSuccessful();
-    void loginFailed();
-    void logout();
+protected:
+    void closeEvent(QCloseEvent *event) override;
 };
+
 #endif
-
-

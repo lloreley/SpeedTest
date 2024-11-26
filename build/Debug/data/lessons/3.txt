@@ -1,0 +1,3 @@
+id: "3"
+name: "S, W, L and O keys"
+text: "slow sowl wools loll swoos sows lols owls lows sowl swoon"

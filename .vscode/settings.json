@@ -69,6 +69,11 @@
         "qdatastream": "cpp",
         "qvboxlayout": "cpp",
         "qframe": "cpp",
-        "qgridlayout": "cpp"
+        "qgridlayout": "cpp",
+        "qapplication": "cpp",
+        "qgraphicsopacityeffect": "cpp",
+        "qpainter": "cpp",
+        "qtextedit": "cpp",
+        "qtextstream": "cpp"
     }
 }

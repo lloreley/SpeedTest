@@ -201,8 +201,8 @@ void BaseUser::loginSuccessful()
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 struct qt_meta_stringdata_UnauthorizedUser_t {
-    QByteArrayData data[5];
-    char stringdata0[58];
+    QByteArrayData data[4];
+    char stringdata0[41];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -214,12 +214,11 @@ static const qt_meta_stringdata_UnauthorizedUser_t qt_meta_stringdata_Unauthoriz
 QT_MOC_LITERAL(0, 0, 16), // "UnauthorizedUser"
 QT_MOC_LITERAL(1, 17, 14), // "processMessage"
 QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 7), // "message"
-QT_MOC_LITERAL(4, 41, 16) // "isAuthorizedUser"
+QT_MOC_LITERAL(3, 33, 7) // "message"
 
     },
     "UnauthorizedUser\0processMessage\0\0"
-    "message\0isAuthorizedUser"
+    "message"
 };
 #undef QT_MOC_LITERAL
 
@@ -229,7 +228,7 @@ static const uint qt_meta_data_UnauthorizedUser[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -237,12 +236,10 @@ static const uint qt_meta_data_UnauthorizedUser[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x0a /* Public */,
-       4,    0,   27,    2, 0x0a /* Public */,
+       1,    1,   19,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Bool,
 
        0        // eod
 };
@@ -254,8 +251,6 @@ void UnauthorizedUser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->processMessage((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 1: { bool _r = _t->isAuthorizedUser();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -290,14 +285,84 @@ int UnauthorizedUser::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 1)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 1;
     }
+    return _id;
+}
+struct qt_meta_stringdata_User_t {
+    QByteArrayData data[1];
+    char stringdata0[5];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_User_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_User_t qt_meta_stringdata_User = {
+    {
+QT_MOC_LITERAL(0, 0, 4) // "User"
+
+    },
+    "User"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_User[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void User::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject User::staticMetaObject = { {
+    QMetaObject::SuperData::link<BaseUser::staticMetaObject>(),
+    qt_meta_stringdata_User.data,
+    qt_meta_data_User,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *User::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *User::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_User.stringdata0))
+        return static_cast<void*>(this);
+    return BaseUser::qt_metacast(_clname);
+}
+
+int User::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = BaseUser::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP

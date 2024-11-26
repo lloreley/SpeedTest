@@ -52,3 +52,24 @@ QPushButton#TypingLessons
     width: 250;
     height: 60;
 }
+
+
+
+QPushButton.NavigationPanelButton
+{
+    background-color:rgba(%1, %2, %3, %4);
+    color: rgb(%5, %6, %7);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QPushButton.TypingLessons
+{
+    background-color:rgba(%1, %2, %3, %4);
+    color: rgb(%5, %6, %7);
+    font-size: 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 150;
+    height: 60;
+}

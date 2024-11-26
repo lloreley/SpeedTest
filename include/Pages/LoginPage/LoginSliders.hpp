@@ -10,10 +10,11 @@
 #include <QMetaType>
 #include <QTimer>
 #include <QLineEdit>
+#include <QMessageBox>
 
 #include "../../ButtonWithHover.hpp"
 #include "../../defines.hpp"
-// #include "../FileLoader/FileLoader.hpp"
+#include "../../Exception/Exception.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -45,8 +46,7 @@ public:
     Slider(QWidget *parent = nullptr);
     virtual void swap() = 0;
 
-    QPropertyAnimation* SliderPosAnimation();
-
+    QPropertyAnimation *SliderPosAnimation();
 
 protected:
     virtual ButtonWithHover *createSignButton() = 0;
@@ -114,8 +114,14 @@ public:
     QLineEdit *nameLineEdit();
     QLineEdit *emailLineEdit();
     QLineEdit *passwordLineEdit();
+    QPushButton *notSignButton();
 
 private:
+    void validateName(const QString &name);
+    void validateEmail(const QString &email);
+    void validatePassword(const QString &password);
+
+    QPushButton *createNotSignButton();
     QLabel *createMainLabel();
     QLineEdit *createNameLineEdit();
     QLineEdit *createEmailLineEdit();

@@ -1,0 +1,3 @@
+id: "2"
+name: "D, E, K and I keys"
+text: "deki edki de ki dike ed eek dkii edd ki eek ik de deki dii"

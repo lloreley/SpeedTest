@@ -1,0 +1,3 @@
+id: "7"
+name: "V, M and C keys"
+text: "vic mc vmv cim mv cc mv cim mvc vcm ccv vcm mcv mvc"

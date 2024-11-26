@@ -2,6 +2,7 @@
 #define USER_HPP
 
 #include "ServerClient.hpp"
+#include "../DataBase/FileDataBase.hpp"
 
 class BaseUser : public ServerClient
 {
@@ -13,14 +14,41 @@ public:
         connect(this, ServerClient::messageReceived, this, processMessage);
     }
 
-    virtual bool isAuthorizedUser() = 0;
     virtual void processMessage(const QString &message) = 0;
 
-private:
+    const QString getName()
+    {
+        return name;
+    }
+    const QString getEmail()
+    {
+        return email;
+    }
+    const QString getDateRegistration()
+    {
+        return dateRegistration;
+    }
+    const QString getUserData()
+    {
+        return userData;
+    }
+    void addTypingResult(const QString &newResult)
+    {
+        if (!userData.isEmpty())
+        {
+            userData += newResult + "\n";
+            userData.remove('\r');
+            sendToServer(QString("Save\n") + userData);
+        }
+    }
+
+protected:
     QString userData;
+    QString name;
+    QString email;
+    QString dateRegistration;
 
 signals:
-
     void accountCreated();
     void accountNotCreated();
     void userNotFound();
@@ -32,14 +60,18 @@ class UnauthorizedUser : public BaseUser
 {
     Q_OBJECT
 public:
-    UnauthorizedUser(QObject *parent = nullptr) : BaseUser(parent) {}
+    UnauthorizedUser(QObject *parent = nullptr) : BaseUser(parent)
+    {
+        name = "none";
+        email = "none";
+        dateRegistration = "none";
+        userData = "Typing history";
+    }
 
 public slots:
 
     void processMessage(const QString &message) override
     {
-        qDebug() << "Received message:" << message;
-
         if (message.contains(CHECK_CONNECTION_MESSAGE))
         {
             sendToServer(CHECK_CONNECTION_MESSAGE);
@@ -56,43 +88,43 @@ public slots:
                 emit passwordIncorrect();
                 return;
             }
+            userData = message.mid(message.indexOf(NAME_SELECTOR));
+
             emit loginSuccessful();
         }
         if (message.contains(ACCOUNT_MESSAGE_TYPE))
         {
             if (message.contains(ACCOUNT_CREATED))
             {
+                userData = message.mid(message.indexOf(NAME_SELECTOR));
                 emit accountCreated();
             }
             else
                 emit accountNotCreated();
         }
     }
-
-    bool isAuthorizedUser() override
-    {
-        return false;
-    }
 };
 
 class User : public BaseUser
 {
+    Q_OBJECT
 public:
-    User(QObject *parent = nullptr) : BaseUser(parent)
-    {
-    }
+    User(QObject *parent = nullptr) : BaseUser(parent) {}
 
-    void checkCredentials()
+    void setUserData(const QString &userData)
     {
+        this->userData = userData;
+        name = FileDataBase::extractValueFromStrWithSelector(userData, NAME_SELECTOR);
+        email = FileDataBase::extractValueFromStrWithSelector(userData, EMAIL_SELECTOR);
+        dateRegistration = FileDataBase::extractValueFromStrWithSelector(userData, DATE_OF_REGISTRATION_SELECTOR);
     }
 
     void processMessage(const QString &message) override
     {
-    }
-
-    bool isAuthorizedUser() override
-    {
-        return true;
+        if (message.contains(CHECK_CONNECTION_MESSAGE))
+        {
+            sendToServer(CHECK_CONNECTION_MESSAGE);
+        }
     }
 
 private:
