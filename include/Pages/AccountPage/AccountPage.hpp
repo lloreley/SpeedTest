@@ -14,63 +14,63 @@ class AccountPage : public Page
 {
     Q_OBJECT
 public:
-    AccountPage(QWidget *parent = nullptr) : Page(parent)
+    AccountPage(QWidget *parent = nullptr) : Page(parent), user{nullptr}
     {
         QVBoxLayout *layout = new QVBoxLayout(this);
+        CHECK_PTR(layout)
         layout->setContentsMargins(0, 0, 50, 20);
         layout->setSpacing(30);
     }
 
     QLabel *createNameLabel()
     {
-        if (!user)
-            throw NullPointerException("user");
-        QLabel *label = new QLabel(this);
-        label->setText("Name:  " + user->getName());
-        label->setProperty(ACCOUNT_PAGE_WIDGETS_PROPERTY);
-        return label;
+        CHECK_PTR(user)
+        QLabel *nameLabel = new QLabel(this);
+        CHECK_PTR(nameLabel)
+        nameLabel->setText("Name:  " + user->getName());
+        nameLabel->setProperty(ACCOUNT_PAGE_WIDGETS_PROPERTY);
+        return nameLabel;
     }
     QLabel *createEmailLabel()
     {
-        if (!user)
-            throw NullPointerException("user");
-        QLabel *label = new QLabel(this);
-        label->setText("Email:  " + user->getEmail());
-        label->setProperty(ACCOUNT_PAGE_WIDGETS_PROPERTY);
-        return label;
+        CHECK_PTR(user)
+        QLabel *emailLabel = new QLabel(this);
+        CHECK_PTR(emailLabel)
+        emailLabel->setText("Email:  " + user->getEmail());
+        emailLabel->setProperty(ACCOUNT_PAGE_WIDGETS_PROPERTY);
+        return emailLabel;
     }
     QLabel *createDateRegistrationLabel()
     {
-        if (!user)
-            throw NullPointerException("user");
-        QLabel *label = new QLabel(this);
-        label->setText("Date of registration:  " + user->getDateRegistration());
-        label->setProperty(ACCOUNT_PAGE_WIDGETS_PROPERTY);
-        return label;
+        CHECK_PTR(user)
+        QLabel *dateRegistrationLabel = new QLabel(this);
+        CHECK_PTR(dateRegistrationLabel)
+        dateRegistrationLabel->setText("Date of registration:  " + user->getDateRegistration());
+        dateRegistrationLabel->setProperty(ACCOUNT_PAGE_WIDGETS_PROPERTY);
+        return dateRegistrationLabel;
     }
     QLabel *createHistoryLabel()
     {
-        QLabel *label = new QLabel(this);
-        label->setText("Testing history");
-        return label;
+        QLabel *historyLabel = new QLabel(this);
+        CHECK_PTR(historyLabel);
+        historyLabel->setText("Testing history");
+        return historyLabel;
     }
-
     void setUser(BaseUser *us) noexcept
     {
-        try
+        user = us;
+        if (!user)
         {
-            user = us;
+            return;
+        }
+        if (layout()->count() < 4)
+        {
             findChild<QVBoxLayout *>()->addWidget(createNameLabel());
             findChild<QVBoxLayout *>()->addWidget(createEmailLabel());
             findChild<QVBoxLayout *>()->addWidget(createDateRegistrationLabel());
             findChild<QVBoxLayout *>()->addWidget(createHistoryLabel());
-
-            emit userInstalled();
         }
-        catch (BaseException ex)
-        {
-            qDebug() << ex.what();
-        }
+        emit userInstalled();
     }
 
     BaseUser *getUser()
@@ -87,7 +87,7 @@ public slots:
         if (userData != "" && layout()->count() < 5)
         {
             addResultsFromString(userData.mid(userData.indexOf("Typing history")));
-            this->setStyleSheet(UserDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
+            setStyleSheet(UserDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
         }
     }
 
@@ -115,6 +115,9 @@ public slots:
         }
     }
 
+private:
+    BaseUser *user;
+
     void addResultsFromString(const QString &resultsString)
     {
         QStringList results = resultsString.split("\n");
@@ -124,10 +127,7 @@ public slots:
         }
     }
 
-private:
-    BaseUser *user;
-
-    signals:
+signals:
     void userInstalled();
 };
 

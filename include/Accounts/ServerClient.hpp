@@ -18,16 +18,7 @@ public:
         socket = new QTcpSocket(this);
         socket->connectToHost(SERVER_IP, SERVER_PORT);
         connect(socket, &QTcpSocket::readyRead, this, &ServerClient::read);
-        connect(this, &ServerClient::messageReceived, this, &ServerClient::processMessage);
-        keepAliveTimer = new QTimer(this);
-        connect(keepAliveTimer, &QTimer::timeout, this, &checkConnection);
-        keepAliveTimer->start(KEEP_ALIGN_TIME);
-    }
-    ServerClient(QTcpSocket *s, QObject *parent = nullptr) : QObject(parent)
-    {
-        socket = s;
-        connect(socket, &QTcpSocket::readyRead, this, &ServerClient::read);
-        connect(this, &ServerClient::messageReceived, this, &ServerClient::processMessage);
+        connect(this, &ServerClient::messageReceived, this, &processMessage);
         keepAliveTimer = new QTimer(this);
         connect(keepAliveTimer, &QTimer::timeout, this, &checkConnection);
         keepAliveTimer->start(KEEP_ALIGN_TIME);
@@ -38,10 +29,19 @@ public:
         return socket;
     }
 
+    void *setSocket(QTcpSocket *socket)
+    {
+        this->socket = socket;
+        if (!socket)
+        {
+            keepAliveTimer->stop();
+        }
+    }
+
 public slots:
     void sendToServer(const QString &str)
     {
-        if (socket->state() == QAbstractSocket::ConnectedState)
+        if (socket && socket->state() == QAbstractSocket::ConnectedState)
         {
             Data.clear();
             QDataStream out(&Data, QIODevice::WriteOnly);
@@ -56,6 +56,20 @@ public slots:
         }
     }
 
+protected slots:
+    virtual void processMessage(const QString &message)
+    {
+        if (message.contains(CHECK_CONNECTION_MESSAGE))
+        {
+            isConnected = true;
+            sendToServer(CHECK_CONNECTION_MESSAGE);
+        }
+        else if(message.contains(DISCONNECT_CONNECTION_MESSAGE))
+        {
+            qDebug() << "disk";
+            emit disconnect();
+        }
+    }
 private slots:
 
     void tryConnectToServer()
@@ -79,22 +93,11 @@ private slots:
         }
     }
 
-    void processMessage(const QString &message)
-    {
-        qDebug() << "Received message:" << message;
-
-        if (message == CHECK_CONNECTION_MESSAGE)
-        {
-            isConnected = true;
-            sendToServer(CHECK_CONNECTION_MESSAGE);
-        }
-    }
-
     void read()
     {
         QDataStream in(socket);
         in.setVersion(QDataStream::Qt_5_14);
-        while (socket->bytesAvailable() >= sizeof(quint16))
+        while (socket && socket->bytesAvailable() >= sizeof(quint16))
         {
             if (nextBlockSize == 0)
             {
@@ -113,7 +116,7 @@ private slots:
         }
     }
 
-private:
+protected:
     QTcpSocket *socket;
     QByteArray Data;
     quint16 nextBlockSize;
@@ -123,6 +126,7 @@ private:
 signals:
     void messageReceived(QString message);
     void connectionLost();
+    void disconnect();
 };
 
 #endif

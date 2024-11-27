@@ -3,17 +3,14 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
-#include <QPropertyAnimation>
-#include <QPainter>
 #include <QLabel>
 #include <QStyleOption>
 #include <QMetaType>
-#include <QTimer>
 #include <QLineEdit>
 #include <QMessageBox>
 
-#include "../../ButtonWithHover.hpp"
 #include "../../defines.hpp"
+#include "../../ButtonWithHover.hpp"
 #include "../../Exception/Exception.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -77,10 +74,6 @@ public:
 
     BorderRadii getBorderRadii();
     void setBorderRadii(BorderRadii borderRadii);
-
-    void swapGreetinLabelText() noexcept;
-    void swapAdditionalLabelText() noexcept;
-    void swap() override;
     ButtonWithHover *signButton();
     QLabel *greetingLabel();
     QLabel *additionalLabel();
@@ -92,6 +85,9 @@ private:
     ButtonWithHover *createSignButton() override;
     QLabel *createGreetingLabel();
     QLabel *createAdditionalLabel();
+    void swapGreetinLabelText();
+    void swapAdditionalLabelText();
+    void swap() override;
 
 public slots:
     void isSignButtonClicked() override;
@@ -105,8 +101,6 @@ class LoginSlider : public Slider
     Q_OBJECT
 public:
     LoginSlider(QWidget *parent = nullptr);
-    void swapMainLabelText();
-    void swap() override;
 
     QLabel *mainLabel();
     QLabel *errorLabel();
@@ -120,7 +114,8 @@ private:
     void validateName(const QString &name);
     void validateEmail(const QString &email);
     void validatePassword(const QString &password);
-
+    void swapMainLabelText();
+    void swap() override;
     QPushButton *createNotSignButton();
     QLabel *createMainLabel();
     QLineEdit *createNameLineEdit();

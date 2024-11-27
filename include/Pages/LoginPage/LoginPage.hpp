@@ -1,7 +1,6 @@
 #ifndef LOGIN_WINDOW
 #define LOGIN_WINDOW
 
-#include <QFrame>
 #include "LoginSliders.hpp"
 #include "../../Accounts/User.hpp"
 #include "../Page.hpp"
@@ -10,60 +9,74 @@ class LoginPage : public Page
 {
     Q_OBJECT
 public:
-    LoginPage(QWidget *parent = nullptr) : Page(parent)
+    LoginPage(QWidget *parent) : Page(parent)
     {
-        if (parent)
-        {
-            parent->setMaximumSize(LOGIN_PAGE_WIDTH, LOGIN_PAGE_HEIGHT);
-        }
+        parent->setFixedSize(LOGIN_PAGE_WIDTH, LOGIN_PAGE_HEIGHT);
         loginSlider = new LoginSlider(this);
         mainSlider = new MainSlider(this);
+
+        CHECK_PTR(loginSlider)
+        CHECK_PTR(mainSlider)
+
         connect(mainSlider, &Slider::sliderMove, loginSlider, &Slider::isSliderMove);
-        createUser();
+        createUnauthorizedUser();
+        connect(loginSlider->notSignButton(), &QAbstractButton::clicked, this, &dontUseAccount);
     }
 
-    void createUser()
+    void createUnauthorizedUser()
     {
         user = new UnauthorizedUser(parent());
+        CHECK_PTR(user);
         connect(user, &BaseUser::accountCreated, this, &isSuccessfulSign);
         connect(user, &BaseUser::loginSuccessful, this, &isSuccessfulSign);
+
         connect(user, &BaseUser::accountNotCreated, [this]()
-                { loginSlider->errorLabel()->setText(LP_LS_EL_THIS_NAME_IS_TAKEN); });
+                { QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(LP_LS_EL_THIS_NAME_IS_TAKEN), QMessageBox::Ok); });
         connect(user, &BaseUser::passwordIncorrect, [this]()
-                { loginSlider->errorLabel()->setText(LP_LS_EL_PASSWORD_INCORRECT); });
+                { QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(LP_LS_EL_PASSWORD_INCORRECT), QMessageBox::Ok); });
         connect(user, &BaseUser::userNotFound, [this]()
-                { loginSlider->errorLabel()->setText(LP_LS_EL_USER_NOT_FOUND); });
+                { QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(LP_LS_EL_USER_NOT_FOUND), QMessageBox::Ok); });
         connect(user, &BaseUser::connectionLost, [this]()
                 { loginSlider->errorLabel()->setText(LP_LS_EL_CONNECTION_LOST); });
 
-        connect(loginSlider->notSignButton(), &QAbstractButton::clicked, this, &dontUseAccount);
         connect(loginSlider, &LoginSlider::sliderSignInClicked, user, &ServerClient::sendToServer);
         connect(loginSlider, &LoginSlider::sliderSignUpClicked, user, &ServerClient::sendToServer);
     }
 
     BaseUser *getUser()
     {
+        CHECK_PTR(user);
         return user;
     }
 
-private:
+private slots:
+
     void dontUseAccount()
     {
-        user->getSocket()->disconnect();
+        disconnect(user->getSocket(), nullptr, nullptr, nullptr);
+        user->getSocket()->deleteLater();
+        user->setSocket(nullptr);
         hide();
     }
 
     void isSuccessfulSign()
     {
+
+        User *authorizedUser = new User(parent());
+        if (!authorizedUser)
+        {
+            QMessageBox::critical(nullptr, "Error", QString("An error occurred: user was not created"), QMessageBox::Ok);
+            return;
+        }
         QString userData = user->getUserData();
-        qDebug() << userData;
-        delete user;
-        User *autorizedUser = new User;
-        autorizedUser->setUserData(userData);
-        user = autorizedUser;
+        disconnect(user, nullptr, nullptr, nullptr);
+        user->deleteLater();
+        authorizedUser->setUserData(userData);
+        user = authorizedUser;
         hide();
     }
 
+private:
     MainSlider *mainSlider;
     LoginSlider *loginSlider;
     BaseUser *user;

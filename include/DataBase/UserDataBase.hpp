@@ -11,7 +11,6 @@ public:
         QFile file(filePath);
         if (!file.open(QFile::ReadOnly))
         {
-            // my exception
             return QString();
         }
 

@@ -34,6 +34,18 @@
 			"value" : "D:/tools/Qt/Tools/mingw730_64/bin/ar.exe"
 		},
 		{
+			"name" : "CMAKE_BUILD_TYPE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "Debug"
+		},
+		{
 			"name" : "CMAKE_CACHEFILE_DIR",
 			"properties" : 
 			[
@@ -511,7 +523,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "W:/Program Files (x86)/cw"
+			"value" : "W:/Program Files (x86)/SpeedTest"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1264,42 +1276,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
-		},
-		{
-			"name" : "cw_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "D:/projects/SpeedTest/build"
-		},
-		{
-			"name" : "cw_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "cw_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "D:/projects/SpeedTest"
 		}
 	],
 	"kind" : "cache",

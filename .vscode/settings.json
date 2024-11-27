@@ -74,6 +74,8 @@
         "qgraphicsopacityeffect": "cpp",
         "qpainter": "cpp",
         "qtextedit": "cpp",
-        "qtextstream": "cpp"
+        "qtextstream": "cpp",
+        "qlineedit": "cpp",
+        "qmessagebox": "cpp"
     }
 }

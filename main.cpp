@@ -4,21 +4,15 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-
     try
     {
         MainWindow *w = new MainWindow(MAIN_WINDOW_NAME, MIN_MAIN_WINDOW_WIDHT, MIN_MAIN_WINDOW_HEIGHT);
         w->show();
+        app.exec();
     }
     catch (const BaseException &ex)
     {
-        QMessageBox msgBox;
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setText("An error occurred");
-        msgBox.setInformativeText(ex.what());
-        msgBox.setStandardButtons(QMessageBox::Ok);
-        msgBox.exec();
-        std::exit(0);
+        QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(ex.what()), QMessageBox::Ok);
     }
-    return app.exec();
+    return 0;
 }

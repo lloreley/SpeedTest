@@ -28,6 +28,8 @@ public:
         QObject::connect(this, &QPushButton::clicked, this, &cursorLeave);
         animBackColor = new QPropertyAnimation(this, "currentBackground");
         animTextColor = new QPropertyAnimation(this, "currentTextColor");
+        CHECK_PTR(animBackColor)
+        CHECK_PTR(animTextColor)
     }
 
     void setHoverDuration(int hoverDuration) noexcept
@@ -40,19 +42,6 @@ public:
     void setHoverActive(bool value)
     {
         hoverActive = value;
-    }
-
-    void swapText() noexcept
-    {
-        if (text() == SIGN_IN)
-        {
-            setText(SIGN_UP);
-            return;
-        }
-        if (text() == SIGN_UP)
-        {
-            setText(SIGN_IN);
-        }
     }
 
     void setStartTextColor(const QColor &color) noexcept
@@ -96,19 +85,20 @@ public:
         this->setIcon(coloredPixmap);
     }
 
-private:
-    QString buttonStyle;
-    QColor currentBackground;
-    QColor currentTextColor;
-    QColor startTextColor;
-    QColor endTextColor;
-    QColor startBackgroundColor;
-    QColor endBackgroundColor;
-    QPropertyAnimation *animBackColor;
-    QPropertyAnimation *animTextColor;
-    int hoverDuration;
-    bool hoverActive;
+    void swapText() noexcept
+    {
+        if (text() == SIGN_IN)
+        {
+            setText(SIGN_UP);
+            return;
+        }
+        if (text() == SIGN_UP)
+        {
+            setText(SIGN_IN);
+        }
+    }
 
+private:
     QColor getBackground() const
     {
         return currentBackground;
@@ -145,8 +135,6 @@ private:
         cursorEnter();
     }
 
-private slots:
-
     void cursorLeave()
     {
         setCursor(Qt::ArrowCursor);
@@ -170,6 +158,18 @@ private slots:
             animTextColor->start();
         }
     }
+
+    QString buttonStyle;
+    QColor currentBackground;
+    QColor currentTextColor;
+    QColor startTextColor;
+    QColor endTextColor;
+    QColor startBackgroundColor;
+    QColor endBackgroundColor;
+    QPropertyAnimation *animBackColor;
+    QPropertyAnimation *animTextColor;
+    int hoverDuration;
+    bool hoverActive;
 };
 
 #endif

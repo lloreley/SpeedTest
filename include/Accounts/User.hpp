@@ -8,13 +8,7 @@ class BaseUser : public ServerClient
 {
     Q_OBJECT
 public:
-    BaseUser(QObject *parent = nullptr) : ServerClient(parent), userData("")
-    {
-
-        connect(this, ServerClient::messageReceived, this, processMessage);
-    }
-
-    virtual void processMessage(const QString &message) = 0;
+    BaseUser(QObject *parent = nullptr) : ServerClient(parent), userData(""){}
 
     const QString getName()
     {
@@ -72,10 +66,7 @@ public slots:
 
     void processMessage(const QString &message) override
     {
-        if (message.contains(CHECK_CONNECTION_MESSAGE))
-        {
-            sendToServer(CHECK_CONNECTION_MESSAGE);
-        }
+        ServerClient::processMessage(message);
         if (message.contains(ACCESS_MESSAGE_TYPE))
         {
             if (message.contains(ACCESS_USER_NOT_FOUND))
@@ -121,10 +112,7 @@ public:
 
     void processMessage(const QString &message) override
     {
-        if (message.contains(CHECK_CONNECTION_MESSAGE))
-        {
-            sendToServer(CHECK_CONNECTION_MESSAGE);
-        }
+        ServerClient::processMessage(message);
     }
 
 private:

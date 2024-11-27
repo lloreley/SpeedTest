@@ -1,6 +1,8 @@
 #ifndef DEFINES_HPP
 #define DEFINES_HPP
 
+#include "Exception/Exception.hpp"
+
 // MainWindow
 
 #define MIN_MAIN_WINDOW_HEIGHT                      600
@@ -8,8 +10,12 @@
 #define MAIN_WINDOW_NAME                            "Type.io"
 #define MAIN_WINDOW_OBJECT_NAME                     "MainWindow"
 
-// FileDataBase
 
+#define CHECK_PTR(ptr)                              if (!(ptr)) { \
+                                                        throw NullPointerException(#ptr); \
+                                                    }
+
+//                                                  FileDataBase
 #define USER_DATA_FOLDER_PATH                       "data/users"
 #define DATA_FOLDER_PATH                            "data"
 #define NAME_SELECTOR                               "name"
@@ -18,11 +24,10 @@
 #define EMAIL_SELECTOR                              "email"
 #define DATE_OF_REGISTRATION_SELECTOR               "date_of_registration"
 #define ID_SELECTOR                                 "id"
-#define USERS_COUNT_SELECETOR                       "users_count"
-
 #define SERVER_PORT                                 8080
 
 #define MESSAGE_TYPE_SELECTOR                       QString("message_type")
+#define DISCONNECT_CONNECTION_MESSAGE               QString("disconnect")
 #define CHECK_CONNECTION_MESSAGE                    QString("check_connection")
 #define CHECK_CREDENTIALS_MESSAGE_TYPE              QString("check_credentials")
 #define ADD_USER_MESSAGE_TYPE                       QString("add_user")
@@ -105,9 +110,6 @@
 #define LP_MS_ADDITIONAL_LABEL_OBJECT_NAME          "LoginPageMainSliderAdditionalLabel"
 #define LP_MS_ADDITIONAL_LABEL_LEFT_POS_TEXT        "Enter yor personal details to use all of application features"
 #define LP_MS_ADDITIONAL_LABEL_RIGHT_POS_TEXT       "Register with your personal details to use all of application features"
-#define LP_MS_GREATING_LABEL_IN_LAYOUT              qobject_cast<QLabel *>(this->layout()->itemAt(0)->widget())
-#define LP_MS_ADDITIONAL_LABEL_IN_LAYOUT            qobject_cast<QLabel *>(this->layout()->itemAt(1)->widget())
-#define LP_MS_SIGN_BUTTON_IN_LAYOUT                 qobject_cast<ButtonWithHover *>(this->layout()->itemAt(2)->widget())
 
 #define LP_LS_NOT_SIGN_BUTTON_OBJECT_NAME           "LoginPageLoginSliderNotSignButton"
 #define LP_LS_NOT_SIGN_BUTTON_TEXT                  "Use unauthorized account"
@@ -149,8 +151,8 @@
 
 //                                                  NAVIGATION PANEL
 #define NAVIGATION_PANEL_OBJECT_NAME                "NavigationPanel"
-#define NP_BUTTONS_CLASS_NAME                       "QPushButton.NavigationPanelButton"
-#define NP_BUTTONS_PROPERTY                         "class", "NavigationPanelButton"       
+#define BASE_BUTTONS_CLASS_NAME                     "QPushButton.BasePanelButton"
+#define BASE_BUTTONS_PROPERTY                       "class", "BasePanelButton"       
 #define NP_ACCOUNT_BUTTON_OBJECT_NAME               "NavigationPanelAccountButton"       
 #define NP_LOGOUT_BUTTON_OBJECT_NAME                "NavigationPanelLogoutButton"       
 #define NP_TYPING_TEST_BUTTON_OBJECT_NAME           "NavigationPanelTypingTestButton"       

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ButtonWithHover_t {
-    QByteArrayData data[6];
-    char stringdata0[76];
+    QByteArrayData data[3];
+    char stringdata0[51];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,15 +33,12 @@ struct qt_meta_stringdata_ButtonWithHover_t {
 static const qt_meta_stringdata_ButtonWithHover_t qt_meta_stringdata_ButtonWithHover = {
     {
 QT_MOC_LITERAL(0, 0, 15), // "ButtonWithHover"
-QT_MOC_LITERAL(1, 16, 11), // "cursorLeave"
-QT_MOC_LITERAL(2, 28, 0), // ""
-QT_MOC_LITERAL(3, 29, 11), // "cursorEnter"
-QT_MOC_LITERAL(4, 41, 17), // "currentBackground"
-QT_MOC_LITERAL(5, 59, 16) // "currentTextColor"
+QT_MOC_LITERAL(1, 16, 17), // "currentBackground"
+QT_MOC_LITERAL(2, 34, 16) // "currentTextColor"
 
     },
-    "ButtonWithHover\0cursorLeave\0\0cursorEnter\0"
-    "currentBackground\0currentTextColor"
+    "ButtonWithHover\0currentBackground\0"
+    "currentTextColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,41 +48,25 @@ static const uint qt_meta_data_ButtonWithHover[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
-       2,   26, // properties
+       0,    0, // methods
+       2,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
- // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
-
- // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void,
-
  // properties: name, type, flags
-       4, QMetaType::QColor, 0x00095003,
-       5, QMetaType::QColor, 0x00095003,
+       1, QMetaType::QColor, 0x00095003,
+       2, QMetaType::QColor, 0x00095003,
 
        0        // eod
 };
 
 void ButtonWithHover::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<ButtonWithHover *>(_o);
-        Q_UNUSED(_t)
-        switch (_id) {
-        case 0: _t->cursorLeave(); break;
-        case 1: _t->cursorEnter(); break;
-        default: ;
-        }
-    }
+
 #ifndef QT_NO_PROPERTIES
-    else if (_c == QMetaObject::ReadProperty) {
+    if (_c == QMetaObject::ReadProperty) {
         auto *_t = static_cast<ButtonWithHover *>(_o);
         Q_UNUSED(_t)
         void *_v = _a[0];
@@ -106,6 +87,9 @@ void ButtonWithHover::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     } else if (_c == QMetaObject::ResetProperty) {
     }
 #endif // QT_NO_PROPERTIES
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
     Q_UNUSED(_a);
 }
 
@@ -137,17 +121,9 @@ int ButtonWithHover::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QPushButton::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
-    if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
-            *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
-    }
+    
 #ifndef QT_NO_PROPERTIES
-    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
+    if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
         _id -= 2;

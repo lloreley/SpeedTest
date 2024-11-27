@@ -4,7 +4,6 @@
 #include <QFrame>
 #include <QGraphicsOpacityEffect>
 #include "../ButtonWithHover.hpp"
-#include "../Exception/Exception.hpp"
 
 class Page : public QFrame
 {
@@ -15,12 +14,9 @@ public:
     static ButtonWithHover *createBaseButton(QWidget *parent = nullptr)
     {
         ButtonWithHover *btn = new ButtonWithHover(parent);
-        if(!btn)
-        {
-            throw NullPointerException("ButtonWithHower");
-        }
-        btn->setProperty(NP_BUTTONS_PROPERTY);
-        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH, QString(NP_BUTTONS_CLASS_NAME)));
+        CHECK_PTR(btn)
+        btn->setProperty(BASE_BUTTONS_PROPERTY);
+        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH, QString(BASE_BUTTONS_CLASS_NAME)));
         btn->setHoverActive(true);
         btn->setStartBackgroundColor(TRANSPARENT);
         btn->setEndBackgroundColor(TRANSPARENT);

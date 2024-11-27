@@ -1,14 +1,12 @@
-
 #ifndef LESSONS_SCROLL_AREA_HPP
 #define LESSONS_SCROLL_AREA_HPP
 
 #include <QScrollArea>
-#include <QVBoxLayout>
 #include "TypingTest/TypingTest.hpp"
 #include "TypingLessons/TypingLessons.hpp"
 #include "AccountPage/AccountPage.hpp"
 
-class LessonsScrollArea : public QScrollArea
+class LessonsScrollArea final : public QScrollArea
 {
     Q_OBJECT
 public:
@@ -22,16 +20,17 @@ public:
         LessonTypingTest *lessonTypingTest = new LessonTypingTest(viewportWidget);
         RepeatTypingTest *repeatTypingTest = new RepeatTypingTest(viewportWidget);
 
-        if(!viewportWidget || !layout || !nameLabel || !accountPage || !typingLessons || !lessonTypingTest || !repeatTypingTest)
-        {
-            throw NullPointerException("LessonsScrollAreaWidget");
-        }
+        CHECK_PTR(viewportWidget)
+        CHECK_PTR(layout)
+        CHECK_PTR(nameLabel)
+        CHECK_PTR(accountPage)
+        CHECK_PTR(typingLessons)
+        CHECK_PTR(lessonTypingTest)
+        CHECK_PTR(repeatTypingTest)
 
         layout->setContentsMargins(ZERO_CONTENTS_MARGINS);
         nameLabel->setObjectName(SCROLL_AREA_NAME_LABEL_OBJECT_NAME);
-
-
-        this->setStyleSheet("background-color: rgba(0, 0, 0, 0);");
+        setStyleSheet("background-color: transparent;");
 
         lessonTypingTest->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
         repeatTypingTest->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
@@ -47,95 +46,118 @@ public:
         connect(typingLessons, &TypingLessons::start, lessonTypingTest, &TypingTest::setPlainText);
         connect(typingLessons, &TypingLessons::start, lessonTypingTest, &TypingTest::show);
         connect(lessonTypingTest, &TypingTest::hidden, typingLessons, &TypingLessons::show);
+        connect(accountPage, &AccountPage::userInstalled, this, &setNewConnection);
 
         connect(lessonTypingTest->nextButton(), &QAbstractButton::clicked, [lessonTypingTest, typingLessons]()
                 {if(typingLessons->currentId < typingLessons->countLessons)
                     ++(typingLessons->currentId);
                 else typingLessons->currentId = 1;
-        lessonTypingTest->setPlainText(FileDataBase::extractValueFromStrWithSelector(FileDataBase::readAllFile(DATA_LESSONS_PATH+QString::number(typingLessons->currentId) + TXT_END), TEXT_SELECTOR) ); });
-        this->setWidget(viewportWidget);
-        connect(accountPage, &AccountPage::userInstalled, this, &setNewConnection);
+                lessonTypingTest->setPlainText(FileDataBase::extractValueFromStrWithSelector
+                (FileDataBase::readAllFile(DATA_LESSONS_PATH+QString::number(typingLessons->currentId) + TXT_END), TEXT_SELECTOR) ); });
+
+        setWidget(viewportWidget);
+        setWidgetResizable(true);
+        hide();
     }
 
     QLabel *getNameLabel()
     {
-        QLabel* label = findChild<QLabel *>(SCROLL_AREA_NAME_LABEL_OBJECT_NAME);
-        if(!label)
-        {
-            throw NullPointerException("NameLabelScrollArea");
-        }
-        return label;
+        QLabel *nameLabel = findChild<QLabel *>(SCROLL_AREA_NAME_LABEL_OBJECT_NAME);
+        CHECK_PTR(nameLabel)
+        return nameLabel;
     }
-
     RepeatTypingTest *getRepeatTypingTest()
     {
-        RepeatTypingTest* test = findChild<RepeatTypingTest *>();
-        if(!test)
-        {
-            throw NullPointerException("RepeatTypingTest");
-        }
-        return test;
+        RepeatTypingTest *repeatTypinTest = findChild<RepeatTypingTest *>();
+        CHECK_PTR(repeatTypinTest)
+        return repeatTypinTest;
     }
-
     LessonTypingTest *getLessonTypingTest()
     {
-        LessonTypingTest* test = findChild<LessonTypingTest *>();
-        if(!test)
-        {
-            throw NullPointerException("LessonTypingTest");
-        }
-        return test;
+        LessonTypingTest *lessonsTypingTest = findChild<LessonTypingTest *>();
+        CHECK_PTR(lessonsTypingTest)
+        return lessonsTypingTest;
     }
-
     TypingLessons *getTypingLessons()
     {
-        TypingLessons* lessons = findChild<TypingLessons *>();
-        if(!lessons)
-        {
-            throw NullPointerException("TypingLessons");
-        }
-        return lessons;
+        TypingLessons *typingLessons = findChild<TypingLessons *>();
+        CHECK_PTR(typingLessons)
+        return typingLessons;
     }
-
     AccountPage *getAccountPage()
     {
-        return findChild<AccountPage *>();
+        AccountPage *accountPage = findChild<AccountPage *>();
+        CHECK_PTR(accountPage)
+        return accountPage;
     }
 
-    void setNewConnection()
+private slots:
+    void setNewConnection() noexcept
     {
-        connect(getLessonTypingTest(), &TypingTest::newResult, getAccountPage(), &AccountPage::addResult);
-        connect(getRepeatTypingTest(), &TypingTest::newResult, getAccountPage(), &AccountPage::addResult);
-        if (getAccountPage()->getUser()->getDateRegistration() != "none")
+        try
         {
-            connect(getLessonTypingTest(), &TypingTest::newResult, getAccountPage()->getUser(), &BaseUser::addTypingResult);
-            connect(getRepeatTypingTest(), &TypingTest::newResult, getAccountPage()->getUser(), &BaseUser::addTypingResult);
+            connect(getLessonTypingTest(), &TypingTest::newResult, getAccountPage(), &AccountPage::addResult);
+            connect(getRepeatTypingTest(), &TypingTest::newResult, getAccountPage(), &AccountPage::addResult);
+            if (getAccountPage()->getUser()->getDateRegistration() != "none")
+            {
+                connect(getLessonTypingTest(), &TypingTest::newResult, getAccountPage()->getUser(), &BaseUser::addTypingResult);
+                connect(getRepeatTypingTest(), &TypingTest::newResult, getAccountPage()->getUser(), &BaseUser::addTypingResult);
+            }
+        }
+        catch (const BaseException &ex)
+        {
+            QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1\nThe result may not be saved").arg(ex.what()), QMessageBox::Ok);
+            return;
         }
     }
 
+public slots:
     void showRepeatTypingTestPage()
     {
-        getNameLabel()->setText("Typing Test");
-        getLessonTypingTest()->hide();
-        getTypingLessons()->hide();
-        getAccountPage()->hide();
-        getRepeatTypingTest()->show();
+        try
+        {
+            getNameLabel()->setText("Typing Test");
+            getLessonTypingTest()->hide();
+            getTypingLessons()->hide();
+            getAccountPage()->hide();
+            getRepeatTypingTest()->show();
+        }
+        catch (const BaseException &ex)
+        {
+            QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1\n").arg(ex.what()), QMessageBox::Ok);
+            return;
+        }
     }
-
     void showTypingLessonsPage()
     {
-        getNameLabel()->setText("Typing Lessons");
-        getRepeatTypingTest()->hide();
-        getAccountPage()->hide();
-        getTypingLessons()->show();
+        try
+        {
+            getNameLabel()->setText("Typing Lessons");
+            getRepeatTypingTest()->hide();
+            getAccountPage()->hide();
+            getTypingLessons()->show();
+        }
+        catch (const BaseException &ex)
+        {
+            QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1\n").arg(ex.what()), QMessageBox::Ok);
+            return;
+        }
     }
     void showAccountPage()
     {
-        getNameLabel()->setText("Account");
-        getLessonTypingTest()->hide();
-        getTypingLessons()->hide();
-        getRepeatTypingTest()->hide();
-        getAccountPage()->show();
+        try
+        {
+            getNameLabel()->setText("Account");
+            getLessonTypingTest()->hide();
+            getTypingLessons()->hide();
+            getRepeatTypingTest()->hide();
+            getAccountPage()->show();
+        }
+        catch (const BaseException &ex)
+        {
+            QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1\n").arg(ex.what()), QMessageBox::Ok);
+            return;
+        }
     }
 };
 

@@ -5,16 +5,13 @@
 #include "../Page.hpp"
 #include "../../ButtonWithHover.hpp"
 
-class NavigationPanel : public Page
+class NavigationPanel final : public Page
 {
 public:
     NavigationPanel(QWidget *parent = nullptr) : Page(parent)
     {
         QVBoxLayout *layout = new QVBoxLayout(this);
-        if (!layout)
-        {
-            throw NullPointerException("NavigationPanelLayout");
-        }
+        CHECK_PTR(layout)
         layout->addStretch();
         layout->addWidget(createTypingTestButton());
         layout->addWidget(createTypingLessonsButton());
@@ -33,38 +30,25 @@ public:
     ButtonWithHover *accountButton()
     {
         ButtonWithHover *btn = findChild<ButtonWithHover *>(NP_ACCOUNT_BUTTON_OBJECT_NAME);
-        if (!btn)
-        {
-            throw NullPointerException(NP_ACCOUNT_BUTTON_OBJECT_NAME);
-        }
+        CHECK_PTR(btn)
         return btn;
     }
     ButtonWithHover *typingTestButton()
     {
         ButtonWithHover *btn = findChild<ButtonWithHover *>(NP_TYPING_TEST_BUTTON_OBJECT_NAME);
-        if (!btn)
-        {
-            throw NullPointerException(NP_TYPING_TEST_BUTTON_OBJECT_NAME);
-        }
-
+        CHECK_PTR(btn)
         return btn;
     }
     ButtonWithHover *typingLessonsButton()
     {
         ButtonWithHover *btn = findChild<ButtonWithHover *>(NP_TYPING_LESSONS_BUTTON_OBJECT_NAME);
-        if (!btn)
-        {
-            throw NullPointerException(NP_TYPING_LESSONS_BUTTON_OBJECT_NAME);
-        }
+        CHECK_PTR(btn)
         return btn;
     }
     ButtonWithHover *logoutButton()
     {
         ButtonWithHover *btn = findChild<ButtonWithHover *>(NP_LOGOUT_BUTTON_OBJECT_NAME);
-        if (!btn)
-        {
-            throw NullPointerException(NP_LOGOUT_BUTTON_OBJECT_NAME);
-        }
+        CHECK_PTR(btn)
         return btn;
     }
 
@@ -121,10 +105,7 @@ private:
     void enterEvent(QEvent *event) override
     {
         QPropertyAnimation *anim = new QPropertyAnimation(this, "minimumWidth");
-        if (!anim)
-        {
-            throw NullPointerException("ButtonAnimation");
-        }
+        CHECK_PTR(anim)
         anim->setEndValue(NAVIGATION_PANEL_MAX_WIDTH);
         anim->setDuration(NAVIGATION_PANEL_ANIMATION_DURATION);
         anim->setEasingCurve(NAVIGATION_PANEL_ANIMATION_EASIGN_CURVE);
@@ -134,10 +115,7 @@ private:
     void leaveEvent(QEvent *event) override
     {
         QPropertyAnimation *anim = new QPropertyAnimation(this, "minimumWidth");
-        if (!anim)
-        {
-            throw NullPointerException("ButtonAnimation");
-        }
+        CHECK_PTR(anim)
         anim->setEndValue(NAVIGATION_PANEL_MIN_WIDTH);
         anim->setDuration(NAVIGATION_PANEL_ANIMATION_DURATION);
         anim->setEasingCurve(NAVIGATION_PANEL_ANIMATION_EASIGN_CURVE);

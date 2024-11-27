@@ -27,13 +27,15 @@ public:
     QGridLayout *layout;
 
 private:
+    void emergencyExit(const BaseException);
     void isLoginPageHidden();
     void isWelcomePageHidden();
     void createWidgets();
     void setConnections();
-
-protected:
     void closeEvent(QCloseEvent *event) override;
+
+private slots:
+    void isLogout();
 };
 
 #endif

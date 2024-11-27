@@ -22,7 +22,6 @@ add_executable(SpeedTest
     include/mainwindow.hpp
     src/mainwindow.cpp
 
-    # include/FileLoader/FileLoader.hpp
     include/Pages/LoginPage/LoginPage.hpp
     include/Pages/LoginPage/LoginSliders.hpp
     include/Pages/LoginPage/LoginSliders.cpp

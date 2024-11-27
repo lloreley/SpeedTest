@@ -5,10 +5,11 @@ Slider::Slider(QWidget *parent) : QWidget(parent), sliderStyle{""}
 {
     setGeometry(QRect(0, 0, LOGIN_PAGE_SLIDER_WIDTH, LOGIN_PAGE_SLIDER_HEIGHT));
     QVBoxLayout *layout = new QVBoxLayout(this);
+    sliderPosAnimation = new QPropertyAnimation(this, "pos");
+    CHECK_PTR(layout)
+    CHECK_PTR(sliderPosAnimation)
     layout->setContentsMargins(ZERO_CONTENTS_MARGINS);
     layout->setAlignment(Qt::AlignCenter);
-
-    sliderPosAnimation = new QPropertyAnimation(this, "pos");
     sliderPosAnimation->setEasingCurve(LOGIN_PAGE_SLIDER_MOVE_EASIGN_CURVE);
     sliderPosAnimation->setDuration(LOGIN_PAGE_SLIDER_MOVE_DURATION);
 }
@@ -23,6 +24,7 @@ void Slider::paintEvent(QPaintEvent *pe)
 
 QPropertyAnimation *Slider::SliderPosAnimation()
 {
+    CHECK_PTR(sliderPosAnimation)
     return sliderPosAnimation;
 }
 
@@ -58,6 +60,7 @@ MainSlider::MainSlider(QWidget *parent) : Slider(parent)
     }
     setBorderRadii(LP_MS_BORDER_RADII_IN_LEFT_POS);
     sliderBorderAnimation = new QPropertyAnimation(this, "borderRadii");
+    CHECK_PTR(sliderBorderAnimation)
     sliderBorderAnimation->setDuration(LOGIN_PAGE_SLIDER_MOVE_DURATION);
     sliderBorderAnimation->setEasingCurve(LOGIN_PAGE_SLIDER_BORDER_EASIGN_CURVE);
 }
@@ -65,6 +68,7 @@ MainSlider::MainSlider(QWidget *parent) : Slider(parent)
 ButtonWithHover *MainSlider::createSignButton()
 {
     ButtonWithHover *btn = new ButtonWithHover(this);
+    CHECK_PTR(btn)
     btn->setObjectName(LP_MS_SIGN_BUTTON_OBJECT_NAME);
     btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                         QString("#") + QString(LP_MS_SIGN_BUTTON_OBJECT_NAME)));
@@ -81,6 +85,7 @@ ButtonWithHover *MainSlider::createSignButton()
 QLabel *MainSlider::createGreetingLabel()
 {
     QLabel *label = new QLabel(this);
+    CHECK_PTR(label)
     label->setText(LP_MS_GREATING_LABEL_LEFT_POS_TEXT);
     label->setObjectName(LP_MS_GREATING_LABEL_OBJECT_NAME);
     return label;
@@ -88,6 +93,7 @@ QLabel *MainSlider::createGreetingLabel()
 QLabel *MainSlider::createAdditionalLabel()
 {
     QLabel *label = new QLabel(this);
+    CHECK_PTR(label)
     label->setText(LP_MS_ADDITIONAL_LABEL_LEFT_POS_TEXT);
     label->setObjectName(LP_MS_ADDITIONAL_LABEL_OBJECT_NAME);
     label->setWordWrap(true);
@@ -97,15 +103,21 @@ QLabel *MainSlider::createAdditionalLabel()
 
 ButtonWithHover *MainSlider::signButton()
 {
-    return LP_MS_SIGN_BUTTON_IN_LAYOUT;
+    ButtonWithHover *signBtn = findChild<ButtonWithHover *>(LP_MS_SIGN_BUTTON_OBJECT_NAME);
+    CHECK_PTR(signBtn)
+    return signBtn;
 }
 QLabel *MainSlider::greetingLabel()
 {
-    return LP_MS_GREATING_LABEL_IN_LAYOUT;
+    QLabel *greatingLbl = findChild<QLabel *>(LP_MS_GREATING_LABEL_OBJECT_NAME);
+    CHECK_PTR(greatingLbl)
+    return greatingLbl;
 }
 QLabel *MainSlider::additionalLabel()
 {
-    return LP_MS_ADDITIONAL_LABEL_IN_LAYOUT;
+    QLabel *additionalLbl = findChild<QLabel *>(LP_MS_ADDITIONAL_LABEL_OBJECT_NAME);
+    CHECK_PTR(additionalLbl)
+    return additionalLbl;
 }
 
 void MainSlider::isSliderMove()
@@ -144,7 +156,7 @@ void MainSlider::isSignButtonClicked()
 {
     isSliderMove();
 }
-void MainSlider::swapGreetinLabelText() noexcept
+void MainSlider::swapGreetinLabelText()
 {
     if (greetingLabel()->text() == LP_MS_GREATING_LABEL_LEFT_POS_TEXT)
     {
@@ -153,7 +165,7 @@ void MainSlider::swapGreetinLabelText() noexcept
     }
     greetingLabel()->setText(LP_MS_GREATING_LABEL_LEFT_POS_TEXT);
 }
-void MainSlider::swapAdditionalLabelText() noexcept
+void MainSlider::swapAdditionalLabelText()
 {
     if (additionalLabel()->text() == LP_MS_ADDITIONAL_LABEL_LEFT_POS_TEXT)
     {
@@ -204,7 +216,6 @@ void LoginSlider::validateName(const QString &name)
         throw InvalidNameException(name);
     }
 }
-
 void LoginSlider::validateEmail(const QString &email)
 {
     if (email.isEmpty() || !QRegularExpression(R"((^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,})$)").match(email).hasMatch())
@@ -212,14 +223,13 @@ void LoginSlider::validateEmail(const QString &email)
         throw InvalidEmailException(email);
     }
 }
-
 void LoginSlider::validatePassword(const QString &password)
 {
     if (password.length() < 8 ||
-        !QRegularExpression("[A-Z]").match(password).hasMatch() ||      // хотя бы одна заглавная буква
-        !QRegularExpression("[a-z]").match(password).hasMatch() ||      // хотя бы одна строчная буква
-        !QRegularExpression("[0-9]").match(password).hasMatch() ||      // хотя бы одна цифра
-        !QRegularExpression("[^A-Za-z0-9]").match(password).hasMatch()) // хотя бы один специальный символ
+        !QRegularExpression("[A-Z]").match(password).hasMatch() ||
+        !QRegularExpression("[a-z]").match(password).hasMatch() ||
+        !QRegularExpression("[0-9]").match(password).hasMatch() ||
+        !QRegularExpression("[^A-Za-z0-9]").match(password).hasMatch())
     {
         throw InvalidPasswordException(password);
     }
@@ -228,6 +238,7 @@ void LoginSlider::validatePassword(const QString &password)
 QLabel *LoginSlider::createMainLabel()
 {
     QLabel *label = new QLabel(this);
+    CHECK_PTR(label)
     label->setObjectName(LP_LS_MAIN_LABEL_OBJECT_NAME);
     label->setText(LP_LS_MAIN_LABEL_TEXT_IN_RIGHT_POS);
     return label;
@@ -235,6 +246,7 @@ QLabel *LoginSlider::createMainLabel()
 QPushButton *LoginSlider::createNotSignButton()
 {
     QPushButton *btn = new QPushButton(this);
+    CHECK_PTR(btn)
     btn->setText(LP_LS_NOT_SIGN_BUTTON_TEXT);
     btn->setObjectName(LP_LS_NOT_SIGN_BUTTON_OBJECT_NAME);
     return btn;
@@ -242,6 +254,7 @@ QPushButton *LoginSlider::createNotSignButton()
 ButtonWithHover *LoginSlider::createSignButton()
 {
     ButtonWithHover *btn = new ButtonWithHover(this);
+    CHECK_PTR(btn)
     btn->setObjectName(LP_LS_SIGN_BUTTON_OBJECT_NAME);
     btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                         QString("#") + QString(LP_LS_SIGN_BUTTON_OBJECT_NAME)));
@@ -257,6 +270,7 @@ ButtonWithHover *LoginSlider::createSignButton()
 QLineEdit *LoginSlider::createNameLineEdit()
 {
     QLineEdit *lineEdit = new QLineEdit(this);
+    CHECK_PTR(lineEdit)
     lineEdit->setProperty(LP_LS_LINE_EDIT_PROPERTY);
     lineEdit->setObjectName(LP_LS_NAME_LE_OBJECT_NAME);
     lineEdit->setPlaceholderText(LP_LS_NAME_LINE_EDIT_PLACEHOLDER_TEXT);
@@ -266,6 +280,7 @@ QLineEdit *LoginSlider::createNameLineEdit()
 QLineEdit *LoginSlider::createEmailLineEdit()
 {
     QLineEdit *lineEdit = new QLineEdit(this);
+    CHECK_PTR(lineEdit)
     lineEdit->setProperty(LP_LS_LINE_EDIT_PROPERTY);
     lineEdit->setObjectName(LP_LS_EMAIL_LE_OBJECT_NAME);
     lineEdit->setPlaceholderText(LP_LS_EMAIL_LINE_EDIT_PLACEHOLDER_TEXT);
@@ -275,6 +290,7 @@ QLineEdit *LoginSlider::createEmailLineEdit()
 QLineEdit *LoginSlider::createPasswordLineEdit()
 {
     QLineEdit *lineEdit = new QLineEdit(this);
+    CHECK_PTR(lineEdit)
     lineEdit->setProperty(LP_LS_LINE_EDIT_PROPERTY);
     lineEdit->setObjectName(LP_LS_PASSWORD_LE_OBJECT_NAME);
     lineEdit->setPlaceholderText(LP_LS_PASSWORD_LINE_EDIT_PLACEHOLDER_TEXT);
@@ -285,57 +301,69 @@ QLineEdit *LoginSlider::createPasswordLineEdit()
 QLabel *LoginSlider::createErrorLabel()
 {
     QLabel *label = new QLabel(this);
+    CHECK_PTR(label)
     label->setObjectName(LP_LS_ERROR_LABEL_OBJECT_NAME);
     return label;
 }
 QLabel *LoginSlider::createPictureLabel()
 {
     QLabel *picture = new QLabel(this);
+    CHECK_PTR(picture)
     QPixmap pixmap(LOGO_PATH);
     picture->setPixmap(pixmap.scaled(LP_LS_LOGO_SIZE, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     picture->setAlignment(Qt::AlignCenter);
-    picture->setContentsMargins(ZERO_CONTENTS_MARGINS); ////
+    picture->setContentsMargins(ZERO_CONTENTS_MARGINS);
     return picture;
 }
 
 QPushButton *LoginSlider::notSignButton()
 {
-    return findChild<QPushButton *>(LP_LS_NOT_SIGN_BUTTON_OBJECT_NAME);
+    QPushButton *notUseAccountBtn = findChild<QPushButton *>(LP_LS_NOT_SIGN_BUTTON_OBJECT_NAME);
+    CHECK_PTR(notUseAccountBtn)
+    return notUseAccountBtn;
 }
 QLabel *LoginSlider::mainLabel()
 {
-    return findChild<QLabel *>(LP_LS_MAIN_LABEL_OBJECT_NAME);
+    QLabel *mnLabel = findChild<QLabel *>(LP_LS_MAIN_LABEL_OBJECT_NAME);
+    CHECK_PTR(mnLabel)
+    return mnLabel;
 }
 QLabel *LoginSlider::errorLabel()
 {
-    return findChild<QLabel *>(LP_LS_ERROR_LABEL_OBJECT_NAME);
+    QLabel *errLabel = findChild<QLabel *>(LP_LS_ERROR_LABEL_OBJECT_NAME);
+    CHECK_PTR(errLabel)
+    return errLabel;
 }
 QLineEdit *LoginSlider::nameLineEdit()
 {
-    return findChild<QLineEdit *>(LP_LS_NAME_LE_OBJECT_NAME);
+    QLineEdit *nmLineEdit = findChild<QLineEdit *>(LP_LS_NAME_LE_OBJECT_NAME);
+    CHECK_PTR(nmLineEdit)
+    return nmLineEdit;
 }
 QLineEdit *LoginSlider::emailLineEdit()
 {
-    return findChild<QLineEdit *>(LP_LS_EMAIL_LE_OBJECT_NAME);
+    QLineEdit *emLineEdit = findChild<QLineEdit *>(LP_LS_EMAIL_LE_OBJECT_NAME);
+    CHECK_PTR(emLineEdit)
+    return emLineEdit;
 }
 QLineEdit *LoginSlider::passwordLineEdit()
 {
-    return findChild<QLineEdit *>(LP_LS_PASSWORD_LE_OBJECT_NAME);
+    QLineEdit *passLineEdit = findChild<QLineEdit *>(LP_LS_PASSWORD_LE_OBJECT_NAME);
+    CHECK_PTR(passLineEdit)
+    return passLineEdit;
 }
 ButtonWithHover *LoginSlider::signButton()
 {
-    return findChild<ButtonWithHover *>(LP_LS_SIGN_BUTTON_OBJECT_NAME);
+    ButtonWithHover *btn = findChild<ButtonWithHover *>(LP_LS_SIGN_BUTTON_OBJECT_NAME);
+    CHECK_PTR(btn)
+    return btn;
 }
 
 void LoginSlider::swap()
 {
-
     swapMainLabelText();
-
     if (emailLineEdit()->isVisible())
-    {
         emailLineEdit()->hide();
-    }
     else
         emailLineEdit()->show();
     signButton()->swapText();
@@ -359,7 +387,6 @@ void LoginSlider::swapMainLabelText()
 
 void LoginSlider::isSignButtonClicked()
 {
-    errorLabel()->setText(LP_LS_EL_EMTPY_FIELS_TEXT);
     try
     {
         validateName(nameLineEdit()->text());
@@ -369,12 +396,7 @@ void LoginSlider::isSignButtonClicked()
     }
     catch (BaseException &ex)
     {
-        QMessageBox msgBox;
-        msgBox.setIcon(QMessageBox::Critical);
-        msgBox.setText("An error occurred");
-        msgBox.setInformativeText(ex.what());
-        msgBox.setStandardButtons(QMessageBox::Ok);
-        msgBox.exec();
+        QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(ex.what()), QMessageBox::Ok);
         return;
     }
 
@@ -385,6 +407,7 @@ void LoginSlider::isSignButtonClicked()
     message += NAME_SELECTOR + LEFT_MESSAGE_BRACKET + nameLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
     message += PASSWORD_SELECTOR + LEFT_MESSAGE_BRACKET + passwordLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
 
+    passwordLineEdit()->clear();
     if (mainLabel()->text() == SIGN_IN)
     {
         emit sliderSignInClicked(message);
@@ -397,9 +420,7 @@ void LoginSlider::isSignButtonClicked()
 void LoginSlider::isSliderMove()
 {
     if (sliderPosAnimation->state() != QAbstractAnimation::Stopped)
-    {
         sliderPosAnimation->stop();
-    }
     sliderPosAnimation->setEndValue(signButton()->text() == SIGN_UP ? LOGIN_PAGE_SLIDER_LEFT_POS : LOGIN_PAGE_SLIDER_RIGHT_POS);
     sliderPosAnimation->start();
     clear();
