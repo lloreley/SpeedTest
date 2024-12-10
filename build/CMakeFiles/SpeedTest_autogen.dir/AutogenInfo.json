@@ -71,12 +71,6 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/projects/SpeedTest/include/Accounts/ServerClient.hpp",
-			"MU",
-			"GKX6U2S5T6/moc_ServerClient.cpp",
-			null
-		],
-		[
 			"D:/projects/SpeedTest/include/Accounts/User.hpp",
 			"MU",
 			"GKX6U2S5T6/moc_User.cpp",
@@ -92,12 +86,6 @@
 			"D:/projects/SpeedTest/include/DataBase/FileDataBase.hpp",
 			"MU",
 			"HSSC5WASNF/moc_FileDataBase.cpp",
-			null
-		],
-		[
-			"D:/projects/SpeedTest/include/DataBase/UserDataBase.hpp",
-			"MU",
-			"HSSC5WASNF/moc_UserDataBase.cpp",
 			null
 		],
 		[

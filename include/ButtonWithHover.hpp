@@ -5,7 +5,7 @@
 #include <QPropertyAnimation>
 #include <QPixmap>
 #include <QPainter>
-#include "DataBase/UserDataBase.hpp"
+#include "DataBase/FileDataBase.hpp"
 #include "defines.hpp"
 
 class ButtonWithHover final : public QPushButton
@@ -31,60 +31,56 @@ public:
         CHECK_PTR(animBackColor)
         CHECK_PTR(animTextColor)
     }
-
+    ~ButtonWithHover()
+    {
+        animBackColor->deleteLater();
+        animBackColor->deleteLater();
+    }
     void setHoverDuration(int hoverDuration) noexcept
     {
         this->hoverDuration = hoverDuration;
         animBackColor->setDuration(hoverDuration);
         animTextColor->setDuration(hoverDuration);
     }
-
     void setHoverActive(bool value)
     {
         hoverActive = value;
     }
-
     void setStartTextColor(const QColor &color) noexcept
     {
         setTextColor(color);
         startTextColor = color;
     }
-
     void setEndTextColor(const QColor &color) noexcept
     {
         endTextColor = color;
     }
-
     void setStartBackgroundColor(const QColor &color) noexcept
     {
         setBackground(color);
         startBackgroundColor = color;
     }
-
     void setEndBackgroundColor(const QColor &color) noexcept
     {
         endBackgroundColor = color;
     }
-
     void setButtonStyle(const QString &style)
     {
         buttonStyle = style;
     }
-
     void upldateIconColor()
     {
         QPixmap pixmap = icon().pixmap(this->size());
         QPixmap coloredPixmap(pixmap.size());
-        coloredPixmap.fill(Qt::transparent); // Заполняем прозрачным цветом
+        coloredPixmap.fill(Qt::transparent);
         QPainter painter(&coloredPixmap);
-        painter.setCompositionMode(QPainter::CompositionMode_Source);   // Устанавливаем режим наложения
-        painter.drawPixmap(0, 0, pixmap);                               // Рисуем оригинальный pixmap
-        painter.setCompositionMode(QPainter::CompositionMode_SourceIn); // Устанавливаем режим наложения
-        painter.fillRect(coloredPixmap.rect(), currentTextColor);       // Заполняем цветом
+        painter.setCompositionMode(QPainter::CompositionMode_Source);
+        painter.drawPixmap(0, 0, pixmap);
+        painter.setCompositionMode(QPainter::CompositionMode_SourceIn);
+        painter.fillRect(coloredPixmap.rect(), currentTextColor);
         painter.end();
         this->setIcon(coloredPixmap);
     }
-
     void swapText() noexcept
     {
         if (text() == SIGN_IN)
@@ -98,23 +94,19 @@ public:
         }
     }
 
-private:
     QColor getBackground() const
     {
         return currentBackground;
     }
-
     void setBackground(const QColor backColor)
     {
         currentBackground = backColor;
         this->setStyleSheet(buttonStyle.arg(backColor.red()).arg(backColor.green()).arg(backColor.blue()).arg(currentBackground.alpha()).arg(currentTextColor.red()).arg(currentTextColor.green()).arg(currentTextColor.blue()));
     }
-
     QColor getTextColor() const
     {
         return currentTextColor;
     }
-
     void setTextColor(const QColor &tColor)
     {
         currentTextColor = tColor;
@@ -125,16 +117,17 @@ private:
         this->setStyleSheet(buttonStyle.arg(currentBackground.red()).arg(currentBackground.green()).arg(currentBackground.blue()).arg(currentBackground.alpha()).arg(currentTextColor.red()).arg(currentTextColor.green()).arg(currentTextColor.blue()));
     }
 
+private:
     void leaveEvent(QEvent *event)
     {
         cursorLeave();
+        QPushButton::leaveEvent(event);
     }
-
     void enterEvent(QEvent *event)
     {
         cursorEnter();
+        QPushButton::leaveEvent(event);
     }
-
     void cursorLeave()
     {
         setCursor(Qt::ArrowCursor);
@@ -146,7 +139,6 @@ private:
             animTextColor->start();
         }
     }
-
     void cursorEnter()
     {
         setCursor(Qt::PointingHandCursor);

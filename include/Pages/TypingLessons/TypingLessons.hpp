@@ -4,9 +4,8 @@
 #include <QStyleOption>
 #include "../TypingTest/TypingTest.hpp"
 
-class Lesson final : public QWidget
+class Lesson : public QWidget
 {
-
     Q_OBJECT
     friend class TypingLessons;
 
@@ -52,7 +51,7 @@ public:
     {
         ButtonWithHover *btn = new ButtonWithHover(this);
         CHECK_PTR(btn)
-        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
+        btn->setButtonStyle(FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                             "QPushButton.TypingLessons"));
         btn->setHoverActive(true);
         btn->setStartBackgroundColor(LIGHT_GRAY);
@@ -78,7 +77,7 @@ private:
     int id;
 };
 
-class TypingLessons final: public Page
+class TypingLessons : public Page
 {
     Q_OBJECT
     friend class LessonsScrollArea;
@@ -94,9 +93,14 @@ public:
         createLessons();
         setObjectName(TYPING_LESSONS_OBJECT_NAME);
     }
-
+    ~TypingLessons()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
 public slots:
-
     void isStartLesson()
     {
         Lesson *lesson = qobject_cast<Lesson *>(sender()->parent());
@@ -107,7 +111,6 @@ public slots:
             this->hide();
         }
     }
-
 private:
     void createLessons()
     {
@@ -117,7 +120,6 @@ private:
             QFile file(filename);
             if (file.exists())
             {
-
                 if (file.open(QIODevice::ReadOnly | QIODevice::Text))
                 {
                     QTextStream in(&file);
@@ -135,7 +137,6 @@ private:
             }
         }
     }
-
     void paintEvent(QPaintEvent *pe)
     {
         QStyleOption o;

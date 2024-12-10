@@ -16,7 +16,7 @@ public:
         ButtonWithHover *btn = new ButtonWithHover(parent);
         CHECK_PTR(btn)
         btn->setProperty(BASE_BUTTONS_PROPERTY);
-        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH, QString(BASE_BUTTONS_CLASS_NAME)));
+        btn->setButtonStyle(FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH, QString(BASE_BUTTONS_CLASS_NAME)));
         btn->setHoverActive(true);
         btn->setStartBackgroundColor(TRANSPARENT);
         btn->setEndBackgroundColor(TRANSPARENT);

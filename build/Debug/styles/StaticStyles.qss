@@ -3,6 +3,11 @@ QWidget#MainWindow
 {
         background: #2a2b38; 
  }
+
+QWidget:title#MainWindow
+{
+    background-color: black;
+}
 QWidget
 {
     font-family: Noto Sans Mono;

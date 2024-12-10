@@ -26,6 +26,13 @@ public:
         }
         layout->setAlignment(Qt::AlignLeft);
     }
+    ~NavigationPanel()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
 
     ButtonWithHover *accountButton()
     {
@@ -111,7 +118,6 @@ private:
         anim->setEasingCurve(NAVIGATION_PANEL_ANIMATION_EASIGN_CURVE);
         anim->start(QAbstractAnimation::DeleteWhenStopped);
     }
-
     void leaveEvent(QEvent *event) override
     {
         QPropertyAnimation *anim = new QPropertyAnimation(this, "minimumWidth");

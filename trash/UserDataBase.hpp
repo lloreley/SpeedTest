@@ -1,7 +1,7 @@
 #ifndef USER_DATA_BASE_HPP
 #define USER_DATA_BASE_HPP
 
-#include "FileDataBase.hpp"
+// #include "FileDataBase.hpp"
 
 class UserDataBase : public FileDataBase
 {
@@ -23,7 +23,7 @@ public:
         {
             return match.captured(1);
         }
-        return QString(); 
+        return QString();
     }
 };
 

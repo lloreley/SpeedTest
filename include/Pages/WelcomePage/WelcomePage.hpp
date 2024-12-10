@@ -7,7 +7,6 @@
 #include <QLabel>
 #include <QGraphicsOpacityEffect>
 #include "../../defines.hpp"
-#include "../../DataBase/UserDataBase.hpp"
 #include "../../ButtonWithHover.hpp"
 #include "../Page.hpp"
 class WelcomePage : public Page
@@ -32,7 +31,13 @@ public:
             layout->setAlignment(layout->itemAt(i)->widget(), Qt::AlignCenter);
         }
     }
-
+    ~WelcomePage()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
     QLabel *createGreatingLabel()
     {
         QLabel *label = new QLabel(this);
@@ -52,7 +57,7 @@ public:
     {
         ButtonWithHover *btn = new ButtonWithHover(this);
         btn->setObjectName(WELCOME_PAGE_RIGHT_BUTTON_OBJECT_NAME);
-        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
+        btn->setButtonStyle(FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                             QString("#") + QString(WELCOME_PAGE_RIGHT_BUTTON_OBJECT_NAME)));
         btn->setHoverActive(true);
         btn->setStartBackgroundColor(GOLD);
@@ -61,14 +66,14 @@ public:
         btn->setStartTextColor(GRAY);
         btn->setEndTextColor(GOLD);
         connect(btn, &QPushButton::clicked, [this]()
-                { emit TypingTest(); hide();});
+                { emit TypingTest(); hide(); });
         return btn;
     }
     ButtonWithHover *createRightButton()
     {
         ButtonWithHover *btn = new ButtonWithHover(this);
         btn->setObjectName(WELCOME_PAGE_RIGHT_BUTTON_OBJECT_NAME);
-        btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
+        btn->setButtonStyle(FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                             QString("#") + QString(WELCOME_PAGE_RIGHT_BUTTON_OBJECT_NAME)));
         btn->setHoverActive(true);
         btn->setStartBackgroundColor(LIGHT_GRAY);
@@ -77,26 +82,35 @@ public:
         btn->setStartTextColor(GRAY);
         btn->setEndTextColor(GOLD);
         connect(btn, &QPushButton::clicked, [&]()
-                { emit TypingLessons(); hide();});
+                { emit TypingLessons(); hide(); });
         return btn;
     }
 
 private:
     QLabel *greatingLabel()
     {
-        return WELCOME_PAGE_GREATING_LABEL_IN_LAYOUT;
+
+        QLabel *label = findChild<QLabel *>(WELCOME_PAGE_GREATING_OBJECT_NAME);
+        CHECK_PTR(label)
+        return label;
     }
     QLabel *additionalLabel()
     {
-        return WELCOME_PAGE_ADDITIONAL_LABEL_IN_LAYOUT;
+        QLabel *label = findChild<QLabel *>(WELCOME_PAGE_ADDITIONAL_OBJECT_NAME);
+        CHECK_PTR(label)
+        return label;
     }
     ButtonWithHover *leftButton()
     {
-        return WELCOME_PAGE_LEFT_BUTTON_IN_LAYOUT;
+        ButtonWithHover *btn = findChild<ButtonWithHover *>(WELCOME_PAGE_LEFT_BUTTON_OBJECT_NAME);
+        CHECK_PTR(btn)
+        return btn;
     }
     ButtonWithHover *rightButton()
     {
-        return WELCOME_PAGE_RIGHT_BUTTON_IN_LAYOUT;
+        ButtonWithHover *btn = findChild<ButtonWithHover *>(WELCOME_PAGE_RIGHT_BUTTON_OBJECT_NAME);
+        CHECK_PTR(btn)
+        return btn;
     }
 
 signals:

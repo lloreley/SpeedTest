@@ -41,6 +41,13 @@ public:
                 { ++time; });
         setObjectName(TYPING_TEST_LINE_OBJECT_NAME);
     }
+    ~TypingTestEdit()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
 
 protected:
     void paintEvent(QPaintEvent *event) override
@@ -176,10 +183,10 @@ public:
 private:
     QGraphicsBlurEffect *blurEffect;
     QPropertyAnimation *blurAnimation;
+    QTimer *timer;
 
     QString::iterator nextChar;
 
-    QTimer *timer;
     QString plainText;
     int time;
     int countMistakes;
@@ -212,7 +219,13 @@ public:
 
         layout->addLayout(hLayout);
     }
-
+    ~TypingTest()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
     void hide()
     {
         Page::hide();
@@ -248,14 +261,12 @@ public:
         CHECK_PTR(nextBtn)
         return nextBtn;
     }
-
     TypingTestEdit *typingTestEdit()
     {
         TypingTestEdit *typingTE = findChild<TypingTestEdit *>(TYPING_TEST_LINE_OBJECT_NAME);
         CHECK_PTR(typingTE)
         return typingTE;
     }
-
     void setPlainText(const QString &plainText)
     {
         QString htmlText = "<span style='color:  rgb(109, 120, 135); font-size: 24px;'>" + plainText + "</span>";
@@ -263,7 +274,6 @@ public:
         typingTestEdit()->plainText = plainText;
         typingTestEdit()->nextChar = typingTestEdit()->plainText.begin();
     }
-
     void reset()
     {
         typingTestEdit()->countMistakes = typingTestEdit()->countRightSymbol = typingTestEdit()->time = 0;
@@ -278,7 +288,6 @@ protected slots:
         reset();
         isTimeout();
     }
-
     void isTimeout()
     {
         if (isVisible())
@@ -292,7 +301,6 @@ protected slots:
             reset();
         }
     }
-
     void showResult()
     {
         emit newResult(typingTestEdit()->plainText + DELITOR + typingTestEdit()->curCpm() + DELITOR + typingTestEdit()->curAcc() + DELITOR + QString::number(typingTestEdit()->countMistakes));
@@ -300,11 +308,10 @@ protected slots:
         QString message = QString("Your results:\nCMP: ") + typingTestEdit()->curCpm() + QString("\nAccuracy: ") + typingTestEdit()->curAcc() + QString("\nMistakes: ") + QString::number(typingTestEdit()->countMistakes);
         msgBox.setText(message);
         msgBox.setStyleSheet("QWidget { background-color: #1f2029; color: #333;font-family: Noto Sans Mono;font-size: 28px;font-weight: 500;color: #6d7887; }"
-                             "QPushButton { background-color: #0078d7; fons-size: 16px;color: white; border: none; padding: 5px; border-radius: 5px; }");
+                             "QPushButton { background-color: #0078d7; font-size: 16px;color: white; border: none; padding: 5px; border-radius: 5px; }");
         msgBox.exec();
         repeat();
     }
-
     void paintEvent(QPaintEvent *event) override
     {
         Page::paintEvent(event);
@@ -378,6 +385,13 @@ public:
         next();
         connect(nextButton(), &QAbstractButton::clicked, this, &next);
     }
+    ~RepeatTypingTest()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
 
 private:
     void next()
@@ -386,7 +400,6 @@ private:
         setPlainText(*it);
         ++it;
     }
-
     void readFromFile(const QString &filename)
     {
         QFile file(filename);
@@ -404,7 +417,6 @@ private:
 
         file.close();
     }
-
     CircularLinkedList<QString> texts;
 };
 
@@ -420,7 +432,13 @@ public:
             hLayout->insertWidget(0, createQuitButton());
         }
     }
-
+    ~LessonTypingTest()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
     ButtonWithHover *quitButton()
     {
         return findChild<ButtonWithHover *>(TYPING_TEST_QUIT_BUTTON_OBJECT_NAME);

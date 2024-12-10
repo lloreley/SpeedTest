@@ -15,7 +15,7 @@ class ServerClient : public QObject
 public:
     ServerClient(QObject *parent = nullptr) : QObject(parent), nextBlockSize{}, isConnected(true)
     {
-        socket = new QTcpSocket(this);
+        socket = new QTcpSocket;
         socket->connectToHost(SERVER_IP, SERVER_PORT);
         connect(socket, &QTcpSocket::readyRead, this, &ServerClient::read);
         connect(this, &ServerClient::messageReceived, this, &processMessage);
@@ -23,13 +23,29 @@ public:
         connect(keepAliveTimer, &QTimer::timeout, this, &checkConnection);
         keepAliveTimer->start(KEEP_ALIGN_TIME);
     }
+    ServerClient(QTcpSocket *skt, QObject *parent = nullptr) : QObject(parent), nextBlockSize{}, isConnected(true)
+    {
+        QObject::disconnect(skt, nullptr, nullptr, nullptr);
+        socket = skt;
+        connect(socket, &QTcpSocket::readyRead, this, &ServerClient::read);
+        connect(this, &ServerClient::messageReceived, this, &processMessage);
+        keepAliveTimer = new QTimer(this);
+        connect(keepAliveTimer, &QTimer::timeout, this, &checkConnection);
+        keepAliveTimer->start(KEEP_ALIGN_TIME);
+    }
+
+    ~ServerClient()
+    {
+        if (!socket)
+            delete socket;
+    }
 
     QTcpSocket *getSocket()
     {
         return socket;
     }
 
-    void *setSocket(QTcpSocket *socket)
+    void setSocket(QTcpSocket *socket)
     {
         this->socket = socket;
         if (!socket)
@@ -64,9 +80,8 @@ protected slots:
             isConnected = true;
             sendToServer(CHECK_CONNECTION_MESSAGE);
         }
-        else if(message.contains(DISCONNECT_CONNECTION_MESSAGE))
+        else if (message.contains(DISCONNECT_CONNECTION_MESSAGE))
         {
-            qDebug() << "disk";
             emit disconnect();
         }
     }
@@ -126,7 +141,7 @@ protected:
 signals:
     void messageReceived(QString message);
     void connectionLost();
-    void disconnect();
+    void disconnected();
 };
 
 #endif

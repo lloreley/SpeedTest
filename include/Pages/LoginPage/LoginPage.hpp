@@ -11,7 +11,6 @@ class LoginPage : public Page
 public:
     LoginPage(QWidget *parent) : Page(parent)
     {
-        parent->setFixedSize(LOGIN_PAGE_WIDTH, LOGIN_PAGE_HEIGHT);
         loginSlider = new LoginSlider(this);
         mainSlider = new MainSlider(this);
 
@@ -21,6 +20,18 @@ public:
         connect(mainSlider, &Slider::sliderMove, loginSlider, &Slider::isSliderMove);
         createUnauthorizedUser();
         connect(loginSlider->notSignButton(), &QAbstractButton::clicked, this, &dontUseAccount);
+    }
+
+    ~LoginPage()
+    {
+        mainSlider->deleteLater();
+        loginSlider->deleteLater();
+        user->deleteLater();
+    }
+    void show()
+    {
+        parentWidget()->setFixedSize(LOGIN_PAGE_WIDTH, LOGIN_PAGE_HEIGHT);
+        Page::show();
     }
 
     void createUnauthorizedUser()
@@ -58,11 +69,9 @@ private slots:
         user->setSocket(nullptr);
         hide();
     }
-
     void isSuccessfulSign()
     {
-
-        User *authorizedUser = new User(parent());
+        User *authorizedUser = new User(user->getSocket(), parent());
         if (!authorizedUser)
         {
             QMessageBox::critical(nullptr, "Error", QString("An error occurred: user was not created"), QMessageBox::Ok);
@@ -70,6 +79,7 @@ private slots:
         }
         QString userData = user->getUserData();
         disconnect(user, nullptr, nullptr, nullptr);
+        user->setSocket(nullptr);
         user->deleteLater();
         authorizedUser->setUserData(userData);
         user = authorizedUser;

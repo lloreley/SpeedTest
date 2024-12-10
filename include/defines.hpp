@@ -7,9 +7,8 @@
 
 #define MIN_MAIN_WINDOW_HEIGHT                      600
 #define MIN_MAIN_WINDOW_WIDHT                       800
-#define MAIN_WINDOW_NAME                            "Type.io"
+#define MAIN_WINDOW_NAME                            "Typing Test System"
 #define MAIN_WINDOW_OBJECT_NAME                     "MainWindow"
-
 
 #define CHECK_PTR(ptr)                              if (!(ptr)) { \
                                                         throw NullPointerException(#ptr); \
@@ -144,11 +143,6 @@
 #define WELCOME_PAGE_LEFT_BUTTON_OBJECT_NAME        "StartTypingTest"
 #define WELCOME_PAGE_LEFT_BUTTON_TEXT               "Typing Test"
 
-#define WELCOME_PAGE_GREATING_LABEL_IN_LAYOUT       qobject_cast<QLabel *>(this->layout()->itemAt(0)->widget())
-#define WELCOME_PAGE_ADDITIONAL_LABEL_IN_LAYOUT     qobject_cast<QLabel *>(this->layout()->itemAt(1)->widget())
-#define WELCOME_PAGE_LEFT_BUTTON_IN_LAYOUT          qobject_cast<ButtonWithHover *>(layout()->itemAt(2)->layout()->itemAt(0)->widget())
-#define WELCOME_PAGE_RIGHT_BUTTON_IN_LAYOUT         qobject_cast<ButtonWithHover *>(layout()->itemAt(2)->layout()->itemAt(1)->widget())
-
 //                                                  NAVIGATION PANEL
 #define NAVIGATION_PANEL_OBJECT_NAME                "NavigationPanel"
 #define BASE_BUTTONS_CLASS_NAME                     "QPushButton.BasePanelButton"
@@ -184,8 +178,6 @@
 #define TYPING_LESSONS_OBJECT_NAME                  "typingLessons"
 
 #define SCROLL_AREA_NAME_LABEL_OBJECT_NAME          "NameLabel"
-
-
 
 //                                                  ACCOUNT_PAGE
 #define DELITOR                                     QString("|")

@@ -41,6 +41,7 @@ class Slider : public QWidget
     Q_OBJECT
 public:
     Slider(QWidget *parent = nullptr);
+    ~Slider();
     virtual void swap() = 0;
 
     QPropertyAnimation *SliderPosAnimation();

@@ -4,8 +4,6 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QStringList>
-#include <QWidget>
-#include <QScrollArea>
 #include "../Page.hpp"
 #include "../../Accounts/User.hpp"
 #include "../../Exception/Exception.hpp"
@@ -21,7 +19,14 @@ public:
         layout->setContentsMargins(0, 0, 50, 20);
         layout->setSpacing(30);
     }
-
+    ~AccountPage()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+        user->deleteLater();
+    }
     QLabel *createNameLabel()
     {
         CHECK_PTR(user)
@@ -72,7 +77,6 @@ public:
         }
         emit userInstalled();
     }
-
     BaseUser *getUser()
     {
         return user;
@@ -87,10 +91,9 @@ public slots:
         if (userData != "" && layout()->count() < 5)
         {
             addResultsFromString(userData.mid(userData.indexOf("Typing history")));
-            setStyleSheet(UserDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
+            setStyleSheet(FileDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
         }
     }
-
     void addResult(const QString &resultString)
     {
         QStringList fields = resultString.split(DELITOR);
@@ -117,7 +120,6 @@ public slots:
 
 private:
     BaseUser *user;
-
     void addResultsFromString(const QString &resultsString)
     {
         QStringList results = resultsString.split("\n");

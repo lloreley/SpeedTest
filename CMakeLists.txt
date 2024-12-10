@@ -29,7 +29,6 @@ add_executable(SpeedTest
     include/ButtonWithHover.hpp
 
     include/DataBase/FileDataBase.hpp
-    include/DataBase/UserDataBase.hpp
 
     include/Pages/WelcomePage/WelcomePage.hpp
     include/Pages/TypingTest/TypingTest.hpp
@@ -40,8 +39,6 @@ add_executable(SpeedTest
     include/Pages/Page.hpp
     include/Pages/LessonsScrollArea.hpp
 
-
-    include/Accounts/ServerClient.hpp
     include/Accounts/User.hpp
 )
 

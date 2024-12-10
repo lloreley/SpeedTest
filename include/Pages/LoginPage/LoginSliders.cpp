@@ -13,7 +13,13 @@ Slider::Slider(QWidget *parent) : QWidget(parent), sliderStyle{""}
     sliderPosAnimation->setEasingCurve(LOGIN_PAGE_SLIDER_MOVE_EASIGN_CURVE);
     sliderPosAnimation->setDuration(LOGIN_PAGE_SLIDER_MOVE_DURATION);
 }
-
+Slider::~Slider()
+{
+    for (auto child : children())
+    {
+        child->deleteLater();
+    }
+}
 void Slider::paintEvent(QPaintEvent *pe)
 {
     QStyleOption o;
@@ -47,7 +53,7 @@ MainSlider::MainSlider(QWidget *parent) : Slider(parent)
     qRegisterAnimationInterpolator<BorderRadii>(myBorderInterpolator);
     move(LOGIN_PAGE_SLIDER_LEFT_POS);
     setObjectName(LOGIN_PAGE_MAIN_SLIDER_OBJECT_NAME);
-    sliderStyle = UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
+    sliderStyle = FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                   QString("#") + QString(LOGIN_PAGE_MAIN_SLIDER_OBJECT_NAME));
     layout()->addWidget(createGreetingLabel());
     layout()->addWidget(createAdditionalLabel());
@@ -70,7 +76,7 @@ ButtonWithHover *MainSlider::createSignButton()
     ButtonWithHover *btn = new ButtonWithHover(this);
     CHECK_PTR(btn)
     btn->setObjectName(LP_MS_SIGN_BUTTON_OBJECT_NAME);
-    btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
+    btn->setButtonStyle(FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                         QString("#") + QString(LP_MS_SIGN_BUTTON_OBJECT_NAME)));
     btn->setHoverActive(true);
     btn->setHoverDuration(LOGIN_PAGE_SIGN_BUTTON_HOVER_DURATION);
@@ -256,7 +262,7 @@ ButtonWithHover *LoginSlider::createSignButton()
     ButtonWithHover *btn = new ButtonWithHover(this);
     CHECK_PTR(btn)
     btn->setObjectName(LP_LS_SIGN_BUTTON_OBJECT_NAME);
-    btn->setButtonStyle(UserDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
+    btn->setButtonStyle(FileDataBase::loadStyleFromFile(DYNAMIC_STYLES_FILE_PATH,
                                                         QString("#") + QString(LP_LS_SIGN_BUTTON_OBJECT_NAME)));
     btn->setHoverActive(true);
     btn->setStartBackgroundColor(GOLD);
@@ -384,7 +390,6 @@ void LoginSlider::swapMainLabelText()
     }
     mainLabel()->setText(LP_LS_MAIN_LABEL_TEXT_IN_RIGHT_POS);
 }
-
 void LoginSlider::isSignButtonClicked()
 {
     try
@@ -416,7 +421,6 @@ void LoginSlider::isSignButtonClicked()
     message += EMAIL_SELECTOR + LEFT_MESSAGE_BRACKET + emailLineEdit()->text() + RIGHT_MESSAGE_BRACKET;
     emit sliderSignUpClicked(message);
 }
-
 void LoginSlider::isSliderMove()
 {
     if (sliderPosAnimation->state() != QAbstractAnimation::Stopped)

@@ -59,6 +59,13 @@ public:
         setWidgetResizable(true);
         hide();
     }
+    ~LessonsScrollArea()
+    {
+        for (auto child : children())
+        {
+            child->deleteLater();
+        }
+    }
 
     QLabel *getNameLabel()
     {

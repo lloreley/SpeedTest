@@ -1,48 +1,40 @@
 #include "../include/mainwindow.hpp"
-MainWindow::MainWindow(const char *windowTitle,
-                       size_t minimumWidth,
-                       size_t minimumHeight,
-                       QWidget *parent) : QWidget(parent)
+MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 {
-        createWidgets();
-        setConnections();
-        this->setWindowTitle(windowTitle);
-        this->setMinimumSize(minimumWidth, minimumHeight);
-        this->setObjectName(MAIN_WINDOW_OBJECT_NAME);
-        this->setStyleSheet(UserDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
+        try
+        {
+                setup();
+                setMinimumSize(MIN_MAIN_WINDOW_WIDHT, MIN_MAIN_WINDOW_HEIGHT);
+                setObjectName(MAIN_WINDOW_OBJECT_NAME);
+                setStyleSheet(FileDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
+        }
+        catch (const BaseException &ex)
+        {
+                emergencyExit(ex);
+        }
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-        if (QMessageBox::question(this, "Question", "Are you sure?",
-                                  QMessageBox::Yes | QMessageBox::No) == QMessageBox::No)
+        BaseUser *user = area->getAccountPage()->getUser();
+        if (user && user->getDateRegistration() != "none")
         {
-                event->ignore();
+                user->sendToServer(QString("disconnected\n") + NAME_SELECTOR + LEFT_MESSAGE_BRACKET + user->getName() + RIGHT_MESSAGE_BRACKET);
         }
-        else
-        {
-                BaseUser *user = area->getAccountPage()->getUser();
-                if (user && user->getDateRegistration() != "none")
-                {
-                        user->sendToServer(QString("disconnected\n") + NAME_SELECTOR + LEFT_MESSAGE_BRACKET + user->getName() + RIGHT_MESSAGE_BRACKET);
-                }
-                event->accept();
-        }
+        event->accept();
 }
-
 void MainWindow::emergencyExit(const BaseException ex)
 {
         QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(ex.what()), QMessageBox::Ok);
-        std::exit(0);
+        QApplication::quit();
 }
-
 void MainWindow::isLoginPageHidden()
 {
         try
         {
                 setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
                 area->getAccountPage()->setUser(logpage->getUser());
-                connect(area->getAccountPage()->getUser(), &ServerClient::disconnect, [this]()
+                connect(area->getAccountPage()->getUser(), &ServerClient::disconnected, [this]()
                         {QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg("server stopped work"), QMessageBox::Ok);
                         isLogout(); });
                 setLayout(layout);
@@ -53,14 +45,12 @@ void MainWindow::isLoginPageHidden()
                 emergencyExit(ex);
         }
 }
-
 void MainWindow::isWelcomePageHidden()
 {
         area->show();
         navigationPanel->show();
 }
-
-void MainWindow::createWidgets()
+void MainWindow::setup()
 {
         layout = new QGridLayout;
         logpage = new LoginPage(this);
@@ -85,10 +75,7 @@ void MainWindow::createWidgets()
                 layout->setRowStretch(i, 1);
         }
         layout->setContentsMargins(ZERO_CONTENTS_MARGINS);
-}
 
-void MainWindow::setConnections()
-{
         connect(logpage, &LoginPage::hidden, this, &MainWindow::isLoginPageHidden);
         connect(welcomePage, &WelcomePage::hidden, this, &MainWindow::isWelcomePageHidden);
         connect(welcomePage, &WelcomePage::TypingTest, area, &LessonsScrollArea::showRepeatTypingTestPage);
@@ -98,30 +85,34 @@ void MainWindow::setConnections()
         connect(navigationPanel->accountButton(), &QAbstractButton::clicked, area, &LessonsScrollArea::showAccountPage);
         connect(navigationPanel->logoutButton(), &QAbstractButton::clicked, this, &MainWindow::isLogout);
 }
-
 void MainWindow::isLogout()
 {
-        BaseUser *user = area->getAccountPage()->getUser();
-        if (user && user->getDateRegistration() != "none")
+        try
         {
-                user->sendToServer(QString("disconnected\n") + NAME_SELECTOR + LEFT_MESSAGE_BRACKET + user->getName() + RIGHT_MESSAGE_BRACKET);
-        }
-        user->deleteLater();
-        area->getAccountPage()->setUser(nullptr);
-        area->hide();
-        navigationPanel->QWidget::hide();
-        welcomePage->QWidget::hide();
-        logpage->show();
-        logpage->createUnauthorizedUser();
-        QLayout *accountLayout = area->getAccountPage()->layout();
-        CHECK_PTR(accountLayout)
-        QLayoutItem *item;
-        while ((item = accountLayout->takeAt(0)) != nullptr)
-        {
-                if (QWidget *widget = item->widget())
+                BaseUser *user = area->getAccountPage()->getUser();
+                if (user && user->getDateRegistration() != "none")
+                        user->sendToServer(QString("disconnected\n") + NAME_SELECTOR + LEFT_MESSAGE_BRACKET + user->getName() + RIGHT_MESSAGE_BRACKET);
+                user->deleteLater();
+                area->getAccountPage()->setUser(nullptr);
+                area->hide();
+                navigationPanel->QWidget::hide();
+                welcomePage->QWidget::hide();
+                logpage->show();
+                logpage->createUnauthorizedUser();
+                QLayout *accountLayout = area->getAccountPage()->layout();
+                CHECK_PTR(accountLayout)
+                QLayoutItem *item;
+                while ((item = accountLayout->takeAt(0)) != nullptr)
                 {
-                        widget->deleteLater();
+                        if (QWidget *widget = item->widget())
+                        {
+                                widget->deleteLater();
+                        }
+                        delete item;
                 }
-                delete item;
+        }
+        catch (const BaseException &ex)
+        {
+                emergencyExit(ex);
         }
 }
