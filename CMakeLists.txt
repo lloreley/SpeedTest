@@ -18,28 +18,35 @@ find_package(Qt5 COMPONENTS Widgets Network REQUIRED)
 
 add_executable(SpeedTest
     main.cpp
-
-    include/mainwindow.hpp
+    src/AccountPage.cpp
+    src/ButtonWithHover.cpp
+    src/FileDataBase.cpp
+    src/LessonsScrollArea.cpp
+    src/LoginPage.cpp
+    src/LoginSliders.cpp
+    src/NavigationPage.cpp
+    src/Page.cpp
+    src/TypingLessons.cpp
+    src/TypingTest.cpp
+    src/User.cpp
+    src/WelcomePage.cpp
     src/mainwindow.cpp
 
-    include/Pages/LoginPage/LoginPage.hpp
-    include/Pages/LoginPage/LoginSliders.hpp
-    include/Pages/LoginPage/LoginSliders.cpp
-    
-    include/ButtonWithHover.hpp
-
-    include/DataBase/FileDataBase.hpp
-
-    include/Pages/WelcomePage/WelcomePage.hpp
-    include/Pages/TypingTest/TypingTest.hpp
-    include/Pages/TypingLessons/TypingLessons.hpp
-    include/Pages/NavigationPage/NavigationPage.hpp
-    include/Pages/AccountPage/AccountPage.hpp
-    include/Exception/Exception.hpp
-    include/Pages/Page.hpp
-    include/Pages/LessonsScrollArea.hpp
-
-    include/Accounts/User.hpp
+    include/AccountPage.h
+    include/ButtonWithHover.h
+    include/CircularLinkedList.h
+    include/Exception.h
+    include/FileDataBase.h
+    include/LessonsScrollArea.h
+    include/LoginPage.h
+    include/LoginSliders.h
+    include/mainwindow.h
+    include/NavigationPage.h
+    include/Page.h
+    include/TypingTest.h
+    include/TypingLessons.h
+    include/User.h
+    include/WelcomePage.h
 )
 
 target_link_libraries(SpeedTest Qt5::Widgets Qt5::Network)

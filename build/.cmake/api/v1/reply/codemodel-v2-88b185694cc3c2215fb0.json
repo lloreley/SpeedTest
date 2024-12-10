@@ -1,0 +1,175 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SpeedTest",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SpeedTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpeedTest-Debug-c707c29b201480623073.json",
+					"name" : "SpeedTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SpeedTest_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpeedTest_autogen-Debug-f7145ec7eb6f1576bf09.json",
+					"name" : "SpeedTest_autogen",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SpeedTest",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SpeedTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpeedTest-Release-da8c08f8ed6c641fc51e.json",
+					"name" : "SpeedTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SpeedTest_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpeedTest_autogen-Release-a12487e19d4993a8a4f0.json",
+					"name" : "SpeedTest_autogen",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "SpeedTest",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "SpeedTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpeedTest-RelWithDebInfo-ad8eeddea37f3e3dca36.json",
+					"name" : "SpeedTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SpeedTest_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpeedTest_autogen-RelWithDebInfo-cd67146fefd85e99a703.json",
+					"name" : "SpeedTest_autogen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/projects/SpeedTest/build",
+		"source" : "D:/projects/SpeedTest"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

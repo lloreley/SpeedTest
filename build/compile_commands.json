@@ -13,15 +13,81 @@
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\mainwindow.cpp.obj -c D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
-  "file": "D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\mainwindow.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\AccountPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\AccountPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\AccountPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\AccountPage.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\include\\Pages\\LoginPage\\LoginSliders.cpp.obj -c D:\\projects\\SpeedTest\\include\\Pages\\LoginPage\\LoginSliders.cpp",
-  "file": "D:\\projects\\SpeedTest\\include\\Pages\\LoginPage\\LoginSliders.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\include\\Pages\\LoginPage\\LoginSliders.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\ButtonWithHover.cpp.obj -c D:\\projects\\SpeedTest\\src\\ButtonWithHover.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\ButtonWithHover.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\ButtonWithHover.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\FileDataBase.cpp.obj -c D:\\projects\\SpeedTest\\src\\FileDataBase.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\FileDataBase.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\FileDataBase.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\LessonsScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\LessonsScrollArea.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\LoginPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\LoginPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LoginPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\LoginPage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\LoginSliders.cpp.obj -c D:\\projects\\SpeedTest\\src\\LoginSliders.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LoginSliders.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\LoginSliders.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\NavigationPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\NavigationPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\NavigationPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\NavigationPage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\Page.cpp.obj -c D:\\projects\\SpeedTest\\src\\Page.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\Page.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\Page.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\TypingLessons.cpp.obj -c D:\\projects\\SpeedTest\\src\\TypingLessons.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\TypingLessons.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\TypingLessons.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\TypingTest.cpp.obj -c D:\\projects\\SpeedTest\\src\\TypingTest.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\TypingTest.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\TypingTest.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\User.cpp.obj -c D:\\projects\\SpeedTest\\src\\User.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\User.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\User.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\WelcomePage.cpp.obj -c D:\\projects\\SpeedTest\\src\\WelcomePage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\WelcomePage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\WelcomePage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\mainwindow.cpp.obj -c D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\mainwindow.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
@@ -37,15 +103,81 @@
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\mainwindow.cpp.obj -c D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
-  "file": "D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\mainwindow.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\AccountPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\AccountPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\AccountPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\AccountPage.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\include\\Pages\\LoginPage\\LoginSliders.cpp.obj -c D:\\projects\\SpeedTest\\include\\Pages\\LoginPage\\LoginSliders.cpp",
-  "file": "D:\\projects\\SpeedTest\\include\\Pages\\LoginPage\\LoginSliders.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\Release\\include\\Pages\\LoginPage\\LoginSliders.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\ButtonWithHover.cpp.obj -c D:\\projects\\SpeedTest\\src\\ButtonWithHover.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\ButtonWithHover.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\ButtonWithHover.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\FileDataBase.cpp.obj -c D:\\projects\\SpeedTest\\src\\FileDataBase.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\FileDataBase.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\FileDataBase.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\LessonsScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\LessonsScrollArea.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\LoginPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\LoginPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LoginPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\LoginPage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\LoginSliders.cpp.obj -c D:\\projects\\SpeedTest\\src\\LoginSliders.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LoginSliders.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\LoginSliders.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\NavigationPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\NavigationPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\NavigationPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\NavigationPage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\Page.cpp.obj -c D:\\projects\\SpeedTest\\src\\Page.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\Page.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\Page.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\TypingLessons.cpp.obj -c D:\\projects\\SpeedTest\\src\\TypingLessons.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\TypingLessons.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\TypingLessons.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\TypingTest.cpp.obj -c D:\\projects\\SpeedTest\\src\\TypingTest.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\TypingTest.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\TypingTest.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\User.cpp.obj -c D:\\projects\\SpeedTest\\src\\User.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\User.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\User.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\WelcomePage.cpp.obj -c D:\\projects\\SpeedTest\\src\\WelcomePage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\WelcomePage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\WelcomePage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\mainwindow.cpp.obj -c D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\mainwindow.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
@@ -61,14 +193,80 @@
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\mainwindow.cpp.obj -c D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
-  "file": "D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\mainwindow.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\AccountPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\AccountPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\AccountPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\AccountPage.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\include\\Pages\\LoginPage\\LoginSliders.cpp.obj -c D:\\projects\\SpeedTest\\include\\Pages\\LoginPage\\LoginSliders.cpp",
-  "file": "D:\\projects\\SpeedTest\\include\\Pages\\LoginPage\\LoginSliders.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\include\\Pages\\LoginPage\\LoginSliders.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\ButtonWithHover.cpp.obj -c D:\\projects\\SpeedTest\\src\\ButtonWithHover.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\ButtonWithHover.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\ButtonWithHover.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\FileDataBase.cpp.obj -c D:\\projects\\SpeedTest\\src\\FileDataBase.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\FileDataBase.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\FileDataBase.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LessonsScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LessonsScrollArea.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LoginPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\LoginPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LoginPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LoginPage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LoginSliders.cpp.obj -c D:\\projects\\SpeedTest\\src\\LoginSliders.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\LoginSliders.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LoginSliders.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\NavigationPage.cpp.obj -c D:\\projects\\SpeedTest\\src\\NavigationPage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\NavigationPage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\NavigationPage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\Page.cpp.obj -c D:\\projects\\SpeedTest\\src\\Page.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\Page.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\Page.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\TypingLessons.cpp.obj -c D:\\projects\\SpeedTest\\src\\TypingLessons.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\TypingLessons.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\TypingLessons.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\TypingTest.cpp.obj -c D:\\projects\\SpeedTest\\src\\TypingTest.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\TypingTest.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\TypingTest.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\User.cpp.obj -c D:\\projects\\SpeedTest\\src\\User.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\User.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\User.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\WelcomePage.cpp.obj -c D:\\projects\\SpeedTest\\src\\WelcomePage.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\WelcomePage.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\WelcomePage.cpp.obj"
+},
+{
+  "directory": "D:/projects/SpeedTest/build",
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\mainwindow.cpp.obj -c D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\mainwindow.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\mainwindow.cpp.obj"
 }
 ]

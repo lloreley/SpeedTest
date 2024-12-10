@@ -71,85 +71,91 @@
 	"HEADERS" : 
 	[
 		[
-			"D:/projects/SpeedTest/include/Accounts/User.hpp",
+			"D:/projects/SpeedTest/include/AccountPage.h",
 			"MU",
-			"GKX6U2S5T6/moc_User.cpp",
+			"6YEA5652QU/moc_AccountPage.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/ButtonWithHover.hpp",
+			"D:/projects/SpeedTest/include/ButtonWithHover.h",
 			"MU",
 			"6YEA5652QU/moc_ButtonWithHover.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/DataBase/FileDataBase.hpp",
+			"D:/projects/SpeedTest/include/CircularLinkedList.h",
 			"MU",
-			"HSSC5WASNF/moc_FileDataBase.cpp",
+			"6YEA5652QU/moc_CircularLinkedList.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Exception/Exception.hpp",
+			"D:/projects/SpeedTest/include/Exception.h",
 			"MU",
-			"2JIUHOC7LV/moc_Exception.cpp",
+			"6YEA5652QU/moc_Exception.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/AccountPage/AccountPage.hpp",
+			"D:/projects/SpeedTest/include/FileDataBase.h",
 			"MU",
-			"ECL5PCTLHN/moc_AccountPage.cpp",
+			"6YEA5652QU/moc_FileDataBase.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/LessonsScrollArea.hpp",
+			"D:/projects/SpeedTest/include/LessonsScrollArea.h",
 			"MU",
-			"WD4OUXR6EQ/moc_LessonsScrollArea.cpp",
+			"6YEA5652QU/moc_LessonsScrollArea.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginPage.hpp",
+			"D:/projects/SpeedTest/include/LoginPage.h",
 			"MU",
-			"7GNFVZUKHW/moc_LoginPage.cpp",
+			"6YEA5652QU/moc_LoginPage.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginSliders.hpp",
+			"D:/projects/SpeedTest/include/LoginSliders.h",
 			"MU",
-			"7GNFVZUKHW/moc_LoginSliders.cpp",
+			"6YEA5652QU/moc_LoginSliders.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/NavigationPage/NavigationPage.hpp",
+			"D:/projects/SpeedTest/include/NavigationPage.h",
 			"MU",
-			"TYTHKC2AES/moc_NavigationPage.cpp",
+			"6YEA5652QU/moc_NavigationPage.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/Page.hpp",
+			"D:/projects/SpeedTest/include/Page.h",
 			"MU",
-			"WD4OUXR6EQ/moc_Page.cpp",
+			"6YEA5652QU/moc_Page.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/TypingLessons/TypingLessons.hpp",
+			"D:/projects/SpeedTest/include/TypingLessons.h",
 			"MU",
-			"ZLBZZ3Z4QZ/moc_TypingLessons.cpp",
+			"6YEA5652QU/moc_TypingLessons.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/TypingTest/TypingTest.hpp",
+			"D:/projects/SpeedTest/include/TypingTest.h",
 			"MU",
-			"NTLF4UN254/moc_TypingTest.cpp",
+			"6YEA5652QU/moc_TypingTest.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/Pages/WelcomePage/WelcomePage.hpp",
+			"D:/projects/SpeedTest/include/User.h",
 			"MU",
-			"YSZPZIQU5Q/moc_WelcomePage.cpp",
+			"6YEA5652QU/moc_User.cpp",
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/mainwindow.hpp",
+			"D:/projects/SpeedTest/include/WelcomePage.h",
+			"MU",
+			"6YEA5652QU/moc_WelcomePage.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/mainwindow.h",
 			"MU",
 			"6YEA5652QU/moc_mainwindow.cpp",
 			null
@@ -229,12 +235,19 @@
 	"SETTINGS_FILE_Release" : "D:/projects/SpeedTest/build/CMakeFiles/SpeedTest_autogen.dir/AutogenUsed_Release.txt",
 	"SOURCES" : 
 	[
-		[
-			"D:/projects/SpeedTest/include/Pages/LoginPage/LoginSliders.cpp",
-			"MU",
-			null
-		],
 		[ "D:/projects/SpeedTest/main.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/AccountPage.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/ButtonWithHover.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/FileDataBase.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/LessonsScrollArea.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/LoginPage.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/LoginSliders.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/NavigationPage.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/Page.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/TypingLessons.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/TypingTest.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/User.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/WelcomePage.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/mainwindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

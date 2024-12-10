@@ -59,6 +59,102 @@ build CMakeFiles/SpeedTest.dir/Debug/main.cpp.obj: CXX_COMPILER__SpeedTest_unsca
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
   OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug
 
+build CMakeFiles/SpeedTest.dir/Debug/src/AccountPage.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/AccountPage.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\AccountPage.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/ButtonWithHover.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/ButtonWithHover.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\ButtonWithHover.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/FileDataBase.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/FileDataBase.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\FileDataBase.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/LessonsScrollArea.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/LessonsScrollArea.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\LessonsScrollArea.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/LoginPage.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/LoginPage.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\LoginPage.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/LoginSliders.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/LoginSliders.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\LoginSliders.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/NavigationPage.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/NavigationPage.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\NavigationPage.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/Page.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/Page.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\Page.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/TypingLessons.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/TypingLessons.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\TypingLessons.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/TypingTest.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/TypingTest.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\TypingTest.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/User.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/User.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\User.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
+build CMakeFiles/SpeedTest.dir/Debug/src/WelcomePage.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/WelcomePage.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
+  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\WelcomePage.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
+  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
+
 build CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/src/mainwindow.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
   DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\src\mainwindow.cpp.obj.d
@@ -66,14 +162,6 @@ build CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj: CXX_COMPILER__Speed
   INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
   OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\src
-
-build CMakeFiles/SpeedTest.dir/Debug/include/Pages/LoginPage/LoginSliders.cpp.obj: CXX_COMPILER__SpeedTest_unscanned_Debug D$:/projects/SpeedTest/include/Pages/LoginPage/LoginSliders.cpp || cmake_object_order_depends_target_SpeedTest_DEBUG
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\"Debug\"
-  DEP_FILE = CMakeFiles\SpeedTest.dir\Debug\include\Pages\LoginPage\LoginSliders.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  INCLUDES = -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork
-  OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
-  OBJECT_FILE_DIR = CMakeFiles\SpeedTest.dir\Debug\include\Pages\LoginPage
 
 
 # =============================================================================
@@ -83,7 +171,7 @@ build CMakeFiles/SpeedTest.dir/Debug/include/Pages/LoginPage/LoginSliders.cpp.ob
 #############################################
 # Link the executable Debug\SpeedTest.exe
 
-build Debug/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_Debug CMakeFiles/SpeedTest.dir/Debug/SpeedTest_autogen/mocs_compilation_Debug.cpp.obj CMakeFiles/SpeedTest.dir/Debug/main.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj CMakeFiles/SpeedTest.dir/Debug/include/Pages/LoginPage/LoginSliders.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Network.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:Debug
+build Debug/SpeedTest.exe: CXX_EXECUTABLE_LINKER__SpeedTest_Debug CMakeFiles/SpeedTest.dir/Debug/SpeedTest_autogen/mocs_compilation_Debug.cpp.obj CMakeFiles/SpeedTest.dir/Debug/main.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/AccountPage.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/ButtonWithHover.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/FileDataBase.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/LessonsScrollArea.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/LoginPage.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/LoginSliders.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/NavigationPage.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/Page.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/TypingLessons.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/TypingTest.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/User.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/WelcomePage.cpp.obj CMakeFiles/SpeedTest.dir/Debug/src/mainwindow.cpp.obj | D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Network.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a D$:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a || SpeedTest_autogen$:Debug
   FLAGS = -g
   LINK_LIBRARIES = D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Widgets.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Network.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Gui.a  D:/tools/Qt/5.14.2/mingw73_64/lib/libQt5Core.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\SpeedTest.dir\Debug
