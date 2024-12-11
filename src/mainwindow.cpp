@@ -1,19 +1,11 @@
 #include "../include/mainwindow.h"
 MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
 {
-        try
-        {
-                setup();
-                setMinimumSize(MIN_MAIN_WINDOW_WIDHT, MIN_MAIN_WINDOW_HEIGHT);
-                setObjectName(MAIN_WINDOW_OBJECT_NAME);
-                setStyleSheet(FileDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
-        }
-        catch (const BaseException &ex)
-        {
-                emergencyExit(ex);
-        }
+        setup();
+        setMinimumSize(MIN_MAIN_WINDOW_WIDHT, MIN_MAIN_WINDOW_HEIGHT);
+        setObjectName(MAIN_WINDOW_OBJECT_NAME);
+        setStyleSheet(FileDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
 }
-
 void MainWindow::closeEvent(QCloseEvent *event)
 {
         BaseUser *user = area->getAccountPage()->getUser();
@@ -25,6 +17,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 void MainWindow::emergencyExit(const BaseException ex)
 {
+        qDebug() << "here1";
         QMessageBox::critical(nullptr, "Error", QString("An error occurred: %1").arg(ex.what()), QMessageBox::Ok);
         QApplication::quit();
 }

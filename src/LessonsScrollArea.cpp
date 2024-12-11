@@ -1,5 +1,5 @@
 #include "../include/LessonsScrollArea.h"
-
+#include <QApplication>
 LessonsScrollArea::LessonsScrollArea(QWidget *parent) : QScrollArea(parent)
 {
     setup();
@@ -8,7 +8,6 @@ LessonsScrollArea::LessonsScrollArea(QWidget *parent) : QScrollArea(parent)
 
 void LessonsScrollArea::setup()
 {
-
     QWidget *viewportWidget = new QWidget(this);
     QVBoxLayout *layout = new QVBoxLayout(viewportWidget);
     QLabel *nameLabel = new QLabel(viewportWidget);

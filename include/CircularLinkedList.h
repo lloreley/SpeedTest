@@ -26,6 +26,7 @@ public:
 
     T &operator*()
     {
+        CHECK_PTR(current)
         return current->data;
     }
 

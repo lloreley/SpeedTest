@@ -4,7 +4,6 @@
 #include <QKeyEvent>
 #include <QPainter>
 #include <QTextEdit>
-#include <QApplication>
 #include <QStackedWidget>
 #include <QMessageBox>
 #include <QDialog>
