@@ -6,6 +6,13 @@ MainWindow::MainWindow(QWidget *parent) : QWidget(parent)
         setObjectName(MAIN_WINDOW_OBJECT_NAME);
         setStyleSheet(FileDataBase::readAllFile(STATIC_STYLES_FILE_PATH));
 }
+MainWindow::~MainWindow()
+{
+        for (auto child : children())
+        {
+                child->deleteLater();
+        }
+}
 void MainWindow::closeEvent(QCloseEvent *event)
 {
         BaseUser *user = area->getAccountPage()->getUser();
@@ -49,7 +56,7 @@ void MainWindow::setup()
         logpage = new LoginPage(this);
         welcomePage = new WelcomePage(this);
         navigationPanel = new NavigationPanel(this);
-        area = new LessonsScrollArea(this);
+        area = new ScrollArea(this);
         CHECK_PTR(logpage)
         CHECK_PTR(welcomePage)
         CHECK_PTR(navigationPanel)
@@ -71,11 +78,11 @@ void MainWindow::setup()
 
         connect(logpage, &LoginPage::hidden, this, &MainWindow::isLoginPageHidden);
         connect(welcomePage, &WelcomePage::hidden, this, &MainWindow::isWelcomePageHidden);
-        connect(welcomePage, &WelcomePage::TypingTest, area, &LessonsScrollArea::showRepeatTypingTestPage);
-        connect(welcomePage, &WelcomePage::TypingLessons, area, &LessonsScrollArea::showTypingLessonsPage);
-        connect(navigationPanel->typingTestButton(), &QAbstractButton::clicked, area, &LessonsScrollArea::showRepeatTypingTestPage);
-        connect(navigationPanel->typingLessonsButton(), &QAbstractButton::clicked, area, &LessonsScrollArea::showTypingLessonsPage);
-        connect(navigationPanel->accountButton(), &QAbstractButton::clicked, area, &LessonsScrollArea::showAccountPage);
+        connect(welcomePage, &WelcomePage::TypingTest, area, &ScrollArea::showRepeatTypingTestPage);
+        connect(welcomePage, &WelcomePage::TypingLessons, area, &ScrollArea::showTypingLessonsPage);
+        connect(navigationPanel->typingTestButton(), &QAbstractButton::clicked, area, &ScrollArea::showRepeatTypingTestPage);
+        connect(navigationPanel->typingLessonsButton(), &QAbstractButton::clicked, area, &ScrollArea::showTypingLessonsPage);
+        connect(navigationPanel->accountButton(), &QAbstractButton::clicked, area, &ScrollArea::showAccountPage);
         connect(navigationPanel->logoutButton(), &QAbstractButton::clicked, this, &MainWindow::isLogout);
 }
 void MainWindow::isLogout()

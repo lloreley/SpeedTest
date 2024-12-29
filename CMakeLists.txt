@@ -21,7 +21,7 @@ add_executable(SpeedTest
     src/AccountPage.cpp
     src/ButtonWithHover.cpp
     src/FileDataBase.cpp
-    src/LessonsScrollArea.cpp
+    src/ScrollArea.cpp
     src/LoginPage.cpp
     src/LoginSliders.cpp
     src/NavigationPage.cpp
@@ -37,7 +37,7 @@ add_executable(SpeedTest
     include/CircularLinkedList.h
     include/Exception.h
     include/FileDataBase.h
-    include/LessonsScrollArea.h
+    include/ScrollArea.h
     include/LoginPage.h
     include/LoginSliders.h
     include/mainwindow.h

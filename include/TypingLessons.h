@@ -41,6 +41,7 @@ private:
     void createLessons();
     void paintEvent(QPaintEvent *pe);
 
+public:
     int countLessons;
     int currentId;
 

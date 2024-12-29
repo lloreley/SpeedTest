@@ -101,12 +101,6 @@
 			null
 		],
 		[
-			"D:/projects/SpeedTest/include/LessonsScrollArea.h",
-			"MU",
-			"6YEA5652QU/moc_LessonsScrollArea.cpp",
-			null
-		],
-		[
 			"D:/projects/SpeedTest/include/LoginPage.h",
 			"MU",
 			"6YEA5652QU/moc_LoginPage.cpp",
@@ -128,6 +122,12 @@
 			"D:/projects/SpeedTest/include/Page.h",
 			"MU",
 			"6YEA5652QU/moc_Page.cpp",
+			null
+		],
+		[
+			"D:/projects/SpeedTest/include/ScrollArea.h",
+			"MU",
+			"6YEA5652QU/moc_ScrollArea.cpp",
 			null
 		],
 		[
@@ -239,11 +239,11 @@
 		[ "D:/projects/SpeedTest/src/AccountPage.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/ButtonWithHover.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/FileDataBase.cpp", "MU", null ],
-		[ "D:/projects/SpeedTest/src/LessonsScrollArea.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/LoginPage.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/LoginSliders.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/NavigationPage.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/Page.cpp", "MU", null ],
+		[ "D:/projects/SpeedTest/src/ScrollArea.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/TypingLessons.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/TypingTest.cpp", "MU", null ],
 		[ "D:/projects/SpeedTest/src/User.cpp", "MU", null ],

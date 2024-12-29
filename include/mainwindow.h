@@ -6,32 +6,25 @@
 #include "WelcomePage.h"
 #include "User.h"
 #include "NavigationPage.h"
-#include "LessonsScrollArea.h"
+#include "ScrollArea.h"
 
 class MainWindow : public QWidget
 {
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow()
-    {
-        for(auto child: children())
-        {
-            child->deleteLater();
-        }
-    }
-
-    LoginPage *logpage;
-    WelcomePage *welcomePage;
-    NavigationPanel *navigationPanel;
-    LessonsScrollArea *area;
-    QGridLayout *layout;
-
+    ~MainWindow();
 private:
     void setup();
     void emergencyExit(const BaseException);
     void isLoginPageHidden();
     void isWelcomePageHidden();
     void closeEvent(QCloseEvent *event) override;
+
+    LoginPage *logpage;
+    WelcomePage *welcomePage;
+    NavigationPanel *navigationPanel;
+    ScrollArea *area;
+    QGridLayout *layout;
 
 private slots:
     void isLogout();

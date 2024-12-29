@@ -35,7 +35,6 @@ private:
     void enterEvent(QEvent *event);
     void cursorLeave();
     void cursorEnter();
-
     QString buttonStyle;
     QColor currentBackground;
     QColor currentTextColor;

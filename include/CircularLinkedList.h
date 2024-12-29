@@ -23,13 +23,11 @@ class CircularIterator
 {
 public:
     CircularIterator(Node<T> *node, Node<T> *head) : current(node), head(head) {}
-
     T &operator*()
     {
         CHECK_PTR(current)
         return current->data;
     }
-
     CircularIterator &operator++()
     {
         if (current)
@@ -38,12 +36,10 @@ public:
         }
         return *this;
     }
-
     bool operator!=(const CircularIterator &other) const
     {
         return current != other.current;
     }
-
     bool isEnd() const
     {
         return current->next == head;
@@ -61,7 +57,6 @@ public:
     Node<T> *head;
 
     CircularLinkedList() : head(nullptr) {}
-
     void append(T value)
     {
         Node<T> *newNode = new Node<T>(value);

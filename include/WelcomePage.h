@@ -15,17 +15,17 @@ class WelcomePage : public Page
 public:
     WelcomePage(QWidget *parent = nullptr);
     ~WelcomePage();
-    QLabel *createGreatingLabel();
-    QLabel *createAdditionalLabel();
-    ButtonWithHover *createLeftButton();
-    ButtonWithHover *createRightButton();
-
-private:
-    void setup() override;
     QLabel *greatingLabel();
     QLabel *additionalLabel();
     ButtonWithHover *leftButton();
     ButtonWithHover *rightButton();
+
+private:
+    void setup() override;
+    QLabel *createGreatingLabel();
+    QLabel *createAdditionalLabel();
+    ButtonWithHover *createLeftButton();
+    ButtonWithHover *createRightButton();
 
 signals:
     void TypingTest();

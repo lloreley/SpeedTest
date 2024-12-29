@@ -31,9 +31,9 @@
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\LessonsScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
-  "file": "D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\LessonsScrollArea.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Debug\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Debug -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -g -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Debug\\src\\ScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\ScrollArea.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\ScrollArea.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Debug\\src\\ScrollArea.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
@@ -121,9 +121,9 @@
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\LessonsScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
-  "file": "D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\LessonsScrollArea.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"Release\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_Release -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O3 -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\Release\\src\\ScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\ScrollArea.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\ScrollArea.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\Release\\src\\ScrollArea.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",
@@ -211,9 +211,9 @@
 },
 {
   "directory": "D:/projects/SpeedTest/build",
-  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LessonsScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
-  "file": "D:\\projects\\SpeedTest\\src\\LessonsScrollArea.cpp",
-  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\LessonsScrollArea.cpp.obj"
+  "command": "D:\\tools\\Qt\\Tools\\mingw730_64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\" -ID:/projects/SpeedTest/build/SpeedTest_autogen/include_RelWithDebInfo -isystem D:/tools/Qt/5.14.2/mingw73_64/include -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtWidgets -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtGui -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtANGLE -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtCore -isystem D:/tools/Qt/5.14.2/mingw73_64/./mkspecs/win32-g++ -isystem D:/tools/Qt/5.14.2/mingw73_64/include/QtNetwork -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\ScrollArea.cpp.obj -c D:\\projects\\SpeedTest\\src\\ScrollArea.cpp",
+  "file": "D:\\projects\\SpeedTest\\src\\ScrollArea.cpp",
+  "output": "CMakeFiles\\SpeedTest.dir\\RelWithDebInfo\\src\\ScrollArea.cpp.obj"
 },
 {
   "directory": "D:/projects/SpeedTest/build",

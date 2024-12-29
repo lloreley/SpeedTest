@@ -21,32 +21,32 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_LessonsScrollArea_t {
+struct qt_meta_stringdata_ScrollArea_t {
     QByteArrayData data[6];
-    char stringdata0[99];
+    char stringdata0[92];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_LessonsScrollArea_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_ScrollArea_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_LessonsScrollArea_t qt_meta_stringdata_LessonsScrollArea = {
+static const qt_meta_stringdata_ScrollArea_t qt_meta_stringdata_ScrollArea = {
     {
-QT_MOC_LITERAL(0, 0, 17), // "LessonsScrollArea"
-QT_MOC_LITERAL(1, 18, 16), // "setNewConnection"
-QT_MOC_LITERAL(2, 35, 0), // ""
-QT_MOC_LITERAL(3, 36, 24), // "showRepeatTypingTestPage"
-QT_MOC_LITERAL(4, 61, 21), // "showTypingLessonsPage"
-QT_MOC_LITERAL(5, 83, 15) // "showAccountPage"
+QT_MOC_LITERAL(0, 0, 10), // "ScrollArea"
+QT_MOC_LITERAL(1, 11, 16), // "setNewConnection"
+QT_MOC_LITERAL(2, 28, 0), // ""
+QT_MOC_LITERAL(3, 29, 24), // "showRepeatTypingTestPage"
+QT_MOC_LITERAL(4, 54, 21), // "showTypingLessonsPage"
+QT_MOC_LITERAL(5, 76, 15) // "showAccountPage"
 
     },
-    "LessonsScrollArea\0setNewConnection\0\0"
+    "ScrollArea\0setNewConnection\0\0"
     "showRepeatTypingTestPage\0showTypingLessonsPage\0"
     "showAccountPage"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_LessonsScrollArea[] = {
+static const uint qt_meta_data_ScrollArea[] = {
 
  // content:
        8,       // revision
@@ -74,10 +74,10 @@ static const uint qt_meta_data_LessonsScrollArea[] = {
        0        // eod
 };
 
-void LessonsScrollArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void ScrollArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<LessonsScrollArea *>(_o);
+        auto *_t = static_cast<ScrollArea *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->setNewConnection(); break;
@@ -90,30 +90,30 @@ void LessonsScrollArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject LessonsScrollArea::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject ScrollArea::staticMetaObject = { {
     QMetaObject::SuperData::link<QScrollArea::staticMetaObject>(),
-    qt_meta_stringdata_LessonsScrollArea.data,
-    qt_meta_data_LessonsScrollArea,
+    qt_meta_stringdata_ScrollArea.data,
+    qt_meta_data_ScrollArea,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *LessonsScrollArea::metaObject() const
+const QMetaObject *ScrollArea::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *LessonsScrollArea::qt_metacast(const char *_clname)
+void *ScrollArea::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_LessonsScrollArea.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_ScrollArea.stringdata0))
         return static_cast<void*>(this);
     return QScrollArea::qt_metacast(_clname);
 }
 
-int LessonsScrollArea::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int ScrollArea::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QScrollArea::qt_metacall(_c, _id, _a);
     if (_id < 0)
